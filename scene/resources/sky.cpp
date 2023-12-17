@@ -524,7 +524,7 @@ ProceduralSky::ProceduralSky(bool p_desaturate) {
 
 	texture_size = TEXTURE_SIZE_1024;
 	regen_queued = false;
-	first_time = true;
+	first_time = false;
 
 	_queue_update();
 }
