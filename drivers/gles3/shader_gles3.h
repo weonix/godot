@@ -156,7 +156,7 @@ private:
 		VersionKey() {}
 		VersionKey(uint64_t p_key) :
 				key(p_key) {}
-		_FORCE_INLINE_ bool is_subject_to_caching() const { return (version & UBERSHADER_FLAG); }
+		_FORCE_INLINE_ bool is_subject_to_caching() const { /*return true;*/ return (version & UBERSHADER_FLAG); }
 	};
 
 	struct Version {

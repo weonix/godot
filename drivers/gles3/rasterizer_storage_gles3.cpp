@@ -2120,7 +2120,7 @@ RID RasterizerStorageGLES3::shader_create() {
 	RID rid = shader_owner.make_rid(shader);
 	_shader_make_dirty(shader);
 	shader->self = rid;
-
+	//fprintf(stdout, "shader_create\n");
 	return rid;
 }
 
@@ -2185,6 +2185,8 @@ void RasterizerStorageGLES3::_update_shader(Shader *p_shader) const {
 	p_shader->ubo_size = 0;
 
 	p_shader->uniforms.clear();
+
+	//fprintf(stdout, "_update_shader\n");
 
 	if (p_shader->code == String()) {
 		return; //just invalid, but no error
@@ -8304,6 +8306,13 @@ void RasterizerStorageGLES3::initialize() {
 	} else {
 		print_line("Async. shader compilation: OFF");
 	}
+
+	
+	print_line("Shader cache: ON");
+	shaders.cache = memnew(ShaderCacheGLES3);
+	shaders.cache_write_queue = memnew(ThreadedCallableQueue<GLuint>());
+	
+
 	ShaderGLES3::compile_queue = shaders.compile_queue;
 	ShaderGLES3::parallel_compile_supported = config.parallel_shader_compile_supported;
 	ShaderGLES3::shader_cache = shaders.cache;

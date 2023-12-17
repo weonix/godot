@@ -258,6 +258,7 @@ ShaderGLES2::Version *ShaderGLES2::get_current_version() {
 	v.vert_id = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(v.vert_id, strings.size(), &strings[0], nullptr);
 	glCompileShader(v.vert_id);
+	VS::get_singleton()->emit_signal("gl_shader_compiled");
 
 	GLint status;
 
@@ -334,6 +335,7 @@ ShaderGLES2::Version *ShaderGLES2::get_current_version() {
 	v.frag_id = glCreateShader(GL_FRAGMENT_SHADER);
 	glShaderSource(v.frag_id, strings.size(), &strings[0], nullptr);
 	glCompileShader(v.frag_id);
+	VS::get_singleton()->emit_signal("gl_shader_compiled");
 
 	glGetShaderiv(v.frag_id, GL_COMPILE_STATUS, &status);
 	if (status == GL_FALSE) {

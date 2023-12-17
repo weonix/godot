@@ -41,6 +41,10 @@ String ShaderCacheGLES3::hash_program(const char *const *p_strings_platform, con
 	CryptoCore::SHA256Context ctx;
 	ctx.start();
 
+	// print_line(p_strings_platform);
+	// print_line(p_vertex_strings);
+	// print_line(p_fragment_strings);
+
 	// GL may already reject a binary program if hardware/software has changed, but just in case
 	for (const char *const *s = p_strings_platform; *s; s++) {
 		uint8_t *bytes = reinterpret_cast<uint8_t *>(const_cast<char *>(*s));
@@ -59,6 +63,8 @@ String ShaderCacheGLES3::hash_program(const char *const *p_strings_platform, con
 }
 
 bool ShaderCacheGLES3::retrieve(const String &p_program_hash, uint32_t *r_format, PoolByteArray *r_data) {
+	//print_line(p_program_hash + " retrieving cache: " + storage_path.plus_file(p_program_hash));
+
 	if (!storage_da) {
 		return false;
 	}
@@ -67,6 +73,8 @@ bool ShaderCacheGLES3::retrieve(const String &p_program_hash, uint32_t *r_format
 	if (!fa) {
 		return false;
 	}
+
+	//print_line(p_program_hash + " file opened: " + storage_path.plus_file(p_program_hash));
 
 	*r_format = fa->get_32();
 	uint32_t binary_len = fa->get_32();
@@ -89,6 +97,8 @@ bool ShaderCacheGLES3::retrieve(const String &p_program_hash, uint32_t *r_format
 	fa->seek(0);
 	fa->store_32(*r_format);
 
+	//print_line("ok");
+
 	return true;
 }
 
@@ -96,7 +106,7 @@ void ShaderCacheGLES3::store(const String &p_program_hash, uint32_t p_program_fo
 	if (!storage_da) {
 		return;
 	}
-
+	print_line(p_program_hash + "storing cache: " + storage_path.plus_file(p_program_hash));
 	FileAccessRef fa = FileAccess::open(storage_path.plus_file(p_program_hash), FileAccess::WRITE);
 	ERR_FAIL_COND(!fa);
 	fa->store_32(p_program_format);

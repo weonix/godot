@@ -35,7 +35,7 @@
 NoiseTexture::NoiseTexture() {
 	update_queued = false;
 	regen_queued = false;
-	first_time = true;
+	first_time = false;
 
 	size = Vector2i(512, 512);
 	seamless = false;

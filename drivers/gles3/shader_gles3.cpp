@@ -258,11 +258,15 @@ bool ShaderGLES3::_process_program_state(Version *p_version, bool p_async_forbid
 					start_compiles_count = MIN(2, free_async_slots);
 				}
 				if (start_compiles_count >= 1) {
+					print_verbose("glCompileShader [if (start_compiles_count >= 1)]\n");
 					glCompileShader(p_version->ids.vert);
+					VS::get_singleton()->emit_signal("gl_shader_compiled");
 					if (start_compiles_count == 1) {
 						p_version->compile_status = Version::COMPILE_STATUS_COMPILING_VERTEX;
 					} else {
+						print_verbose("glCompileShader [if (start_compiles_count == 1) else]");
 						glCompileShader(p_version->ids.frag);
+						VS::get_singleton()->emit_signal("gl_shader_compiled");
 						p_version->compile_status = Version::COMPILE_STATUS_COMPILING_VERTEX_AND_FRAGMENT;
 					}
 					if (!p_async_forbidden) {
@@ -284,7 +288,9 @@ bool ShaderGLES3::_process_program_state(Version *p_version, bool p_async_forbid
 					}
 				}
 				if (must_compile_frag_now) {
+					print_verbose("glCompileShader [must_compile_frag_now]");
 					glCompileShader(p_version->ids.frag);
+					VS::get_singleton()->emit_signal("gl_shader_compiled");
 					if (p_version->compiling_list.in_list()) {
 						active_compiles_count++;
 						*max_frame_compiles_in_progress = MAX(*max_frame_compiles_in_progress, active_compiles_count);
@@ -296,7 +302,9 @@ bool ShaderGLES3::_process_program_state(Version *p_version, bool p_async_forbid
 					glGetShaderiv(p_version->ids.vert, _EXT_COMPLETION_STATUS, &completed);
 					if (completed) {
 						// Not touching compiles count since the same slot used for vertex is now used for fragment
+						print_verbose("glCompileShader [parallel_compile_supported completed]");
 						glCompileShader(p_version->ids.frag);
+						VS::get_singleton()->emit_signal("gl_shader_compiled");
 						p_version->compile_status = Version::COMPILE_STATUS_COMPILING_FRAGMENT;
 					}
 				}
@@ -329,6 +337,7 @@ bool ShaderGLES3::_process_program_state(Version *p_version, bool p_async_forbid
 						}
 					}
 				}
+				print_verbose(p_version->version_key.is_subject_to_caching() ? "is_subject_to_caching: true":"is_subject_to_caching: false");
 				if (must_complete_now) {
 					bool must_save_to_cache = p_version->version_key.is_subject_to_caching() && p_version->program_binary.source != Version::ProgramBinary::SOURCE_CACHE && shader_cache;
 					bool ok = p_version->shader->_complete_compile(p_version->ids, must_save_to_cache);
@@ -816,6 +825,7 @@ ShaderGLES3::Version *ShaderGLES3::get_current_version(bool &r_async_forbidden) 
 		};
 		v.program_binary.cache_hash = ShaderCacheGLES3::hash_program(strings_platform, strings_vertex, strings_fragment);
 		if (shader_cache->retrieve(v.program_binary.cache_hash, &v.program_binary.format, &v.program_binary.data)) {
+			print_verbose("in_cache");
 			in_cache = true;
 			v.program_binary.source = Version::ProgramBinary::SOURCE_CACHE;
 			v.compile_status = Version::COMPILE_STATUS_BINARY_READY_FROM_CACHE;
@@ -867,8 +877,11 @@ ShaderGLES3::Version *ShaderGLES3::get_current_version(bool &r_async_forbidden) 
 				async_strings_fragment.push_back(fragment_code.ptr());
 
 				_set_source(async_ids, async_strings_vertex, async_strings_fragment);
+				print_verbose("glCompileShader [compile_queue->enqueue(v.ids.main, [this, &v, vertex_code, fragment_code]() x2]\n");
 				glCompileShader(async_ids.vert);
+				VS::get_singleton()->emit_signal("gl_shader_compiled");
 				glCompileShader(async_ids.frag);
+				VS::get_singleton()->emit_signal("gl_shader_compiled");
 				if (_complete_compile(async_ids, true) && _complete_link(async_ids, &v.program_binary.format, &v.program_binary.data)) {
 					glDeleteShader(async_ids.frag);
 					glDeleteShader(async_ids.vert);
