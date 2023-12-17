@@ -24,7 +24,7 @@
 # Чтабс <chtabs2k19@gmail.com>, 2021.
 # Nikita Blizniuk <BliznyukNM@gmail.com>, 2021.
 # Сергей Волков <zerosar4@gmail.com>, 2021.
-# Alexander Sinitsyn <almoig747@gmail.com>, 2021.
+# Alexander Sinitsyn <almoig747@gmail.com>, 2021, 2022.
 # Толя Богомолов <tolya.bogomolov2004@gmail.com>, 2021.
 # Rustam Alieskerov <rustam.aleskerov7@gmail.com>, 2021, 2022.
 # Vladimir Svity <development.openworld@gmail.com>, 2021.
@@ -52,12 +52,19 @@
 # SonicStalker Games <dmitriyusolsev1971@gmail.com>, 2022.
 # Kedr <lava20121991@gmail.com>, 2022.
 # Lost Net <pc.mirkn@gmail.com>, 2022.
+# Vladimir Kirillovskiy <vladimir.kirillovskiy@gmail.com>, 2022.
+# motismob <evt.mixail@ya.ru>, 2022.
+# Handsless coder <yfintktajy1@gmail.com>, 2022.
+# Evgeniy Khramov <thejenjagamertjg@gmail.com>, 2022.
+# Григорий <bolon667@gmail.com>, 2022.
+# Artur Leonov (Depish) <depish.eskry@yandex.ru>, 2022.
+# Patrik <avdmur@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: Godot Engine class reference\n"
 "Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
-"PO-Revision-Date: 2022-08-28 00:17+0000\n"
-"Last-Translator: Алексей Смирнов <tir74@mail.ru>\n"
+"PO-Revision-Date: 2022-12-23 10:00+0000\n"
+"Last-Translator: Patrik <avdmur@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/godot-engine/"
 "godot-class-reference/ru/>\n"
 "Language: ru\n"
@@ -66,7 +73,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.1-dev\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 
 #: doc/tools/make_rst.py
 msgid "Description"
@@ -122,7 +129,7 @@ msgstr "Унаследовано:"
 
 #: doc/tools/make_rst.py
 msgid "(overrides %s)"
-msgstr "(переназначает %s)"
+msgstr "(переопределяет %s)"
 
 #: doc/tools/make_rst.py
 msgid "Default"
@@ -456,9 +463,9 @@ msgstr ""
 "Ограничивает [code]value[/code], возвращая значение не меньше [code]min[/"
 "code] и не больше [code]max[/code].\n"
 "[codeblock]\n"
-"a = clamp(1000, 1, 20) # a будет 20\n"
-"a = clamp(-10, 1, 20)  # a будет 1\n"
-"a = clamp(15, 1, 20)   # a будет 15\n"
+"a = clamp(1000, 1, 20) # вернёт 20\n"
+"a = clamp(-10, 1, 20)  # вернёт 1\n"
+"a = clamp(15, 1, 20)   # вернёт 15\n"
 "[/codeblock]"
 
 #: modules/gdscript/doc_classes/@GDScript.xml
@@ -529,12 +536,12 @@ msgid ""
 "a = dectime(60, 10, 0.1)) # a is 59.0\n"
 "[/codeblock]"
 msgstr ""
-"[b]Примечание:[/b] [code]dectime[/code] был устаревшим и будет удален в "
-"Godot 4.0, пожалуйста, используйте [метод move_toward] вместо него.\n"
+"[b]Примечание:[/b] [code]dectime[/code] устарел и будет удален в Godot 4.0, "
+"пожалуйста, используйте [method move_toward] вместо него.\n"
 "Возвращает результат [code]value[/code], уменьшенный на [code]step[/code] * "
 "[code]amount[/code].\n"
 "[codeblock]\n"
-"a = dectime(60, 10, 0.1)) # a равно 59.0\n"
+"a = dectime(60, 10, 0.1)) # вернёт59.0\n"
 "[/codeblock]"
 
 #: modules/gdscript/doc_classes/@GDScript.xml
@@ -596,7 +603,6 @@ msgstr ""
 "экземпляр объекта. Полезно для десериализации."
 
 #: modules/gdscript/doc_classes/@GDScript.xml
-#, fuzzy
 msgid ""
 "Returns an \"eased\" value of [code]x[/code] based on an easing function "
 "defined with [code]curve[/code]. This easing function is based on an "
@@ -630,8 +636,8 @@ msgstr ""
 "- Больше 1,0 (не включая): Облегчение вхождения(только вход)\n"
 "[/codeblock]\n"
 "[url=https://raw.githubusercontent.com/godotengine/godot-docs/3.4/img/"
-"ease_cheatsheet.png]ease() значения кривой шпаргалка[/url]\n"
-"См. также [метод smoothstep]. Если вам нужно выполнить более сложные "
+"ease_cheatsheet.png]ease() шпаргалка значений кривой[/url]\n"
+"См. также [method smoothstep]. Если вам нужно выполнить более сложные "
 "переходы, используйте [Tween] или [AnimationPlayer]."
 
 #: modules/gdscript/doc_classes/@GDScript.xml
@@ -763,7 +769,8 @@ msgstr ""
 
 #: modules/gdscript/doc_classes/@GDScript.xml
 msgid ""
-"Returns an array of dictionaries representing the current call stack.\n"
+"Returns an array of dictionaries representing the current call stack. See "
+"also [method print_stack].\n"
 "[codeblock]\n"
 "func _ready():\n"
 "    foo()\n"
@@ -778,24 +785,33 @@ msgid ""
 "[codeblock]\n"
 "[{function:bar, line:12, source:res://script.gd}, {function:foo, line:9, "
 "source:res://script.gd}, {function:_ready, line:6, source:res://script.gd}]\n"
-"[/codeblock]"
+"[/codeblock]\n"
+"[b]Note:[/b] [method get_stack] only works if the running instance is "
+"connected to a debugging server (i.e. an editor instance). [method "
+"get_stack] will not work in projects exported in release mode, or in "
+"projects exported in debug mode if not connected to a debugging server."
 msgstr ""
-"Возвращает массив словарей, представляющий текущий стек вызовов.\n"
+"Возвращает массив словарей, представляющий текущий стек вызовов. См. также "
+"[method print_stack].\n"
 "[codeblock]\n"
 "func _ready():\n"
-"    foo()\n"
+"\tfoo()\n"
 "\n"
 "func foo():\n"
-"    bar()\n"
+"\tbar()\n"
 "\n"
 "func bar():\n"
-"    print(get_stack())\n"
+"\tprint(get_stack())\n"
 "[/codeblock]\n"
 "выведет\n"
 "[codeblock]\n"
 "[{function:bar, line:12, source:res://script.gd}, {function:foo, line:9, "
 "source:res://script.gd}, {function:_ready, line:6, source:res://script.gd}]\n"
-"[/codeblock]"
+"[/codeblock]\n"
+"[b]Примечание:[/b] [method get_stack] работает только при подключенном "
+"сервере отладки (например в редакторе). [method get_stack] не будет работать "
+"в проектах, экспортированных в режиме release или в проектах "
+"экспортированных в режиме debug, если они не подключены к серверу отладки."
 
 #: modules/gdscript/doc_classes/@GDScript.xml
 msgid ""
@@ -864,7 +880,6 @@ msgstr ""
 "[/codeblock]"
 
 #: modules/gdscript/doc_classes/@GDScript.xml
-#, fuzzy
 msgid ""
 "Returns an interpolation or extrapolation factor considering the range "
 "specified in [code]from[/code] and [code]to[/code], and the interpolated "
@@ -888,13 +903,13 @@ msgid ""
 "[method range_lerp] to map a continuous series of values to another."
 msgstr ""
 "Возвращает коэффициент интерполяции или экстраполяции с учетом диапазона, "
-"указанного в [code]от[/code] и [code]до[/code], и интерполированное "
-"значение, указанное в [code]весе[/code]. Возвращаемое значение будет "
-"находиться в диапазоне [code]0.0[/code] and [code]1.0[/code] если [code]вес[/"
-"code] находится между [code]от[/code] и [code]до[/code] (включительно). Если "
-"[code]вес[/code] находится за пределами этого диапазона, то будет возвращён "
-"коэффициент экстраполяции (возвращаемое значение меньше [code]0.0[/code] или "
-"больше [code]1.0[/code]).\n"
+"указанного в [code]from[/code] и [code]to[/code], и интерполированное "
+"значение, указанное в [code]weight[/code]. Возвращаемое значение будет "
+"находиться в диапазоне от [code]0.0[/code] до [code]1.0[/code], если "
+"[code]weight[/code] находится между [code]from[/code] и [code]to[/code] "
+"(включительно). Если [code]weight[/code] находится за пределами этого "
+"диапазона, то будет возвращён коэффициент экстраполяции (возвращаемое "
+"значение меньше [code]0.0[/code] или больше [code]1.0[/code]).\n"
 "[codeblock]\n"
 "# Коэффициент интерполяции в приведённом ниже вызове `lerp()` составляет "
 "0,75.\n"
@@ -905,7 +920,8 @@ msgstr ""
 "var ratio = inverse_lerp(20, 30, 27.5)\n"
 "# `ratio` теперь 0.75.\n"
 "[/codeblock]\n"
-"Смотрите также [метод lerp], который выполняет обратную этой операцию."
+"Смотрите также [method lerp], который выполняет обратную операцию и [method "
+"range_lerp] для отображения последовательного ряда значений в другом."
 
 #: modules/gdscript/doc_classes/@GDScript.xml
 msgid ""
@@ -977,7 +993,6 @@ msgstr ""
 "[/codeblock]"
 
 #: modules/gdscript/doc_classes/@GDScript.xml
-#, fuzzy
 msgid ""
 "Linearly interpolates between two values by the factor defined in "
 "[code]weight[/code]. To perform interpolation, [code]weight[/code] should be "
@@ -1000,11 +1015,11 @@ msgid ""
 "continuous series of values to another."
 msgstr ""
 "Линейно интерполирует между двумя значениями с помощью коэффициента, "
-"определенного в [code]weight[/code]. Для выполнения интерполяции [code]вес[/"
-"code] должен составлять от [code]0.0[/code] до [code]1.0[/code] "
+"определенного в [code]weight[/code]. Для выполнения интерполяции "
+"[code]weight[/code] должен быть между [code]0.0[/code] и [code]1.0[/code] "
 "(включительно). Однако значения за пределами этого диапазона разрешены и "
 "могут быть использованы для выполнения [i]экстраполяции[/i].\n"
-"Если аргументы [code]от[/code] и [code]до[/code] имеют тип [int] или "
+"Если аргументы [code]from[/code] и [code]to[/code] имеют тип [int] или "
 "[float], возвращаемое значение будет [float].\n"
 "Если оба значения имеют одинаковый векторный тип ([Vector2], [Vector3] или "
 "[Color]), возвращаемое значение будет одного типа ([code]lerp[/code], затем "
@@ -1040,23 +1055,23 @@ msgid ""
 msgstr ""
 "Линейная интерполяция между двумя углами (в радианах) по нормализованному "
 "значению.\n"
-"Аналогично [методу lerp], но корректно интерполируется, когда углы "
-"оборачивают вокруг [константы @GDScript.TAU]. Чтобы выполнить упрощенную "
-"интерполяцию с помощью [метода lerp_angle], объедините его с [методом ease] "
-"или [методом smoothstep].\n"
+"Аналогично [method lerp], но корректно интерполируется, когда углы "
+"оборачивают вокруг [constant @GDScript.TAU]. Чтобы выполнить упрощенную "
+"интерполяцию с помощью [method lerp_angle], объедините его с [method ease] "
+"или [method smoothstep].\n"
 "[codeblock]\n"
 "extends Sprite\n"
 "var elapsed = 0.0\n"
 "func _process(delta):\n"
-"    var min_angle = deg2rad(0.0)\n"
-"    var max_angle = deg2rad(90.0)\n"
-"    rotation = lerp_angle(min_angle, max_angle, elapsed)\n"
-"    elapsed += delta\n"
+"\tvar min_angle = deg2rad(0.0)\n"
+"\tvar max_angle = deg2rad(90.0)\n"
+"\trotation = lerp_angle(min_angle, max_angle, elapsed)\n"
+"\telapsed += delta\n"
 "[/codeblock]\n"
 "[b]Примечание:[/b] Этот метод проходит через кратчайший путь между "
 "[code]from[/code] и [code]to[/code]. Тем не менее, если разница между этими "
-"двумя  углами и любым целым числом [code]k[/code] приблизительно [code]PI + "
-"k * TAU[/code], неочевидно в какую сторону [/code]из-за ошибок в точности "
+"двумя углами и любым целым числом [code]k[/code] приблизительно [code]PI + k "
+"* TAU[/code], неочевидно в какую сторону [/code]из-за ошибок в точности "
 "чисел с плавающей точкой. Например, [code]lerp_angle(0, PI, weight)[/code] "
 "оборачивается против часовой стрелки, а [code]lerp_angle(0, PI + 5 * TAU, "
 "weight)[/code] оборачивается по часовой."
@@ -1090,6 +1105,7 @@ msgstr ""
 "[/codeblock]"
 
 #: modules/gdscript/doc_classes/@GDScript.xml
+#, fuzzy
 msgid ""
 "Loads a resource from the filesystem located at [code]path[/code]. The "
 "resource is loaded on the method call (unless it's referenced already "
@@ -1116,19 +1132,19 @@ msgstr ""
 "ссылаются в другом месте, например, в другом скрипте или в сцене), что может "
 "вызвать небольшую задержку, особенно при загрузке сцен. Чтобы избежать "
 "ненужных задержек при многократной загрузке чего-либо, либо сохраните ресурс "
-"в переменной, либо используйте [метод preload].\n"
+"в переменной, либо используйте [method preload].\n"
 "[b]Примечание: [/b] Пути к ресурсам можно получить, щёлкнув правой кнопкой "
 "мыши на ресурсе в панели «Файловая система» и выбрав \"Копировать путь\" или "
 "перетащив файл из панели «Файловая система» в сценарий.\n"
 "[codeblock]\n"
 "# Load a scene called main located in the root of the project directory and "
 "cache it in a variable.\n"
-"var main = load(\"res://main.tscn\") # main will contain a PackedScene "
-"resource.\n"
+"var main = load(\"res://main.tscn\") # main будет содержать объект "
+"PackedScene.\n"
 "[/codeblock]\n"
 "[b]Важно:[/b] Путь должен быть абсолютным, локальный путь просто вернет "
 "[code]null[/code].\n"
-"Этот метод представляет собой упрощенную версию [метода ResourceLoader."
+"Этот метод представляет собой упрощенную версию [method ResourceLoader."
 "load], который можно использовать для более сложных сценариев."
 
 #: modules/gdscript/doc_classes/@GDScript.xml
@@ -1430,18 +1446,27 @@ msgstr ""
 
 #: modules/gdscript/doc_classes/@GDScript.xml
 msgid ""
-"Prints a stack track at code location, only works when running with debugger "
-"turned on.\n"
+"Prints a stack trace at the current code location. See also [method "
+"get_stack].\n"
 "Output in the console would look something like this:\n"
 "[codeblock]\n"
 "Frame 0 - res://test.gd:16 in function '_process'\n"
-"[/codeblock]"
+"[/codeblock]\n"
+"[b]Note:[/b] [method print_stack] only works if the running instance is "
+"connected to a debugging server (i.e. an editor instance). [method "
+"print_stack] will not work in projects exported in release mode, or in "
+"projects exported in debug mode if not connected to a debugging server."
 msgstr ""
-"Печатает трек стека вызовов, работает только если включён отладчик.\n"
-"Вывод в консоли будет выглядеть примерно так:\n"
+"Выводит стек вызовов из текущей функции. Смотрите также: [method "
+"get_stack].\n"
+"Вывод в консоли будет примерно таким:\n"
 "[codeblock]\n"
 "Frame 0 - res://test.gd:16 in function '_process'\n"
-"[/codeblock]"
+"[/codeblock]\n"
+"[b]Примечание:[/b] [method print_stack] работает только при подключенном "
+"сервере отладки (например в редакторе). [method print_stack] не будет "
+"работать в проектах, экспортированных в режиме release или в проектах "
+"экспортированных в режиме debug, если они не подключены к серверу отладки."
 
 #: modules/gdscript/doc_classes/@GDScript.xml
 msgid ""
@@ -1680,7 +1705,7 @@ msgid ""
 "3\n"
 "[/codeblock]"
 msgstr ""
-"Возвращает массив с заданным диапазоном. [метод range] может быть вызван "
+"Возвращает массив с заданным диапазоном. [method range] может быть вызван "
 "тремя способами:\n"
 "[code]range(n: int)[/code]: Начинается с 0, увеличивается с шагом в 1 и "
 "останавливается [i]перед[/i] [code]n[/code]. Аргумент [code]n[/code] это "
@@ -1695,16 +1720,16 @@ msgstr ""
 "[b]инклюзив[/b] и [b]эксклюзив[/b], соответственно. Аргумент [code]s[/code] "
 "[b]может[/b] быть негативным, но не [code]0[/code]. Если [code]s[/code] это "
 "[code]0[/code], будет выведено сообщение об ошибке.\n"
-"[метод range] преобразует все аргументы в [int] перед обработкой.\n"
+"[method range] преобразует все аргументы в [int] перед обработкой.\n"
 "[b]Примечание:[/b] Возвращает пустой массив, если ни одно значение не "
 "удовлетворяет ограничению на значение (e.g. [code]range(2, 5, -1)[/code] или "
 "[code]range(5, 5, 1)[/code]).\n"
 "Примеры:\n"
 "[codeblock]\n"
-"print(range(4))        # Prints [0, 1, 2, 3]\n"
-"print(range(2, 5))     # Prints [2, 3, 4]\n"
-"print(range(0, 6, 2))  # Prints [0, 2, 4]\n"
-"print(range(4, 1, -1)) # Prints [4, 3, 2]\n"
+"print(range(4))        # Выведет [0, 1, 2, 3]\n"
+"print(range(2, 5))     # Выведет [2, 3, 4]\n"
+"print(range(0, 6, 2))  # Выведет [0, 2, 4]\n"
+"print(range(4, 1, -1)) # Выведет [4, 3, 2]\n"
 "[/codeblock]\n"
 "Чтобы выполнить итерацию по [Array] в обратном порядке, используйте:\n"
 "[codeblock]\n"
@@ -1732,6 +1757,18 @@ msgid ""
 "For complex use cases where you need multiple ranges, consider using [Curve] "
 "or [Gradient] instead."
 msgstr ""
+"Ограничивает [code]значение[/code] из диапазона [code][istart, istop][/code] "
+"до диапазона [code][ostart, ostop][/code]. Смотрите также [method lerp] и "
+"[method inverse_lerp]. Если [code]значение[/code] за пределами [code]"
+"[istart, istop][/code], тогда, выходное значение тоже будет за пределами "
+"[code][ostart, ostop][/code]. Используйте [method clamp] со значением "
+"полученным от [method range_lerp] если не хотите выходить за пределы.[/"
+"code]\n"
+"[codeblock]\n"
+"range_lerp(75, 0, 100, -1, 1) # Возвращает 0.5\n"
+"[/codeblock]\n"
+"Для случаев где вам нужно несколько диапазонов, используйте [Curve] или "
+"[Gradient]."
 
 #: modules/gdscript/doc_classes/@GDScript.xml
 msgid ""
@@ -1748,10 +1785,10 @@ msgstr ""
 "в большую сторону.\n"
 "[codeblock]\n"
 "a = round(2.49) # Возвращает 2.0\n"
-"a = round(2.5)  # Возвращает 3.0\n"
+"a = round(2.5)\t# Возвращает 3.0\n"
 "a = round(2.51) # Возвращает 3.0\n"
 "[/codeblock]\n"
-"См. также[метод floor], [метод ceil], [метод stepify], и [int]."
+"См. также[method floor], [method ceil], [method stepify], и [int]."
 
 #: modules/gdscript/doc_classes/@GDScript.xml
 msgid ""
@@ -1812,7 +1849,6 @@ msgstr ""
 "[/codeblock]"
 
 #: modules/gdscript/doc_classes/@GDScript.xml
-#, fuzzy
 msgid ""
 "Returns the result of smoothly interpolating the value of [code]s[/code] "
 "between [code]0[/code] and [code]1[/code], based on the where [code]s[/code] "
@@ -1840,33 +1876,29 @@ msgstr ""
 "Возвращает результат плавной интерполяции значения [code]s[/code] между "
 "[code]0[/code] и [code]1[/code], в зависимости от того, где находится "
 "[code]s[/code] относительно [code]from[/code] и [code]to[/code].\n"
-"\n"
 "Возвращаемое значение равно [code]0[/code], если [code]s <= from[/code] и "
 "[code]1[/code], если[code]s >= to[/code]. Если [code]s[/code] находится "
 "между [code]from[/code] и [code]to[/code], то возвращаемое значение следует "
 "S-образной кривой, которая соответствует значению [code]s[/code] между "
 "[code]0[/code] и [code]1[/code].\n"
-"\n"
 "S-образная кривая является кубическим эрмитовым сплайном, заданным функцией "
-"[code]f(s) = 3*s^2 - 2*s^3[/code].\n"
-"\n"
+"[code]f(y) = 3*y^2 - 2*y^3[/code], где [code]y = (x-from) / (to-from)[/"
+"code].\n"
 "[codeblock]\n"
-"smoothstep(0, 2, -5.0) # Returns 0.0\n"
-"smoothstep(0, 2, 0.5) # Returns 0.15625\n"
-"smoothstep(0, 2, 1.0) # Returns 0.5\n"
-"smoothstep(0, 2, 2.0) # Returns 1.0\n"
+"smoothstep(0, 2, -5.0) # Возвращает 0.0\n"
+"smoothstep(0, 2, 0.5) # Возвращает 0.15625\n"
+"smoothstep(0, 2, 1.0) # Возвращает 0.5\n"
+"smoothstep(0, 2, 2.0) # Возвращает 1.0\n"
 "[/codeblock]\n"
-"\n"
-"Compared to [method ease] with a curve value of [code]-1.6521[/code], "
-"[method smoothstep] returns the smoothest possible curve with no sudden "
-"changes in the derivative. If you need to perform more advanced transitions, "
-"use [Tween] or [AnimationPlayer].\n"
+"В сравнении с [method ease] со значение кривой [code]-1.6521[/code], [method "
+"smoothstep] возвращает наиболее плавную кривую без внезапных изменений "
+"производной. Если вам нужно выполнить более продвинутые перемещения, "
+"используйте [Tween] или [AnimationPlayer].\n"
 "[url=https://raw.githubusercontent.com/godotengine/godot-docs/3.5/img/"
-"smoothstep_ease_comparison.png]Comparison between smoothstep() and ease(x, "
-"-1.6521) return values[/url]"
+"smoothstep_ease_comparison.png]Сравнение возвращаемых значений smoothstep() "
+"и ease(x, -1.6521)[/url]"
 
 #: modules/gdscript/doc_classes/@GDScript.xml
-#, fuzzy
 msgid ""
 "Returns the square root of [code]s[/code], where [code]s[/code] is a non-"
 "negative number.\n"
@@ -1886,7 +1918,6 @@ msgstr ""
 "Numerics.Complex[/code] в C#."
 
 #: modules/gdscript/doc_classes/@GDScript.xml
-#, fuzzy
 msgid ""
 "Returns the position of the first non-zero digit, after the decimal point. "
 "Note that the maximum return value is 10, which is a design decision in the "
@@ -1901,12 +1932,9 @@ msgstr ""
 "внимание, что максимальное возвращаемое значение – это 10, что является "
 "проектным решением при реализации.\n"
 "[codeblock]\n"
-"# n равно 0\n"
-"n = step_decimals(5)\n"
-"# n равно 4\n"
-"n = step_decimals(1.0005)\n"
-"# n равно 9\n"
-"n = step_decimals(0.000000005)\n"
+"n = step_decimals(5)                         # n равно 0\n"
+"n = step_decimals(1.0005)              # n равно 4\n"
+"n = step_decimals(0.000000005) # n равно 9\n"
 "[/codeblock]"
 
 #: modules/gdscript/doc_classes/@GDScript.xml
@@ -1950,7 +1978,6 @@ msgstr ""
 "[/codeblock]"
 
 #: modules/gdscript/doc_classes/@GDScript.xml
-#, fuzzy
 msgid ""
 "Converts a formatted string that was returned by [method var2str] to the "
 "original value.\n"
@@ -1981,7 +2008,6 @@ msgstr ""
 "[/codeblock]"
 
 #: modules/gdscript/doc_classes/@GDScript.xml
-#, fuzzy
 msgid ""
 "Returns the hyperbolic tangent of [code]s[/code].\n"
 "[codeblock]\n"
@@ -1992,7 +2018,7 @@ msgstr ""
 "Возвращает гиперболический тангенс [code]s[/code].\n"
 "[codeblock]\n"
 "a = log(2.0) # Возвращает 0.693147\n"
-"tanh(a)      # Возвращает 0.6\n"
+"b = tanh(a)  # Возвращает 0.6\n"
 "[/codeblock]"
 
 #: modules/gdscript/doc_classes/@GDScript.xml
@@ -2029,7 +2055,6 @@ msgstr ""
 "См. также [JSON] для альтернативного преобразования [Variant] в JSON строку."
 
 #: modules/gdscript/doc_classes/@GDScript.xml
-#, fuzzy
 msgid ""
 "Returns whether the given class exists in [ClassDB].\n"
 "[codeblock]\n"
@@ -2039,7 +2064,7 @@ msgid ""
 msgstr ""
 "Возвращает, существует ли данный класс в [ClassDB].\n"
 "[codeblock]\n"
-"type_exists(\"Sprite2D\") # Возвращает true\n"
+"type_exists(\"Sprite\") # Возвращает true\n"
 "type_exists(\"Variant\") # Возвращает false\n"
 "[/codeblock]"
 
@@ -2090,13 +2115,12 @@ msgstr ""
 "[/codeblock]"
 
 #: modules/gdscript/doc_classes/@GDScript.xml
-#, fuzzy
 msgid ""
 "Encodes a variable value to a byte array. When [code]full_objects[/code] is "
 "[code]true[/code] encoding objects is allowed (and can potentially include "
 "code)."
 msgstr ""
-"Кодирует значение переменной в массив байт. Если [code]full_objects[/code] "
+"Кодирует значение переменной в массив байтов. Если [code]full_objects[/code] "
 "равен [code]true[/code], кодирование объектов разрешено (и потенциально "
 "может включать код)."
 
@@ -2272,7 +2296,7 @@ msgid ""
 msgstr ""
 "Останавливает выполнение функции и возвращает текущее приостановленное "
 "состояние вызывающей функции.\n"
-"Вызывающая функция должна вызвать [метод GDScriptFunctionState.resume] на "
+"Вызывающая функция должна вызвать [method GDScriptFunctionState.resume] на "
 "состоянии для возобновления выполнения. Это аннулирует состояние. Внутри "
 "возобновленной функции [code]yield()[/code] возвращает все, что было "
 "передано в вызов функции [code]resume()[/code].\n"
@@ -2285,21 +2309,21 @@ msgstr ""
 "работы функции:\n"
 "[codeblock].\n"
 "func _ready():\n"
-"        yield(countdown(), \"completed\") # ожидание завершения функции "
+"\tyield(countdown(), \"completed\") # ожидание завершения функции "
 "countdown()\n"
-"        print('Ready')\n"
+"\tprint('Ready')\n"
 "\n"
 "func countdown():\n"
-"        yield(get_tree(), \"idle_frame\") # возвращает объект "
+"\tyield(get_tree(), \"idle_frame\") # возвращает объект "
 "GDScriptFunctionState для функции _ready()\n"
-"        print(3)\n"
-"        yield(get_tree().create_timer(1.0), \"timeout\")\n"
-"        print(2)\n"
-"        yield(get_tree().create_timer(1.0), \"timeout\")\n"
-"        print(1)\n"
-"        yield(get_tree().create_timer(1.0), \"timeout\")\n"
+"\tprint(3)\n"
+"\tyield(get_tree().create_timer(1.0), \"timeout\")\n"
+"\tprint(2)\n"
+"\tyield(get_tree().create_timer(1.0), \"timeout\")\n"
+"\tprint(1)\n"
+"\tyield(get_tree().create_timer(1.0), \"timeout\")\n"
 "\n"
-"# печатает:\n"
+"# выведет:\n"
 "# 3\n"
 "# 2\n"
 "# 1\n"
@@ -2857,12 +2881,10 @@ msgid "Help key."
 msgstr "Клавиша помощи."
 
 #: doc/classes/@GlobalScope.xml
-#, fuzzy
 msgid "Left Direction key."
 msgstr "Клавиша направления влево."
 
 #: doc/classes/@GlobalScope.xml
-#, fuzzy
 msgid "Right Direction key."
 msgstr "Клавиша направления вправо."
 
@@ -2871,22 +2893,19 @@ msgid ""
 "Media back key. Not to be confused with the Back button on an Android device."
 msgstr ""
 "Мультимедийная клавиша \"Назад\". Не путать с кнопкой \"Назад\" на "
-"устройствах Android"
+"устройствах Android."
 
 #: doc/classes/@GlobalScope.xml
-#, fuzzy
 msgid "Media forward key."
 msgstr "Клавиша записи мультимедиа."
 
 #: doc/classes/@GlobalScope.xml
-#, fuzzy
 msgid "Media stop key."
 msgstr "Клавиша остановки мультимедиа."
 
 #: doc/classes/@GlobalScope.xml
-#, fuzzy
 msgid "Media refresh key."
-msgstr "Клавиша записи мультимедиа."
+msgstr "Клавиша обновления мультимедиа."
 
 #: doc/classes/@GlobalScope.xml
 msgid "Volume down key."
@@ -2905,22 +2924,18 @@ msgid "Bass Boost key."
 msgstr "Клавиша усиления низких частот."
 
 #: doc/classes/@GlobalScope.xml
-#, fuzzy
 msgid "Bass up key."
 msgstr "Клавиша увеличения басов."
 
 #: doc/classes/@GlobalScope.xml
-#, fuzzy
 msgid "Bass down key."
 msgstr "Клавиша уменьшения низких частот."
 
 #: doc/classes/@GlobalScope.xml
-#, fuzzy
 msgid "Treble up key."
 msgstr "Клавиша увеличения высоких частот."
 
 #: doc/classes/@GlobalScope.xml
-#, fuzzy
 msgid "Treble down key."
 msgstr "Клавиша уменьшения высоких частот."
 
@@ -2950,12 +2965,10 @@ msgid "Home page key."
 msgstr "Клавиша домашней страницы."
 
 #: doc/classes/@GlobalScope.xml
-#, fuzzy
 msgid "Favorites key."
-msgstr "Клавиша избранного."
+msgstr "Клавиша \"Избранное\"."
 
 #: doc/classes/@GlobalScope.xml
-#, fuzzy
 msgid "Search key."
 msgstr "Клавиша поиска."
 
@@ -4122,42 +4135,59 @@ msgid ""
 "MIDI pitch bend message. This message is sent to indicate a change in the "
 "pitch bender (wheel or lever, typically)."
 msgstr ""
+"Сообщение MIDI об изменении высоты тона. Это сообщение отправляется для "
+"обозначения изменения питч-бенда ( как правило, колесо или рычаг)."
 
 #: doc/classes/@GlobalScope.xml
 msgid ""
 "MIDI system exclusive message. This has behavior exclusive to the device "
 "you're receiving input from. Getting this data is not implemented in Godot."
 msgstr ""
+"Эксклюзивное сообщение MIDI системы. Это поведение эксклюзивно для "
+"устройства от которого вы получаете данные. Получение этих данных не "
+"реализовано в Godot."
 
 #: doc/classes/@GlobalScope.xml
 msgid ""
 "MIDI quarter frame message. Contains timing information that is used to "
 "synchronize MIDI devices. Getting this data is not implemented in Godot."
 msgstr ""
+"MIDI сообщение о четверти кадра. Содержит информацию о времени, которая "
+"используется для синхронизации MIDI-устройств. Получение этих данных не "
+"реализовано в Godot."
 
 #: doc/classes/@GlobalScope.xml
 msgid ""
 "MIDI song position pointer message. Gives the number of 16th notes since the "
 "start of the song. Getting this data is not implemented in Godot."
 msgstr ""
+"MIDI сообщение указателя позиции композиции. Дает число 16-ых нот с момента "
+"начала композиции. Получение этих данных не реализовано в Godot."
 
 #: doc/classes/@GlobalScope.xml
 msgid ""
 "MIDI song select message. Specifies which sequence or song is to be played. "
 "Getting this data is not implemented in Godot."
 msgstr ""
+"MIDI сообщение о выборе композиции. Указывает, какая последовательность или "
+"песня должна быть воспроизведена. Получение этих данных не реализовано в "
+"Godot."
 
 #: doc/classes/@GlobalScope.xml
 msgid ""
 "MIDI tune request message. Upon receiving a tune request, all analog "
 "synthesizers should tune their oscillators."
 msgstr ""
+"MIDI сообщение с запросом на подстройку. При получении запроса на подстройку "
+"все аналоговые синтезаторы должны подстроить свои осцилляторы."
 
 #: doc/classes/@GlobalScope.xml
 msgid ""
 "MIDI timing clock message. Sent 24 times per quarter note when "
 "synchronization is required."
 msgstr ""
+"MIDI сообщение синхронизации времени. Отправляется 24 раза на четверть ноты, "
+"когда требуется синхронизация."
 
 #: doc/classes/@GlobalScope.xml
 msgid ""
@@ -4171,7 +4201,7 @@ msgstr ""
 
 #: doc/classes/@GlobalScope.xml
 msgid "MIDI stop message. Stop the current sequence."
-msgstr ""
+msgstr "MIDI сообщение об остановке. Останавливает текущую последовательность."
 
 #: doc/classes/@GlobalScope.xml
 msgid ""
@@ -4180,10 +4210,13 @@ msgid ""
 msgstr ""
 
 #: doc/classes/@GlobalScope.xml
+#, fuzzy
 msgid ""
 "MIDI system reset message. Reset all receivers in the system to power-up "
 "status. It should not be sent on power-up itself."
 msgstr ""
+"MIDI сообщение о сбросе системы. Сбрасывает все получатели системы до "
+"выключенного статуса. Не должен быть отправлен на включение сам по себе."
 
 #: doc/classes/@GlobalScope.xml
 msgid ""
@@ -4402,7 +4435,6 @@ msgid "Skip error."
 msgstr "Ошибка \"Пропущено\"."
 
 #: doc/classes/@GlobalScope.xml
-#, fuzzy
 msgid "Help error."
 msgstr "Ошибка справки."
 
@@ -4637,6 +4669,26 @@ msgstr "Указывает, что изображение использует �
 #: doc/classes/@GlobalScope.xml
 msgid "Hints that an image is compressed using lossless compression."
 msgstr "Указывает, что изображение использует сжатие без потерь."
+
+#: doc/classes/@GlobalScope.xml
+msgid ""
+"Hint that a property represents a particular type. If a property is "
+"[constant TYPE_STRING], allows to set a type from the create dialog. If you "
+"need to create an [Array] to contain elements of a specific type, the "
+"[code]hint_string[/code] must encode nested types using [code]\":\"[/code] "
+"and [code]\"/\"[/code] for specifying [Resource] types. For instance:\n"
+"[codeblock]\n"
+"hint_string = \"%s:\" % [TYPE_INT] # Array of inteters.\n"
+"hint_string = \"%s:%s:\" % [TYPE_ARRAY, TYPE_REAL] # Two-dimensional array "
+"of floats.\n"
+"hint_string = \"%s/%s:Resource\" % [TYPE_OBJECT, TYPE_OBJECT] # Array of "
+"resources.\n"
+"hint_string = \"%s:%s/%s:Resource\" % [TYPE_ARRAY, TYPE_OBJECT, TYPE_OBJECT] "
+"# Two-dimensional array of resources.\n"
+"[/codeblock]\n"
+"[b]Note:[/b] The final colon is required to specify for properly detecting "
+"built-in types."
+msgstr ""
 
 #: doc/classes/@GlobalScope.xml
 msgid "The property is serialized and saved in the scene file (default)."
@@ -4985,10 +5037,8 @@ msgstr ""
 
 #: doc/classes/AABB.xml doc/classes/Rect2.xml doc/classes/Vector2.xml
 #: doc/classes/Vector3.xml
-#, fuzzy
 msgid "Vector math"
-msgstr ""
-"Вектор используемый для 2D математики используя целочисленные координаты."
+msgstr "Векторная математика"
 
 #: doc/classes/AABB.xml doc/classes/Rect2.xml doc/classes/Vector2.xml
 #: doc/classes/Vector3.xml
@@ -5494,8 +5544,7 @@ msgstr ""
 #: doc/classes/AudioStreamPlayer.xml doc/classes/Button.xml
 #: doc/classes/CanvasLayer.xml doc/classes/CollisionShape2D.xml
 #: doc/classes/ColorRect.xml doc/classes/Input.xml doc/classes/InputEvent.xml
-#: doc/classes/InputEventAction.xml doc/classes/Label.xml
-#: doc/classes/Particles2D.xml doc/classes/Timer.xml
+#: doc/classes/InputEventAction.xml doc/classes/Label.xml doc/classes/Timer.xml
 #: doc/classes/VisibilityNotifier2D.xml
 msgid "2D Dodge The Creeps Demo"
 msgstr ""
@@ -6258,11 +6307,11 @@ msgstr ""
 
 #: doc/classes/Animation.xml doc/classes/Gradient.xml
 msgid "Linear interpolation."
-msgstr ""
+msgstr "Линейная интерполяция."
 
 #: doc/classes/Animation.xml doc/classes/Gradient.xml
 msgid "Cubic interpolation."
-msgstr ""
+msgstr "Кубическая интерполяция."
 
 #: doc/classes/Animation.xml
 msgid "Update between keyframes."
@@ -6488,7 +6537,7 @@ msgstr ""
 #: doc/classes/AnimationNodeTimeScale.xml
 #: doc/classes/AnimationNodeTransition.xml
 msgid "AnimationTree"
-msgstr ""
+msgstr "Дерево анимации"
 
 #: doc/classes/AnimationNodeAdd3.xml doc/classes/AnimationNodeAnimation.xml
 #: doc/classes/AnimationNodeBlend2.xml
@@ -7524,7 +7573,7 @@ msgstr ""
 
 #: doc/classes/AnimationTree.xml
 msgid "Using AnimationTree"
-msgstr ""
+msgstr "Использование дерева анимации"
 
 #: doc/classes/AnimationTree.xml
 msgid "Manually advance the animations by the specified time (in seconds)."
@@ -7954,43 +8003,43 @@ msgstr ""
 
 #: doc/classes/AnimationTreePlayer.xml
 msgid "Output node."
-msgstr ""
+msgstr "Выходной узел."
 
 #: doc/classes/AnimationTreePlayer.xml
 msgid "Animation node."
-msgstr ""
+msgstr "Анимационный узел."
 
 #: doc/classes/AnimationTreePlayer.xml
 msgid "OneShot node."
-msgstr ""
+msgstr "Узел OneShot."
 
 #: doc/classes/AnimationTreePlayer.xml
 msgid "Mix node."
-msgstr ""
+msgstr "Микс-узел."
 
 #: doc/classes/AnimationTreePlayer.xml
 msgid "Blend2 node."
-msgstr ""
+msgstr "Узел Blend2."
 
 #: doc/classes/AnimationTreePlayer.xml
 msgid "Blend3 node."
-msgstr ""
+msgstr "Узел Blend3."
 
 #: doc/classes/AnimationTreePlayer.xml
 msgid "Blend4 node."
-msgstr ""
+msgstr "Узел Blend4."
 
 #: doc/classes/AnimationTreePlayer.xml
 msgid "TimeScale node."
-msgstr ""
+msgstr "Узел TimeScale."
 
 #: doc/classes/AnimationTreePlayer.xml
 msgid "TimeSeek node."
-msgstr ""
+msgstr "Узел TimeSeek."
 
 #: doc/classes/AnimationTreePlayer.xml
 msgid "Transition node."
-msgstr ""
+msgstr "Переходный узел."
 
 #: doc/classes/Area.xml
 msgid "3D area for detection and physics and audio influence."
@@ -8000,7 +8049,12 @@ msgstr ""
 msgid ""
 "3D area that detects [CollisionObject] nodes overlapping, entering, or "
 "exiting. Can also alter or override local physics parameters (gravity, "
-"damping) and route audio to custom audio buses."
+"damping) and route audio to a custom audio bus.\n"
+"To give the area its shape, add a [CollisionShape] or a [CollisionPolygon] "
+"node as a [i]direct[/i] child (or add multiple such nodes as direct "
+"children) of the area.\n"
+"[b]Warning:[/b] See [ConcavePolygonShape] (also called \"trimesh\") for a "
+"warning about possibly unexpected behavior when using that shape for an area."
 msgstr ""
 
 #: doc/classes/Area.xml doc/classes/QuadMesh.xml doc/classes/Viewport.xml
@@ -8237,7 +8291,12 @@ msgstr ""
 msgid ""
 "2D area that detects [CollisionObject2D] nodes overlapping, entering, or "
 "exiting. Can also alter or override local physics parameters (gravity, "
-"damping) and route audio to a custom audio bus."
+"damping) and route audio to a custom audio bus.\n"
+"To give the area its shape, add a [CollisionShape2D] or a "
+"[CollisionPolygon2D] node as a [i]direct[/i] child (or add multiple such "
+"nodes as direct children) of the area.\n"
+"[b]Warning:[/b] See [ConcavePolygonShape2D] for a warning about possibly "
+"unexpected behavior when using that shape for an area."
 msgstr ""
 
 #: doc/classes/Area2D.xml
@@ -8670,7 +8729,10 @@ msgid ""
 "var array = []\n"
 "array.resize(10)\n"
 "array.fill(0) # Initialize the 10 elements to 0.\n"
-"[/codeblock]"
+"[/codeblock]\n"
+"[b]Note:[/b] If [code]value[/code] is of a reference type ([Object]-derived, "
+"[Array], [Dictionary], etc.) then the array is filled with the references to "
+"the same object, i.e. no duplicates are created."
 msgstr ""
 
 #: doc/classes/Array.xml doc/classes/PoolByteArray.xml
@@ -8899,8 +8961,12 @@ msgstr ""
 "описывает шаг между индексами среза."
 
 #: doc/classes/Array.xml
+#, fuzzy
 msgid ""
 "Sorts the array.\n"
+"[b]Note:[/b] The sorting algorithm used is not [url=https://en.wikipedia.org/"
+"wiki/Sorting_algorithm#Stability]stable[/url]. This means that values "
+"considered equal may have their order changed when using [method sort].\n"
 "[b]Note:[/b] Strings are sorted in alphabetical order (as opposed to natural "
 "order). This may lead to unexpected behavior when sorting an array of "
 "strings ending with a sequence of numbers. Consider the following example:\n"
@@ -8931,9 +8997,13 @@ msgid ""
 "For two elements [code]a[/code] and [code]b[/code], if the given method "
 "returns [code]true[/code], element [code]b[/code] will be after element "
 "[code]a[/code] in the array.\n"
+"[b]Note:[/b] The sorting algorithm used is not [url=https://en.wikipedia.org/"
+"wiki/Sorting_algorithm#Stability]stable[/url]. This means that values "
+"considered equal may have their order changed when using [method "
+"sort_custom].\n"
 "[b]Note:[/b] You cannot randomize the return value as the heapsort algorithm "
-"expects a deterministic result. Doing so will result in unexpected "
-"behavior.\n"
+"expects a deterministic result. Randomizing the return value will result in "
+"unexpected behavior.\n"
 "[codeblock]\n"
 "class MyCustomSorter:\n"
 "    static func sort_ascending(a, b):\n"
@@ -9019,7 +9089,15 @@ msgid ""
 "mode\" where the vertex and other arrays become the sources of data and the "
 "index array defines the vertex order. All sub-arrays must have the same "
 "length as the vertex array or be empty, except for [constant ARRAY_INDEX] if "
-"it is used."
+"it is used.\n"
+"[code]compress_flags[/code] is a bitfield made of [enum Mesh.ArrayFormat] "
+"values. It defaults to [constant Mesh.ARRAY_COMPRESS_DEFAULT].\n"
+"[b]Note:[/b] The default [code]compress_flags[/code] enable [constant Mesh."
+"ARRAY_COMPRESS_COLOR], which makes vertex colors stored as 8-bit unsigned "
+"integers. This will clamp overbright vertex colors to [code]Color(1, 1, 1, 1)"
+"[/code] and reduce their precision. To store HDR vertex colors, remove the "
+"vertex color compression flag by passing [code]Mesh.ARRAY_COMPRESS_DEFAULT ^ "
+"Mesh.ARRAY_COMPRESS_COLOR[/code] as the value of [code]compress_flags[/code]."
 msgstr ""
 
 #: doc/classes/ArrayMesh.xml
@@ -9317,6 +9395,19 @@ msgid ""
 "[ARVRServer]. This makes this node ideal to add child nodes to visualize the "
 "controller."
 msgstr ""
+"Это вспомогательный пространственный узел, связанный с отслеживанием "
+"контроллеров. Он также предлагает несколько удобных переходов к состоянию "
+"кнопок и т.п. на контроллерах.\n"
+"Контроллеры связаны по их ID. Вы можете создавать узлы контроллеров до того, "
+"как контроллеры станут доступны. Если в вашей игре всегда используются два "
+"контроллера (по одному для каждой руки), вы можете заранее определить "
+"контроллеры с ID 1 и 2; они станут активными, как только контроллеры будут "
+"определены. Если вы ожидаете, что будут использоваться дополнительные "
+"контроллеры, вы должны реагировать на сигналы и добавить узлы ARVRController "
+"в вашу сцену.\n"
+"Положение узла контроллера автоматически обновляется сервером [ARVRServer]. "
+"Это делает данный узел идеальным для добавления дочерних узлов для "
+"визуализации контроллера."
 
 #: doc/classes/ARVRController.xml
 msgid ""
@@ -9594,6 +9685,21 @@ msgid ""
 "be a child node of this car. Or, if you're implementing a teleport system to "
 "move your character, you should change the position of this node."
 msgstr ""
+"Это специальный узел в системе AR/VR, который отображает физическое "
+"местоположение центра нашего пространства отслеживания на виртуальное "
+"местоположение в нашем игровом мире.\n"
+"В вашей сцене должен быть только один такой узел, и он обязательно должен "
+"быть у вас. Все узлы ARVRCamera, ARVRController и ARVRAnchor должны быть "
+"прямыми дочерними узлами этого узла, чтобы пространственное отслеживание "
+"работало правильно.\n"
+"Именно положение этого узла вы обновляете, когда персонажу нужно "
+"перемещаться по игровому миру, в то время как в реальном мире мы не "
+"движемся. Движение в реальном мире всегда происходит относительно этой "
+"исходной точки.\n"
+"Например, если ваш персонаж управляет автомобилем, узел ARVROrigin должен "
+"быть дочерним узлом этого автомобиля. Или, если вы реализуете систему "
+"телепортации для перемещения персонажа, вы должны изменить положение этого "
+"узла."
 
 #: doc/classes/ARVROrigin.xml
 msgid ""
@@ -10136,6 +10242,26 @@ msgid ""
 "4, 3][/code] instead, because now even though the distance is longer, it's "
 "\"easier\" to get through point 4 than through point 2."
 msgstr ""
+"Возвращает массив с идентификаторами точек, которые образуют путь, найденный "
+"AStar между заданными точками. Массив упорядочен от начальной точки до "
+"конечной точки пути.\n"
+"[codeblock].\n"
+"var astar = AStar.new()\n"
+"astar.add_point(1, Vector3(0, 0, 0, 0))\n"
+"astar.add_point(2, Vector3(0, 1, 0), 1) # Вес по умолчанию равен 1\n"
+"astar.add_point(3, Vector3(1, 1, 0))\n"
+"astar.add_point(4, Vector3(2, 0, 0))\n"
+"\n"
+"astar.connect_points(1, 2, false)\n"
+"astar.connect_points(2, 3, false)\n"
+"astar.connect_points(4, 3, false)\n"
+"astar.connect_points(1, 4, false)\n"
+"\n"
+"var res = astar.get_id_path(1, 3) # Возвращает [1, 2, 3]\n"
+"[/codeblock].\n"
+"Если изменить вес второй точки на 3, то результатом будет [code][1, 4, 3][/"
+"code], потому что теперь, несмотря на то, что расстояние больше, \"легче\" "
+"пройти через точку 4, чем через точку 2."
 
 #: doc/classes/AStar.xml doc/classes/AStar2D.xml
 msgid ""
@@ -10384,6 +10510,22 @@ msgid ""
 "FLAG_REPEAT] and [constant Texture.FLAG_MIRRORED_REPEAT] flags are ignored "
 "when using an AtlasTexture."
 msgstr ""
+"Ресурс [Texture], который обрезает одну часть текстуры [member atlas], "
+"определенной [member region]. Основное применение - вырезание текстур из "
+"атласа текстур, который представляет собой большой файл текстуры, содержащий "
+"несколько текстур меньшего размера. Состоит из [Texture] для [member atlas], "
+"[member region], который определяет область [member atlas] для "
+"использования, и [member margin], который определяет ширину границы.\n"
+"[AtlasTexture] не может использоваться в [AnimatedTexture], не может быть "
+"плиточным в узлах, таких как [TextureRect], и не работает должным образом, "
+"если используется внутри других ресурсов [AtlasTexture]. Несколько ресурсов "
+"[AtlasTexture] можно использовать для обрезки нескольких текстур из атласа. "
+"Использование атласа текстур помогает оптимизировать затраты видеопамяти и "
+"вызовы рендеринга по сравнению с использованием нескольких небольших "
+"файлов.\n"
+"[b]Примечание:[/b] AtlasTextures не поддерживают повторение. Флаги [constant "
+"Texture.FLAG_REPEAT] и [constant Texture.FLAG_MIRRORED_REPEAT] игнорируются "
+"при использовании AtlasTexture."
 
 #: doc/classes/AtlasTexture.xml
 msgid "The texture that contains the atlas. Can be any [Texture] subtype."
@@ -10614,6 +10756,21 @@ msgid ""
 "- Accentuates transients by using a wider attack, making effects sound more "
 "punchy."
 msgstr ""
+"Компрессор динамического диапазона уменьшает уровень звука, когда амплитуда "
+"превышает определенный порог в децибелах. Одно из основных назначений "
+"компрессора - увеличение динамического диапазона за счет минимального "
+"клиппирования (когда звук превышает 0 дБ).\n"
+"Компрессор имеет множество применений в миксе:\n"
+"- В мастер-шине для сжатия всего выхода (хотя [AudioEffectLimiter], "
+"вероятно, лучше).\n"
+"- В голосовых каналах для обеспечения их максимально сбалансированного "
+"звучания.\n"
+"- В сайдчейне. Это позволяет снизить уровень звука при боковом подключении к "
+"другой аудиошине для определения порога. Эта техника распространена в "
+"микшировании видеоигр для снижения уровня музыки и SFX во время звучания "
+"голосов.\n"
+"- Подчеркивает переходные процессы за счет более широкой атаки, заставляя "
+"эффекты звучать более напористо."
 
 #: doc/classes/AudioEffectCompressor.xml
 msgid ""
@@ -11592,12 +11749,14 @@ msgid "Clears the audio sample data buffer."
 msgstr ""
 
 #: doc/classes/AudioStreamGeneratorPlayback.xml
+#, fuzzy
 msgid ""
-"Returns the number of audio data frames left to play. If this returned "
-"number reaches [code]0[/code], the audio will stop playing until frames are "
-"added again. Therefore, make sure your script can always generate and push "
-"new audio frames fast enough to avoid audio cracking."
+"Returns the number of frames that can be pushed to the audio sample data "
+"buffer without overflowing it. If the result is [code]0[/code], the buffer "
+"is full."
 msgstr ""
+"Возвращает [code]true[/code] если [code]a[/code] и [code]b[/code] "
+"приблизительно равны друг другу."
 
 #: doc/classes/AudioStreamGeneratorPlayback.xml
 msgid ""
@@ -12128,14 +12287,14 @@ msgstr ""
 #: doc/classes/BackBufferCopy.xml
 msgid ""
 "Node for back-buffering the currently-displayed screen. The region defined "
-"in the BackBufferCopy node is buffered with the content of the screen it "
+"in the [BackBufferCopy] node is buffered with the content of the screen it "
 "covers, or the entire screen according to the copy mode set. Use the "
 "[code]texture(SCREEN_TEXTURE, ...)[/code] function in your shader scripts to "
 "access the buffer.\n"
 "[b]Note:[/b] Since this node inherits from [Node2D] (and not [Control]), "
 "anchors and margins won't apply to child [Control]-derived nodes. This can "
 "be problematic when resizing the window. To avoid this, add [Control]-"
-"derived nodes as [i]siblings[/i] to the BackBufferCopy node instead of "
+"derived nodes as [i]siblings[/i] to the [BackBufferCopy] node instead of "
 "adding them as children."
 msgstr ""
 
@@ -12145,22 +12304,22 @@ msgstr ""
 
 #: doc/classes/BackBufferCopy.xml
 msgid ""
-"The area covered by the BackBufferCopy. Only used if [member copy_mode] is "
+"The area covered by the [BackBufferCopy]. Only used if [member copy_mode] is "
 "[constant COPY_MODE_RECT]."
 msgstr ""
 
 #: doc/classes/BackBufferCopy.xml
 msgid ""
-"Disables the buffering mode. This means the BackBufferCopy node will "
+"Disables the buffering mode. This means the [BackBufferCopy] node will "
 "directly use the portion of screen it covers."
 msgstr ""
 
 #: doc/classes/BackBufferCopy.xml
-msgid "BackBufferCopy buffers a rectangular region."
+msgid "[BackBufferCopy] buffers a rectangular region."
 msgstr ""
 
 #: doc/classes/BackBufferCopy.xml
-msgid "BackBufferCopy buffers the entire screen."
+msgid "[BackBufferCopy] buffers the entire screen."
 msgstr ""
 
 #: doc/classes/BakedLightmap.xml
@@ -12373,7 +12532,7 @@ msgstr ""
 
 #: doc/classes/BakedLightmap.xml doc/classes/SpatialMaterial.xml
 msgid "Currently unused."
-msgstr ""
+msgstr "В настоящее время не используется."
 
 #: doc/classes/BakedLightmap.xml
 #, fuzzy
@@ -12834,7 +12993,7 @@ msgstr ""
 
 #: doc/classes/BitMap.xml
 msgid "Boolean matrix."
-msgstr ""
+msgstr "Логическая матрица."
 
 #: doc/classes/BitMap.xml
 msgid ""
@@ -13197,6 +13356,29 @@ msgid ""
 "given time. Use [TouchScreenButton] for buttons that trigger gameplay "
 "movement or actions, as [TouchScreenButton] supports multitouch."
 msgstr ""
+"Кнопка - это стандартная тематическая кнопка. Она может содержать текст и "
+"иконку, и будет отображать их в соответствии с текущей темой [Theme].\n"
+"[b]Пример создания кнопки и назначения действия при нажатии с помощью кода:[/"
+"b]\n"
+"[codeblock].\n"
+"func _ready():\n"
+"    var button = Button.new()\n"
+"    button.text = \"Нажмите на меня\"\n"
+"    button.connect(\"pressed\", self, \"_button_pressed\")\n"
+"    add_child(button)\n"
+"\n"
+"func _button_pressed():\n"
+"    print(\"Hello world!\")\n"
+"[/codeblock].\n"
+"Кнопки (как и все узлы Control) также могут быть созданы в редакторе, но "
+"некоторые ситуации могут потребовать их создания из кода.\n"
+"См. также [BaseButton], который содержит общие свойства и методы, связанные "
+"с этим узлом.\n"
+"[b]Примечание: Кнопки[/b] не интерпретируют сенсорный ввод и поэтому не "
+"поддерживают мультитач, поскольку эмуляция мыши позволяет нажимать только "
+"одну кнопку в данный момент времени. Используйте [TouchScreenButton] для "
+"кнопок, запускающих движение или действия игрового процесса, поскольку "
+"[TouchScreenButton] поддерживает мультитач."
 
 #: doc/classes/Button.xml doc/classes/Dictionary.xml
 #: doc/classes/GridContainer.xml doc/classes/OS.xml
@@ -13657,6 +13839,7 @@ msgid "Camera node for 2D scenes."
 msgstr ""
 
 #: doc/classes/Camera2D.xml
+#, fuzzy
 msgid ""
 "Camera node for 2D scenes. It forces the screen (current layer) to scroll "
 "following this node. This makes it easier (and faster) to program scrollable "
@@ -13672,6 +13855,20 @@ msgid ""
 "limits. You can use [method get_camera_screen_center] to get the real "
 "position."
 msgstr ""
+"Узел камеры для 2D-сцен. Он заставляет экран (текущий слой) прокручиваться "
+"вслед за этим узлом. Это позволяет проще (и быстрее) программировать "
+"прокручиваемые сцены, чем вручную изменять положение узлов на основе "
+"[CanvasItem].\n"
+"Этот узел задуман как простой помощник для быстрого начала работы, но для "
+"изменения работы камеры может потребоваться более широкая функциональность. "
+"Чтобы создать свой собственный узел камеры, наследуйте его от [Node2D] и "
+"измените трансформацию холста, установив [member Viewport.canvas_transform] "
+"в [Viewport] (текущий [Viewport] можно получить с помощью [method Node."
+"get_viewport]).\n"
+"Обратите внимание, что положение узла [Camera2D] [code][/code] не отражает "
+"фактическое положение экрана, которое может отличаться из-за примененного "
+"сглаживания или ограничений. Для получения реального положения можно "
+"использовать [method get_camera_screen_center]."
 
 #: doc/classes/Camera2D.xml doc/classes/TileMap.xml doc/classes/TileSet.xml
 msgid "2D Isometric Demo"
@@ -13988,7 +14185,7 @@ msgstr ""
 
 #: doc/classes/CameraFeed.xml
 msgid "Unspecified position."
-msgstr ""
+msgstr "Неуказанная должность."
 
 #: doc/classes/CameraFeed.xml
 msgid "Camera is mounted at the front of the device."
@@ -15461,17 +15658,17 @@ msgstr ""
 #: doc/classes/CollisionObject.xml doc/classes/CollisionObject2D.xml
 msgid ""
 "If [code]value[/code] is [code]true[/code], sets the specified [code]bit[/"
-"code] in the the [member collision_layer].\n"
+"code] in the [member collision_layer].\n"
 "If [code]value[/code] is [code]false[/code], clears the specified [code]bit[/"
-"code] in the the [member collision_layer]."
+"code] in the [member collision_layer]."
 msgstr ""
 
 #: doc/classes/CollisionObject.xml doc/classes/CollisionObject2D.xml
 msgid ""
 "If [code]value[/code] is [code]true[/code], sets the specified [code]bit[/"
-"code] in the the [member collision_mask].\n"
+"code] in the [member collision_mask].\n"
 "If [code]value[/code] is [code]false[/code], clears the specified [code]bit[/"
-"code] in the the [member collision_mask]."
+"code] in the [member collision_mask]."
 msgstr ""
 
 #: doc/classes/CollisionObject.xml doc/classes/CollisionObject2D.xml
@@ -15780,12 +15977,13 @@ msgstr ""
 
 #: doc/classes/CollisionShape.xml
 msgid ""
-"Editor facility for creating and editing collision shapes in 3D space. You "
-"can use this node to represent all sorts of collision shapes, for example, "
-"add this to an [Area] to give it a detection shape, or add it to a "
-"[PhysicsBody] to create a solid object. [b]IMPORTANT[/b]: this is an Editor-"
-"only helper to create shapes, use [method CollisionObject."
-"shape_owner_get_shape] to get the actual shape."
+"Editor facility for creating and editing collision shapes in 3D space. Set "
+"the [member shape] property to configure the shape. [b]IMPORTANT[/b]: this "
+"is an Editor-only helper to create shapes, use [method CollisionObject."
+"shape_owner_get_shape] to get the actual shape.\n"
+"You can use this node to represent all sorts of collision shapes, for "
+"example, add this to an [Area] to give it a detection shape, or add it to a "
+"[PhysicsBody] to create a solid object."
 msgstr ""
 
 #: doc/classes/CollisionShape.xml doc/classes/CollisionShape2D.xml
@@ -15822,12 +16020,13 @@ msgstr ""
 
 #: doc/classes/CollisionShape2D.xml
 msgid ""
-"Editor facility for creating and editing collision shapes in 2D space. You "
-"can use this node to represent all sorts of collision shapes, for example, "
-"add this to an [Area2D] to give it a detection shape, or add it to a "
-"[PhysicsBody2D] to create a solid object. [b]IMPORTANT[/b]: this is an "
-"Editor-only helper to create shapes, use [method CollisionObject2D."
-"shape_owner_get_shape] to get the actual shape."
+"Editor facility for creating and editing collision shapes in 2D space. Set "
+"the [member shape] property to configure the shape. [b]IMPORTANT[/b]: this "
+"is an Editor-only helper to create shapes, use [method CollisionObject2D."
+"shape_owner_get_shape] to get the actual shape.\n"
+"You can use this node to represent all sorts of collision shapes, for "
+"example, add this to an [Area2D] to give it a detection shape, or add it to "
+"a [PhysicsBody2D] to create a solid object."
 msgstr ""
 
 #: doc/classes/CollisionShape2D.xml doc/classes/KinematicBody2D.xml
@@ -15879,6 +16078,23 @@ msgid ""
 "[url=https://raw.githubusercontent.com/godotengine/godot-docs/master/img/"
 "color_constants.png]Color constants cheatsheet[/url]"
 msgstr ""
+"Цвет, представленный красным, зеленым, синим и альфа-компонентами (RGBA). "
+"Компонент альфа часто используется для непрозрачности. Значения задаются с "
+"плавающей точкой и обычно находятся в диапазоне от 0 до 1. Некоторые "
+"свойства (например, CanvasItem.modulate) могут принимать значения больше 1 "
+"(пересвет или цвета HDR).\n"
+"Вы также можете создать цвет из стандартизированных имен цветов с помощью "
+"[method @GDScript.ColorN] или непосредственно используя определенные здесь "
+"цветовые константы. Стандартизированный набор цветов основан на [url=https://"
+"en.wikipedia.org/wiki/X11_color_names]именах цветов X11[/url].\n"
+"Если вы хотите задать значения в диапазоне от 0 до 255, вам следует "
+"использовать [method @GDScript.Color8].\n"
+"[b]Примечание:[/b] В булевом контексте значение Color будет равно "
+"[code]false[/code], если оно равно [code]Color(0, 0, 0, 0, 1)[/code] "
+"(непрозрачный черный). В противном случае значение Color всегда будет равно "
+"[code]true[/code].\n"
+"[url=https://raw.githubusercontent.com/godotengine/godot-docs/master/img/"
+"color_constants.png]Шпаргалка по константам цвета[/url]"
 
 #: doc/classes/Color.xml doc/classes/ColorPickerButton.xml
 msgid "2D GD Paint Demo"
@@ -16161,15 +16377,15 @@ msgstr ""
 
 #: doc/classes/Color.xml
 msgid "Aqua color."
-msgstr ""
+msgstr "Цвет аква."
 
 #: doc/classes/Color.xml
 msgid "Aquamarine color."
-msgstr ""
+msgstr "Цвет аквамарина."
 
 #: doc/classes/Color.xml
 msgid "Azure color."
-msgstr ""
+msgstr "Лазурный цвет."
 
 #: doc/classes/Color.xml
 msgid "Beige color."
@@ -16177,7 +16393,7 @@ msgstr "Бежевый цвет."
 
 #: doc/classes/Color.xml
 msgid "Bisque color."
-msgstr ""
+msgstr "Цвет бисквита."
 
 #: doc/classes/Color.xml
 msgid "Black color."
@@ -16209,7 +16425,7 @@ msgstr ""
 
 #: doc/classes/Color.xml
 msgid "Chartreuse color."
-msgstr ""
+msgstr "Цвет шартрез."
 
 #: doc/classes/Color.xml
 msgid "Chocolate color."
@@ -16217,11 +16433,11 @@ msgstr "Шоколадный цвет."
 
 #: doc/classes/Color.xml
 msgid "Coral color."
-msgstr ""
+msgstr "Коралловый цвет."
 
 #: doc/classes/Color.xml
 msgid "Cornflower color."
-msgstr ""
+msgstr "Васильковый цвет."
 
 #: doc/classes/Color.xml
 msgid "Corn silk color."
@@ -16229,11 +16445,11 @@ msgstr ""
 
 #: doc/classes/Color.xml
 msgid "Crimson color."
-msgstr ""
+msgstr "Багровый цвет."
 
 #: doc/classes/Color.xml
 msgid "Cyan color."
-msgstr ""
+msgstr "Голубой цвет."
 
 #: doc/classes/Color.xml
 msgid "Dark blue color."
@@ -16321,7 +16537,7 @@ msgstr ""
 
 #: doc/classes/Color.xml
 msgid "Firebrick color."
-msgstr ""
+msgstr "Кирпичный цвет."
 
 #: doc/classes/Color.xml
 msgid "Floral white color."
@@ -16337,7 +16553,7 @@ msgstr "Цвет фуксии."
 
 #: doc/classes/Color.xml
 msgid "Gainsboro color."
-msgstr ""
+msgstr "Цвет Гейнсборо."
 
 #: doc/classes/Color.xml
 msgid "Ghost white color."
@@ -16349,7 +16565,7 @@ msgstr "Золотой цвет."
 
 #: doc/classes/Color.xml
 msgid "Goldenrod color."
-msgstr ""
+msgstr "Золотисто-рыжий цвет."
 
 #: doc/classes/Color.xml
 msgid "Gray color."
@@ -16365,7 +16581,7 @@ msgstr ""
 
 #: doc/classes/Color.xml
 msgid "Honeydew color."
-msgstr ""
+msgstr "Цвет медовой росы."
 
 #: doc/classes/Color.xml
 msgid "Hot pink color."
@@ -16381,15 +16597,15 @@ msgstr "Цвет индиго."
 
 #: doc/classes/Color.xml
 msgid "Ivory color."
-msgstr ""
+msgstr "Цвет слоновой кости."
 
 #: doc/classes/Color.xml
 msgid "Khaki color."
-msgstr ""
+msgstr "Цвет хаки."
 
 #: doc/classes/Color.xml
 msgid "Lavender color."
-msgstr ""
+msgstr "Цвет лаванды."
 
 #: doc/classes/Color.xml
 msgid "Lavender blush color."
@@ -16457,7 +16673,7 @@ msgstr ""
 
 #: doc/classes/Color.xml
 msgid "Lime color."
-msgstr ""
+msgstr "Цвет лайма."
 
 #: doc/classes/Color.xml
 msgid "Lime green color."
@@ -16465,15 +16681,15 @@ msgstr ""
 
 #: doc/classes/Color.xml
 msgid "Linen color."
-msgstr ""
+msgstr "Цвет льна."
 
 #: doc/classes/Color.xml
 msgid "Magenta color."
-msgstr ""
+msgstr "Пурпурный цвет."
 
 #: doc/classes/Color.xml
 msgid "Maroon color."
-msgstr ""
+msgstr "Бордовый цвет."
 
 #: doc/classes/Color.xml
 msgid "Medium aquamarine color."
@@ -16525,7 +16741,7 @@ msgstr ""
 
 #: doc/classes/Color.xml
 msgid "Moccasin color."
-msgstr ""
+msgstr "Цвет мокасин."
 
 #: doc/classes/Color.xml
 msgid "Navajo white color."
@@ -16585,7 +16801,7 @@ msgstr ""
 
 #: doc/classes/Color.xml
 msgid "Peru color."
-msgstr ""
+msgstr "Перуанский цвет."
 
 #: doc/classes/Color.xml
 msgid "Pink color."
@@ -16593,7 +16809,7 @@ msgstr "Розовый цвет."
 
 #: doc/classes/Color.xml
 msgid "Plum color."
-msgstr ""
+msgstr "Цвет сливы."
 
 #: doc/classes/Color.xml
 msgid "Powder blue color."
@@ -16625,7 +16841,7 @@ msgstr ""
 
 #: doc/classes/Color.xml
 msgid "Salmon color."
-msgstr ""
+msgstr "Цвет лосося."
 
 #: doc/classes/Color.xml
 msgid "Sandy brown color."
@@ -16641,11 +16857,11 @@ msgstr "Цвет морской раковины."
 
 #: doc/classes/Color.xml
 msgid "Sienna color."
-msgstr ""
+msgstr "Цвет сиены."
 
 #: doc/classes/Color.xml
 msgid "Silver color."
-msgstr ""
+msgstr "Серебряный цвет."
 
 #: doc/classes/Color.xml
 msgid "Sky blue color."
@@ -16661,7 +16877,7 @@ msgstr ""
 
 #: doc/classes/Color.xml
 msgid "Snow color."
-msgstr ""
+msgstr "Цвет снега."
 
 #: doc/classes/Color.xml
 msgid "Spring green color."
@@ -16673,19 +16889,19 @@ msgstr ""
 
 #: doc/classes/Color.xml
 msgid "Tan color."
-msgstr ""
+msgstr "Цвет загара."
 
 #: doc/classes/Color.xml
 msgid "Teal color."
-msgstr ""
+msgstr "Цвет тила."
 
 #: doc/classes/Color.xml
 msgid "Thistle color."
-msgstr ""
+msgstr "Цвет чертополоха."
 
 #: doc/classes/Color.xml
 msgid "Tomato color."
-msgstr ""
+msgstr "Цвет томатов."
 
 #: doc/classes/Color.xml
 msgid "Transparent color (white with no alpha)."
@@ -16693,7 +16909,7 @@ msgstr ""
 
 #: doc/classes/Color.xml
 msgid "Turquoise color."
-msgstr ""
+msgstr "Бирюзовый цвет."
 
 #: doc/classes/Color.xml
 msgid "Violet color."
@@ -16717,11 +16933,11 @@ msgstr ""
 
 #: doc/classes/Color.xml
 msgid "Wheat color."
-msgstr ""
+msgstr "Цвет пшеницы."
 
 #: doc/classes/Color.xml
 msgid "White color."
-msgstr ""
+msgstr "Белый цвет."
 
 #: doc/classes/Color.xml
 msgid "White smoke color."
@@ -16962,7 +17178,7 @@ msgstr ""
 
 #: doc/classes/ColorRect.xml
 msgid "Colored rectangle."
-msgstr ""
+msgstr "Цветной прямоугольник."
 
 #: doc/classes/ColorRect.xml
 msgid ""
@@ -16988,8 +17204,31 @@ msgid ""
 "area. This shape is created by feeding a list of triangles.\n"
 "[b]Note:[/b] When used for collision, [ConcavePolygonShape] is intended to "
 "work with static [PhysicsBody] nodes like [StaticBody] and will not work "
-"with [KinematicBody] or [RigidBody] with a mode other than Static."
+"with [KinematicBody] or [RigidBody] with a mode other than Static.\n"
+"[b]Warning:[/b] Using this shape for an [Area] (via a [CollisionShape] node, "
+"created e.g. by using the [i]Create Trimesh Collision Sibling[/i] option in "
+"the [i]Mesh[/i] menu that appears when selecting a [MeshInstance] node) may "
+"give unexpected results: when using Godot Physics, the area will only detect "
+"collisions with the triangle faces in the [ConcavePolygonShape] (and not "
+"with any \"inside\" of the shape, for example), and when using Bullet "
+"Physics the area will not detect any collisions with the concave shape at "
+"all (this is a known bug)."
 msgstr ""
+"Ресурс формы вогнутого многоугольника, который может быть установлен в "
+"[PhysicsBody] или область. Эта форма создается путем подачи списка "
+"треугольников.\n"
+"[b]Примечание:[/b] При использовании для столкновений [ConcavePolygonShape] "
+"предназначен для работы со статическими узлами [PhysicsBody], такими как "
+"[StaticBody], и не будет работать с [KinematicBody] или [RigidBody] с "
+"режимом, отличным от Static.\n"
+"[b]Предупреждение:[/b] Использование этой формы для [Area] (через узел "
+"[CollisionShape], созданный, например. с помощью опции [i]Create Trimesh "
+"Collision Sibling[/i] в меню [i]Mesh[/i], которое появляется при выборе узла "
+"[MeshInstance]) может привести к неожиданным результатам: при использовании "
+"Godot Physics область будет обнаруживать столкновения только с гранями "
+"треугольника в [ConcavePolygonShape] (а не с любой \"внутренней\" частью "
+"формы, например), а при использовании Bullet Physics область вообще не будет "
+"обнаруживать столкновений с вогнутой формой (это известная ошибка)."
 
 #: doc/classes/ConcavePolygonShape.xml
 msgid "Returns the faces (an array of triangles)."
@@ -17014,8 +17253,27 @@ msgid ""
 "The main difference between a [ConvexPolygonShape2D] and a "
 "[ConcavePolygonShape2D] is that a concave polygon assumes it is concave and "
 "uses a more complex method of collision detection, and a convex one forces "
-"itself to be convex in order to speed up collision detection."
+"itself to be convex in order to speed up collision detection.\n"
+"[b]Warning:[/b] Using this shape for an [Area2D] (via a [CollisionShape2D] "
+"node) may give unexpected results: the area will only detect collisions with "
+"the segments in the [ConcavePolygonShape2D] (and not with any \"inside\" of "
+"the shape, for example)."
 msgstr ""
+"Ресурс вогнутой многоугольной 2D формы для физики. Он состоит из сегментов и "
+"оптимален для сложных полигональных вогнутых столкновений. Однако его не "
+"рекомендуется использовать для узлов [RigidBody2D]. Вместо него "
+"рекомендуется использовать CollisionPolygon2D в режиме выпуклого разложения "
+"(твердые тела) или несколько выпуклых объектов. В противном случае для "
+"статических столкновений лучше использовать вогнутую полигональную 2D-"
+"форму.\n"
+"Основное различие между [ConvexPolygonShape2D] и [ConcavePolygonShape2D] "
+"заключается в том, что вогнутый полигон предполагает, что он вогнутый и "
+"использует более сложный метод обнаружения столкновений, а выпуклый "
+"заставляет себя быть выпуклым, чтобы ускорить обнаружение столкновений.\n"
+"[b]Предупреждение:[/b] Использование этой фигуры для [Area2D] (через узел "
+"[CollisionShape2D]) может дать неожиданные результаты: область будет "
+"обнаруживать столкновения только с сегментами в [ConcavePolygonShape2D] (а "
+"не с любой \"внутренней\" частью фигуры, например)."
 
 #: doc/classes/ConcavePolygonShape2D.xml
 msgid ""
@@ -17475,6 +17733,27 @@ msgid ""
 "[member rect_clip_content] or [method _clips_input] enabled.\n"
 "[b]Note:[/b] Event position is relative to the control origin."
 msgstr ""
+"Виртуальный метод, который должен быть реализован пользователем. Используйте "
+"этот метод для обработки и приема входных данных на элементах "
+"пользовательского интерфейса. См. [method accept_event].\n"
+"Пример: щелчок по элементу управления.\n"
+"[codeblock].\n"
+"func _gui_input(event):\n"
+"\tif event is InputEventMouseButton:\n"
+"\t\tif event.button_index == BUTTON_LEFT and event.pressed:\n"
+"\t\t\tprint(\"На меня нажали D:\")\n"
+"[/codeblock].\n"
+"Событие не сработает, если:\n"
+"* щелчок вне элемента управления (см. [method has_point]);\n"
+"* у элемента управления [member mouse_filter] установлено значение [constant "
+"MOUSE_FILTER_IGNORE];\n"
+"* элемент управления загорожен другим [Control] сверху, у которого [member "
+"mouse_filter] не установлен на [constant MOUSE_FILTER_IGNORE];\n"
+"* родитель элемента управления имеет [member mouse_filter], установленный на "
+"[constant MOUSE_FILTER_STOP] или принял событие;\n"
+"* событие происходит вне прямоугольника родителя, и у родителя включен "
+"[member rect_clip_content] или [method _clips_input].\n"
+"[b]Примечание:[/b] Положение события относительно начала элемента управления."
 
 #: doc/classes/Control.xml
 msgid ""
@@ -17600,6 +17879,27 @@ msgid ""
 "$MyButton.add_stylebox_override(\"normal\", null)\n"
 "[/codeblock]"
 msgstr ""
+"Создает локальное переопределение для темы [StyleBox] с указанным "
+"[code]именем[/code] . Локальные переопределения всегда имеют приоритет при "
+"получении элементов темы для элемента управления.\n"
+"[b]Примечание:[/b] Переопределение можно удалить, присвоив ему значение "
+"[code]null[/code]. Это поведение устарело и будет удалено в версии 4.0, "
+"используйте [method remove_stylebox_override] вместо этого.\n"
+"См. также [метод get_stylebox].\n"
+"[b]Пример изменения свойства в StyleBox путем его дублирования:[/b]\n"
+"[codeblock]\n"
+"# В приведенном ниже фрагменте предполагается, что дочернему узлу MyButton "
+"назначен StyleBoxFlat.\n"
+"# Ресурсы разделяются между экземплярами, поэтому нам нужно продублировать "
+"его.\n"
+"# чтобы избежать изменения внешнего вида всех остальных кнопок.\n"
+"var new_stylebox_normal = $MyButton.get_stylebox(\"normal\").duplicate()\n"
+"new_stylebox_normal.border_width_top = 3\n"
+"new_stylebox_normal.border_color = Color(0, 1, 0.5)\n"
+"$MyButton.add_stylebox_override(\"normal\", new_stylebox_normal)\n"
+"# Удалите переопределение стилей.\n"
+"$MyButton.add_stylebox_override(\"normal\", null)\n"
+"[/codeblock]"
 
 #: doc/classes/Control.xml
 msgid ""
@@ -18308,6 +18608,27 @@ msgid ""
 "theme.set_color(\"font_color\", \"TooltipLabel\", Color(0, 1, 1))\n"
 "[/codeblock]"
 msgstr ""
+"Изменяет текст всплывающей подсказки. Подсказка появляется, когда курсор "
+"мыши пользователя простаивает над этим элементом управления в течение "
+"нескольких мгновений, при условии, что свойство [member mouse_filter] не "
+"является [constant MOUSE_FILTER_IGNORE]. Вы можете изменить время, "
+"необходимое для появления всплывающей подсказки с помощью опции [code]gui/"
+"timers/tooltip_delay_sec[/code] в Настройках проекта.\n"
+"Всплывающая подсказка будет использовать либо реализацию по умолчанию, либо "
+"пользовательскую, которую вы можете создать, переопределив [method "
+"_make_custom_tooltip]. Всплывающая подсказка по умолчанию включает "
+"[PopupPanel] и [Label], свойства темы которых можно настроить с помощью "
+"методов [Theme] с [code]\"TooltipPanel\"[/code] и [code]\"TooltipLabel\"[/"
+"code] соответственно. Например:\n"
+"[codeblock]\n"
+"var style_box = StyleBoxFlat.new()\n"
+"style_box.set_bg_color(Color(1, 1, 0))\n"
+"style_box.set_border_width_all(2)\n"
+"# Здесь мы предполагаем, что свойству `theme` была предварительно назначена "
+"пользовательская тема.\n"
+"theme.set_stylebox(\"panel\", \"TooltipPanel\", style_box)\n"
+"theme.set_color(\"font_color\", \"TooltipLabel\", Color(0, 1, 1))\n"
+"[/codeblock]"
 
 #: doc/classes/Control.xml
 msgid ""
@@ -18428,6 +18749,22 @@ msgid ""
 "[code]yield(get_tree(), \"idle_frame\")[/code] then set its [member "
 "rect_scale] property."
 msgstr ""
+"Масштаб узла относительно его [member rect_size]. Измените это свойство, "
+"чтобы изменить масштаб узла относительно его [член rect_pivot_offset]. "
+"Масштаб [member hint_tooltip] элемента управления также будет изменяться в "
+"соответствии с этим значением.\n"
+"[b]Примечание:[/b] Это свойство в основном предназначено для использования в "
+"целях анимации. Текст внутри элемента управления будет выглядеть "
+"пикселированным или размытым при масштабировании элемента управления. Для "
+"поддержки нескольких разрешений в вашем проекте используйте соответствующий "
+"режим растяжения видового экрана, как описано в [url=$DOCS_URL/tutorials/"
+"rendering/multiple_resolutions.html]документации[/url] вместо "
+"масштабирования Controls по отдельности.\n"
+"[b]Примечание:[/b] Если узел Control является дочерним узлом узла "
+"[Container], масштаб будет сброшен на [code]Vector2(1, 1)[/code] при "
+"инстансировании сцены. Чтобы установить масштаб элемента управления при его "
+"инстанцировании, подождите один кадр, используя [code]yield(get_tree(), "
+"\"idle_frame\")[/code], а затем установите его свойство [member rect_scale]."
 
 #: doc/classes/Control.xml
 msgid ""
@@ -19696,6 +20033,43 @@ msgid ""
 "[/codeblock]\n"
 "[b]Note:[/b] Not available in HTML5 exports."
 msgstr ""
+"Класс Crypto позволяет вам получить доступ к некоторым более продвинутым "
+"криптографическим функциям в Godot.\n"
+"На данный момент это генерация криптографически безопасных случайных байтов, "
+"генерация RSA-ключей и самоподписанных сертификатов X509, шифрование/"
+"дешифрование асимметричных ключей, а также подписание/верификация.\n"
+"[codeblock].\n"
+"расширяет Node\n"
+"\n"
+"var crypto = Crypto.new()\n"
+"var key = CryptoKey.new()\n"
+"var cert = X509Certificate.new()\n"
+"\n"
+"func _ready():\n"
+"    # Генерируем новый RSA-ключ.\n"
+"    key = crypto.generate_rsa(4096)\n"
+"    # Генерируем новый самоподписанный сертификат с заданным ключом.\n"
+"    cert = crypto.generate_self_signed_certificate(key, \"CN=mydomain.com,"
+"O=My Game Company,C=IT\")\n"
+"    # Сохраните ключ и сертификат в папке пользователя.\n"
+"    key.save(\"user://generated.key\")\n"
+"    cert.save(\"user://generated.crt\")\n"
+"    # Шифрование\n"
+"    var data = \"Некоторые данные\"\n"
+"    var encrypted = crypto.encrypt(key, data.to_utf8())\n"
+"    # Расшифровка\n"
+"    var decrypted = crypto.decrypt(key, encrypted)\n"
+"    # Подписание\n"
+"    var signature = crypto.sign(HashingContext.HASH_SHA256, data."
+"sha256_buffer(), key)\n"
+"    # Проверка\n"
+"    verified = crypto.verify(HashingContext.HASH_SHA256, data."
+"sha256_buffer(), signature, key)\n"
+"    # Проверяет\n"
+"    assert(verified)\n"
+"    assert(data.to_utf8() == decrypted)\n"
+"[/codeblock].\n"
+"[b]Примечание:[/b] Недоступно в экспорте HTML5."
 
 #: doc/classes/Crypto.xml
 msgid ""
@@ -19882,6 +20256,19 @@ msgid ""
 "node also has a significant CPU cost, so it should be avoided during "
 "gameplay."
 msgstr ""
+"Для сложного расположения фигур иногда требуется добавить структуру в узлы "
+"CSG. Узел CSGCombiner позволяет создать такую структуру. Узел инкапсулирует "
+"результат операций CSG своих дочерних узлов. Таким образом, можно выполнить "
+"операции над одним набором фигур, которые являются дочерними элементами "
+"одного узла CSGCombiner, и ряд отдельных операций над вторым набором фигур, "
+"которые являются дочерними элементами второго узла CSGCombiner, а затем "
+"выполнить операцию, которая использует эти два конечных результата в "
+"качестве входных данных для создания окончательной фигуры.\n"
+"[b]Примечание:[/b] CSG-узлы предназначены для использования при создании "
+"прототипов уровней. Создание CSG-узлов требует значительных затрат "
+"процессора по сравнению с созданием [MeshInstance] с [PrimitiveMesh]. "
+"Перемещение узла CSG внутри другого узла CSG также требует значительных "
+"затрат процессора, поэтому этого следует избегать во время игрового процесса."
 
 #: modules/csg/doc_classes/CSGCylinder.xml
 msgid "A CSG Cylinder shape."
@@ -21085,6 +21472,14 @@ msgid "Cylinder shape for collisions."
 msgstr ""
 
 #: doc/classes/CylinderShape.xml
+msgid ""
+"Cylinder shape for collisions.\n"
+"[b]Note:[/b] When using GodotPhysics instead of the default Bullet physics "
+"engine, there are several known bugs with cylinder collision shapes. Using "
+"[CapsuleShape] or [BoxShape] instead is recommended."
+msgstr ""
+
+#: doc/classes/CylinderShape.xml
 msgid "The cylinder's height."
 msgstr "Высота цилиндра."
 
@@ -21131,7 +21526,7 @@ msgstr ""
 
 #: doc/classes/Dictionary.xml
 msgid "Dictionary type."
-msgstr ""
+msgstr "Тип словаря."
 
 #: doc/classes/Dictionary.xml
 msgid ""
@@ -23303,6 +23698,25 @@ msgid ""
 "    return state\n"
 "[/codeblock]"
 msgstr ""
+"Переопределите этот метод, чтобы предоставить данные состояния, которые вы "
+"хотите сохранить, например, положение вида, настройки сетки, сворачивание и "
+"т.д. Эти данные используются при сохранении сцены (чтобы состояние "
+"сохранялось при ее повторном открытии) и при переключении вкладок (чтобы "
+"состояние можно было восстановить при возврате на вкладку). Эти данные "
+"автоматически сохраняются для каждой сцены в файле [code]editstate[/code] в "
+"папке метаданных редактора. Если вы хотите сохранить глобальные (независимые "
+"от сцены) данные редактора для вашего плагина, вы можете использовать "
+"[method get_window_layout] вместо этого.\n"
+"Используйте [method set_state] для восстановления сохраненного состояния.\n"
+"[b]Примечание:[/b] Этот метод не следует использовать для сохранения важных "
+"настроек, которые должны сохраняться в проекте.\n"
+"[b]Примечание:[/b] Для корректного сохранения и восстановления состояния "
+"необходимо реализовать [method get_plugin_name].\n"
+"[codeblock].\n"
+"func get_state():\n"
+"\tvar state = {\"zoom\": zoom, \"preferred_color\": my_color}\n"
+"\treturn state\n"
+"[/codeblock]"
 
 #: doc/classes/EditorPlugin.xml
 msgid ""
@@ -23853,6 +24267,33 @@ msgid ""
 "- Binary format in FBX 2017\n"
 "[/codeblock]"
 msgstr ""
+"Это импортер 3D-активов FBX с полной поддержкой большинства функций FBX.\n"
+"При экспорте FBX-сцены из Autodesk Maya используйте эти настройки экспорта "
+"FBX:\n"
+"[codeblock]\n"
+"- Группы сглаживания\n"
+"- Сгладить сетку\n"
+"- Triangluate (для сеток с формами смешения)\n"
+"- Запечь анимацию\n"
+"- Повторная выборка\n"
+"- Деформированные модели\n"
+"- Скины\n"
+"- Фигуры наложения\n"
+"- Фильтры кривых\n"
+"- Уменьшитель постоянного ключа\n"
+"- Только автоматические касательные\n"
+"- Не отмечайте *Не отмечайте* Constraints (так как это приведет к поломке "
+"файла)\n"
+"- Можно установить флажок Embed Media (встраивает текстуры в экспортируемый "
+"FBX-файл).\n"
+"  - Обратите внимание, что при импорте встроенной среды текстура и сетка "
+"будут одним неизменяемым файлом.\n"
+"  - Вам придется повторно экспортировать и повторно импортировать FBX, если "
+"текстура изменилась.\n"
+"- Единицы измерения: Сантиметры\n"
+"- Ось вверх: Y\n"
+"- Двоичный формат в FBX 2017\n"
+"[/codeblock]."
 
 #: modules/gltf/doc_classes/EditorSceneImporterGLTF.xml
 msgid ""
@@ -23931,7 +24372,10 @@ msgid ""
 "[/codeblock]\n"
 "[b]Note:[/b] The script is run in the Editor context, which means the output "
 "is visible in the console window started with the Editor (stdout) instead of "
-"the usual Godot [b]Output[/b] dock."
+"the usual Godot [b]Output[/b] dock.\n"
+"[b]Note:[/b] EditorScript is reference counted, meaning it is destroyed when "
+"nothing references it. This can cause errors during asynchronous operations "
+"if there are no references to the script."
 msgstr ""
 
 #: doc/classes/EditorScript.xml
@@ -24978,6 +25422,27 @@ msgid ""
 "Effects\" by default. It improves the performance on mobile devices, but at "
 "the same time affects the screen display on mobile devices."
 msgstr ""
+"Ресурс для узлов окружения (например, [WorldEnvironment]), которые "
+"определяют несколько операций с окружением (например, фон [Sky] или [Color], "
+"окружающий свет, туман, глубина резкости...). Эти параметры влияют на "
+"конечный рендеринг сцены. Порядок этих операций следующий:\n"
+"- Размытие глубины резкости\n"
+"- Свечение\n"
+"- Тоновая карта (автоэкспозиция)\n"
+"- Корректировки\n"
+"Если для целевого [Viewport] установлено значение \"2D без выборки\", все "
+"эффекты постобработки будут недоступны. При установке \"3D без эффектов\" "
+"следующие опции будут недоступны:\n"
+"- Ssao\n"
+"- Ss Reflections\n"
+"Это можно настроить для корневого вьюпорта с помощью [member ProjectSettings."
+"rendering/quality/intended_usage/framebuffer_allocation] или для "
+"определенных вьюпортов с помощью свойства [member Viewport.usage].\n"
+"Обратите внимание, что [member ProjectSettings.rendering/quality/"
+"intended_usage/framebuffer_allocation] имеет переопределение для мобильных "
+"платформ, чтобы использовать \"3D без эффектов\" по умолчанию. Это улучшает "
+"производительность на мобильных устройствах, но в то же время влияет на "
+"отображение экрана на мобильных устройствах."
 
 #: doc/classes/Environment.xml doc/classes/WorldEnvironment.xml
 #, fuzzy
@@ -26377,6 +26842,22 @@ msgid ""
 "the [method @GDScript.is_equal_approx] and [method @GDScript.is_zero_approx] "
 "methods instead of [code]==[/code] to compare [float] values for equality."
 msgstr ""
+"Встроенный тип [float] - это 64-битное число с плавающей точкой двойной "
+"точности, эквивалентное [code]double[/code] в C++. Этот тип имеет 14 "
+"надежных десятичных цифр точности. Тип [float] может храниться в [Variant], "
+"который является общим типом, используемым движком. Максимальное значение "
+"[float] приблизительно равно [code]1.79769e308[/code], а минимальное - "
+"приблизительно [code]-1.79769e308[/code].\n"
+"Большинство методов и свойств в движке используют 32-битные числа с "
+"плавающей точкой одинарной точности, эквивалентные [code]float[/code] в C++, "
+"которые имеют 6 надежных десятичных цифр точности. Для структур данных, "
+"таких как [Vector2] и [Vector3], Godot использует 32-битные числа с "
+"плавающей точкой.\n"
+"Математика, выполняемая с использованием типа [float], не гарантирует "
+"точности или детерминированности, и часто будет приводить к небольшим "
+"ошибкам. Обычно для сравнения значений [float] на равенство следует "
+"использовать методы [method @GDScript.is_equal_approx] и [method @GDScript."
+"is_zero_approx] вместо [code]==[/code]."
 
 #: doc/classes/float.xml
 msgid "Wikipedia: Double-precision floating-point format"
@@ -26448,6 +26929,22 @@ msgid ""
 "emoji) are [i]not[/i] supported on Windows. They will display as unknown "
 "characters instead. This will be resolved in Godot 4.0."
 msgstr ""
+"Шрифт содержит набор символов, совместимый с Unicode, а также возможность "
+"рисовать его с переменной шириной, подъемом, спуском и кернингом. О создании "
+"шрифтов из файлов TTF (или других форматов шрифтов) см. раздел \"Поддержка "
+"шрифтов редактором\".\n"
+"[b]Примечание:[/b] Если [DynamicFont] не содержит символ, используемый в "
+"строке, то данный символ будет заменен кодовой точкой [code]0xfffd[/code], "
+"если она доступна в [DynamicFont]. Если этот заменяющий символ недоступен в "
+"DynamicFont, символ будет скрыт без отображения заменяющего символа в "
+"строке.\n"
+"[b]Примечание:[/b] Если [BitmapFont] не содержит символ, используемый в "
+"строке, то данный символ будет скрыт без отображения заменяющего символа в "
+"строке.\n"
+"[b]Примечание:[/b] Символы Юникода после [code]0xffff[/code] (например, "
+"большинство эмодзи) [i]не[/i] поддерживаются в Windows. Вместо этого они "
+"будут отображаться как неизвестные символы. Эта проблема будет решена в "
+"версии Godot 4.0."
 
 #: doc/classes/Font.xml
 msgid ""
@@ -27378,6 +27875,29 @@ msgid ""
 "150), Vector2(50, 150)]\n"
 "[/codeblock]"
 msgstr ""
+"Раздувает или сдувает [code]многоугольник[/code] на [code]дельту[/code] "
+"единиц (пикселей). Если [code]дельта[/code] положительна, полигон "
+"увеличивается наружу. Если [code]дельта[/code] отрицательна, полигон "
+"уменьшается внутрь. Возвращает массив полигонов, так как при раздувании/"
+"сжатии может получиться несколько дискретных полигонов. Возвращает пустой "
+"массив, если [code]delta[/code] отрицательна и ее абсолютное значение "
+"приблизительно превышает минимальные размеры ограничивающего прямоугольника "
+"многоугольника.\n"
+"Вершины каждого многоугольника будут округлены в соответствии с типом "
+"[code]join_type[/code], см. [enum PolyJoinType].\n"
+"В результате операции может быть получен внешний многоугольник (граница) и "
+"внутренний многоугольник (отверстие), которые можно отличить, вызвав [method "
+"is_polygon_clockwise].\n"
+"[b]Примечание:[/b] Для специального перевода вершин многоугольника "
+"используйте метод [method Transform2D.xform]:\n"
+"[codeblock].\n"
+"var polygon = PoolVector2Array([Vector2(0, 0), Vector2(100, 0), Vector2(100, "
+"100), Vector2(0, 100)])\n"
+"var offset = Vector2(50, 50)\n"
+"polygon = Transform2D(0, offset).xform(polygon)\n"
+"print(polygon) # печатает [Vector2(50, 50), Vector2(150, 50), Vector2(150, "
+"150), Vector2(50, 150)]\n"
+"[/codeblock]"
 
 #: doc/classes/Geometry.xml
 msgid ""
@@ -27759,6 +28279,23 @@ msgid ""
 "[code]call_deferred(\"bake\")[/code] instead of calling [method bake] "
 "directly."
 msgstr ""
+"Запекает эффект из всех [GeometryInstance]ов, помеченных [member "
+"GeometryInstance.use_in_baked_light] и [Light]ов, помеченных либо [constant "
+"Light.BAKE_INDIRECT], либо [constant Light.BAKE_ALL]. Если "
+"[code]create_visual_debug[/code] равен [code]true[/code], то после запекания "
+"света будет сгенерирован [MultiMesh], который имеет куб, представляющий "
+"каждую твердую ячейку, причем каждый куб окрашен в цвет альбедо ячейки. Это "
+"можно использовать для визуализации данных [GIProbe] и отладки любых "
+"проблем, которые могут возникнуть.\n"
+"[b]Примечание:[/b] [method bake] работает как в редакторе, так и в "
+"экспортированных проектах. Это делает его подходящим для процедурно "
+"генерируемых или пользовательских уровней. Запекание [GIProbe] обычно "
+"занимает от 5 до 20 секунд в большинстве сцен. Уменьшение [member subdiv] "
+"может ускорить запекание.\n"
+"[b]Примечание:[/b] [GeometryInstance]ы и [Light]ы должны быть полностью "
+"готовы до вызова [method bake]. Если вы создаете их процедурно и некоторые "
+"сетки или освещение отсутствуют в вашем запекаемом [GIProbe], используйте "
+"[code]call_deferred(\"bake\")[/code] вместо прямого вызова [method bake]."
 
 #: doc/classes/GIProbe.xml
 msgid "Calls [method bake] with [code]create_visual_debug[/code] enabled."
@@ -28126,7 +28663,7 @@ msgstr ""
 
 #: doc/classes/GradientTexture.xml
 msgid "Gradient-filled texture."
-msgstr ""
+msgstr "Текстура с градиентным заполнением."
 
 #: doc/classes/GradientTexture.xml
 msgid ""
@@ -28890,6 +29427,21 @@ msgid ""
 "light not affect the first layer, the whole GridMap won't be lit by the "
 "light in question."
 msgstr ""
+"GridMap позволяет размещать сетки на сетке в интерактивном режиме. Она "
+"работает как из редактора, так и из скриптов, что может помочь вам создать "
+"внутриигровые редакторы уровней.\n"
+"GridMap использует [MeshLibrary], которая содержит список плиток. Каждая "
+"плитка - это сетка с материалами и дополнительными фигурами столкновений и "
+"навигации.\n"
+"GridMap содержит коллекцию ячеек. Каждая ячейка сетки ссылается на тайл в "
+"[MeshLibrary]. Все ячейки в карте имеют одинаковые размеры.\n"
+"Внутри карта GridMap разбивается на разреженную коллекцию октантов для "
+"эффективного рендеринга и обработки физики. Каждый октант имеет одинаковые "
+"размеры и может содержать несколько ячеек.\n"
+"[b]Примечание:[/b] GridMap не расширяет [VisualInstance] и поэтому не может "
+"быть скрыт или замаскирован на основе [member VisualInstance.layers]. Если "
+"сделать так, чтобы свет не влиял на первый слой, то вся GridMap не будет "
+"освещена данным светом."
 
 #: modules/gridmap/doc_classes/GridMap.xml
 msgid "Using gridmaps"
@@ -29114,6 +29666,33 @@ msgid ""
 "    printt(res.hex_encode(), Array(res))\n"
 "[/codeblock]"
 msgstr ""
+"Класс HashingContext предоставляет интерфейс для вычисления "
+"криптографических хэшей за несколько итераций. Это полезно, например, при "
+"вычислении хэшей больших файлов (чтобы не загружать их все в память), "
+"сетевых потоков и потоков данных в целом (чтобы не держать буферы).\n"
+"Перечисление [enum HashType] показывает поддерживаемые алгоритмы "
+"хэширования.\n"
+"[codeblock]\n"
+"const CHUNK_SIZE = 1024\n"
+"\n"
+"func hash_file(path):\n"
+"    var ctx = HashingContext.new()\n"
+"    var file = File.new()\n"
+"    # Запустите контекст SHA-256.\n"
+"    ctx.start(HashingContext.HASH_SHA256)\n"
+"    # Проверьте, существует ли файл.\n"
+"    if not file.file_exists(path):\n"
+"        return\n"
+"    # Открываем файл для хэширования.\n"
+"    file.open(path, File.READ)\n"
+"    # Обновляем контекст после чтения каждого чанка.\n"
+"    while not file.eof_reached():\n"
+"        ctx.update(file.get_buffer(CHUNK_SIZE))\n"
+"    # Получение вычисленного хэша.\n"
+"    var res = ctx.finish()\n"
+"    # Выведите результат в виде шестнадцатеричной строки и массива.\n"
+"    printt(res.hex_encode(), Array(res))\n"
+"[/codeblock]."
 
 #: doc/classes/HashingContext.xml
 msgid "Closes the current context, and return the computed hash."
@@ -29399,7 +29978,7 @@ msgstr ""
 
 #: doc/classes/HSeparator.xml
 msgid "Horizontal separator."
-msgstr ""
+msgstr "Горизонтальный разделитель."
 
 #: doc/classes/HSeparator.xml
 msgid ""
@@ -29419,7 +29998,7 @@ msgstr ""
 
 #: doc/classes/HSlider.xml
 msgid "Horizontal slider."
-msgstr ""
+msgstr "Горизонтальный слайдер."
 
 #: doc/classes/HSlider.xml
 msgid ""
@@ -30351,6 +30930,22 @@ msgid ""
 "url] for more details). As a workaround, you can send data as a query string "
 "in the URL. See [method String.http_escape] for an example."
 msgstr ""
+"Создает запрос на базовом [HTTPClient]. Если нет ошибок конфигурации, "
+"пытается подключиться, используя [method HTTPClient.connect_to_host] и "
+"передает параметры в [method HTTPClient.request].\n"
+"Возвращает [constant OK], если запрос успешно создан. (Это не означает, что "
+"сервер ответил), [constant ERR_UNCONFIGURED], если не находится в дереве, "
+"[constant ERR_BUSY], если все еще обрабатывает предыдущий запрос, [constant "
+"ERR_INVALID_PARAMETER], если заданная строка не является правильным форматом "
+"URL, или [constant ERR_CANT_CONNECT], если не используется поток и "
+"[HTTPClient] не может соединиться с хостом.\n"
+"[b]Примечание:[/b] Если [code]метод[/code] является [constant HTTPClient."
+"METHOD_GET], полезная нагрузка, отправленная через [code]request_data[/"
+"code], может быть проигнорирована сервером или даже привести к отклонению "
+"запроса (подробнее см. [url=https://datatracker.ietf.org/doc/html/"
+"rfc7231#section-4.3.1]RFC 7231 раздел 4.3.1[/url]). В качестве обходного "
+"пути вы можете отправить данные в виде строки запроса в URL. Пример см. в "
+"[method String.http_escape]."
 
 #: doc/classes/HTTPRequest.xml
 msgid ""
@@ -30466,7 +31061,7 @@ msgstr ""
 
 #: doc/classes/Image.xml
 msgid "Image datatype."
-msgstr ""
+msgstr "Тип данных изображения."
 
 #: doc/classes/Image.xml
 msgid ""
@@ -31736,7 +32331,11 @@ msgid ""
 "using an [AnimatedTexture], only the first frame will be displayed.\n"
 "[b]Note:[/b] Only images imported with the [b]Lossless[/b], [b]Lossy[/b] or "
 "[b]Uncompressed[/b] compression modes are supported. The [b]Video RAM[/b] "
-"compression mode can't be used for custom cursors."
+"compression mode can't be used for custom cursors.\n"
+"[b]Note:[/b] On the web platform, the maximum allowed cursor image size is "
+"128×128. Cursor images larger than 32×32 will also only be displayed if the "
+"mouse cursor image is entirely located within the page for [url=https://"
+"chromestatus.com/feature/5825971391299584]security reasons[/url]."
 msgstr ""
 
 #: doc/classes/Input.xml
@@ -31834,6 +32433,19 @@ msgid ""
 "recommended to keep it enabled for games which don't require very reactive "
 "input, as this will decrease CPU usage."
 msgstr ""
+"Если [code]true[/code], аналогичные входные события, посылаемые операционной "
+"системой, накапливаются. Когда накопление входных данных включено, все "
+"входные события, генерируемые в течение кадра, будут объединены и выданы "
+"после завершения рендеринга кадра. Таким образом, это ограничивает "
+"количество вызовов метода ввода в секунду до FPS рендеринга.\n"
+"Накопление ввода можно отключить, чтобы получить немного более точный/"
+"реактивный ввод ценой увеличения загрузки процессора. В приложениях, где "
+"требуется рисовать линии от руки, накопление ввода обычно отключается на "
+"время рисования линии пользователем, чтобы получить результаты, точно "
+"соответствующие реальному вводу.\n"
+"[b]Примечание:[/b] Накопление ввода [i]включено[/i] по умолчанию. "
+"Рекомендуется держать его включенным в играх, которые не требуют очень "
+"реактивного ввода, так как это снизит нагрузку на процессор."
 
 #: doc/classes/Input.xml
 msgid "Emitted when a joypad device has been connected or disconnected."
@@ -31969,7 +32581,7 @@ msgstr ""
 
 #: doc/classes/InputEvent.xml
 msgid "InputEvent"
-msgstr ""
+msgstr "InputEvent"
 
 #: doc/classes/InputEvent.xml
 msgid ""
@@ -32710,6 +33322,25 @@ msgid ""
 "print(max_int) # -9223372036854775808, we overflowed and wrapped around.\n"
 "[/codeblock]"
 msgstr ""
+"Знаковый 64-битный целочисленный тип.\n"
+"Он может принимать значения в интервале [code][-2^63, 2^63 - 1][/code], т.е. "
+"[code][-9223372036854775808, 9223372036854775807][/code]. Превышение этих "
+"границ будет обернуто.\n"
+"[int] является типом [Variant], и поэтому будет использоваться при "
+"присвоении целочисленного значения [Variant]. Он также может быть применен с "
+"помощью подсказки типа [code]: int[/code].\n"
+"[codeblock].\n"
+"var my_variant = 0 # int, значение 0.\n"
+"my_variant += 4.2 # float, значение 4.2.\n"
+"var my_int: int = 1 # int, значение 1.\n"
+"my_int = 4.2 # int, значение 4, правое значение неявно приводится к int.\n"
+"my_int = int(\"6.7\") # int, значение 6, строка явно приводится к int.\n"
+"\n"
+"var max_int = 9223372036854775807\n"
+"print(max_int) # 9223372036854775807, OK.\n"
+"max_int += 1\n"
+"print(max_int) # -9223372036854775808, мы переполнились и обернулись.\n"
+"[/codeblock]"
 
 #: doc/classes/int.xml
 msgid ""
@@ -33471,6 +34102,41 @@ msgid ""
 "[/codeblock]\n"
 "[b]Note:[/b] Only available in the HTML5 platform."
 msgstr ""
+"JavaScriptObject используется для взаимодействия с объектами JavaScript, "
+"полученными или созданными с помощью [method JavaScript.get_interface], "
+"[method JavaScript.create_object] или [method JavaScript.create_callback].\n"
+"Пример:\n"
+"[codeblock]\n"
+"extends Node\n"
+"\n"
+"var _my_js_callback = JavaScript.create_callback(self, \"myCallback\") # Эта "
+"ссылка должна быть сохранена\n"
+"var console = JavaScript.get_interface(\"console\")\n"
+"\n"
+"func _init():\n"
+"\tvar buf = JavaScript.create_object(\"ArrayBuffer\", 10) # новый "
+"ArrayBuffer(10)\n"
+"\tprint(buf) # печатает [JavaScriptObject:OBJECT_ID]\n"
+"\tvar uint8arr = JavaScript.create_object(\"Uint8Array\", buf) # новый "
+"Uint8Array(buf)\n"
+"\tuint8arr[1] = 255\n"
+"\tprints(uint8arr[1], uint8arr.byteLength) # печатает 255 10\n"
+"\tconsole.log(uint8arr) # печатает в консоли браузера \"Uint8Array(10) [ 0, "
+"255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\"\n"
+"\n"
+"\t# Эквивалент JavaScript: Array.from(uint8arr).forEach(myCallback)\n"
+"\tJavaScript.get_interface(\"Array\").from(uint8arr)."
+"forEach(_my_js_callback)\n"
+"\n"
+"func myCallback(args):\n"
+"\t# Будет вызван с параметрами, переданными в обратный вызов \"forEach\".\n"
+"\t# [0, 0, [JavaScriptObject:1173]]\n"
+"\t# [255, 1, [JavaScriptObject:1173]]\n"
+"\t# ...\n"
+"\t# [0, 9, [JavaScriptObject:1180]]\n"
+"\tprint(args)\n"
+"[/codeblock].\n"
+"[b]Примечание:[/b] Доступно только в платформе HTML5."
 
 #: doc/classes/JNISingleton.xml
 msgid ""
@@ -33660,7 +34326,6 @@ msgid ""
 msgstr ""
 
 #: doc/classes/JSONParseResult.xml
-#, fuzzy
 msgid ""
 "A [Variant] containing the parsed JSON. Use [method @GDScript.typeof] or the "
 "[code]is[/code] keyword to check if it is what you expect. For example, if "
@@ -33682,25 +34347,25 @@ msgid ""
 "    push_error(\"Unexpected results.\")\n"
 "[/codeblock]"
 msgstr ""
-"Переменная ([Variant]), содержащая разобранный JSON. Используйте [method "
-"@GDScript.typeof] или ключевое слово [code]is[/code] чтобы проверить "
-"ожидаемый тип. Например, если исходный JSON начинается с фигурных скобок "
-"([code]{}[/code]), будет возвращён словарь ([Dictionary]). Если исходный "
-"JSON начинается с квадратных скобок ([code][][/code]), будет возвращён "
-"массив ([Array]).\n"
-"[b]Примечание:[/b] Спецификация JSON не определяет типы integer и float, "
-"только тип[i]number[/i]. Таким образом, при разборе строки JSON все числовые "
-"значения будут преобразованы в тип [float].\n"
-"[b]Примечание:[/b] JSON-объекты не сохраняют порядок ключей как словари "
-"Godot, поэтому вы не должны полагаться на порядок следования ключей, если "
-"словарь получен из JSON. Массивы JSON, напротив, сохраняют порядок своих "
-"элементов:\n"
-"[codeblock]\n"
+"Вариант [Variant], содержащий разобранный JSON. Используйте [method "
+"@GDScript.typeof] или ключевое слово [code]is[/code], чтобы проверить, "
+"является ли это тем, что вы ожидаете. Например, если источник JSON "
+"начинается с фигурных скобок ([code]{}[/code]), будет возвращен [Словарь]. "
+"Если источник JSON начинается со скобок ([code][][/code]), будет возвращен "
+"[Массив].\n"
+"[b]Примечание:[/b] В спецификации JSON не определены типы integer или float, "
+"а только тип [i]number[/i]. Поэтому при разборе текста JSON все числовые "
+"значения будут преобразованы в типы [float].\n"
+"[b]Примечание:[/b] Объекты JSON не сохраняют порядок ключей, как словари "
+"Godot, поэтому не следует полагаться на то, что ключи будут расположены в "
+"определенном порядке, если словарь построен из JSON. Напротив, массивы JSON "
+"сохраняют порядок своих элементов:\n"
+"[codeblock].\n"
 "var p = JSON.parse('[\"hello\", \"world\", \"!\"]')\n"
 "if typeof(p.result) == TYPE_ARRAY:\n"
-"    print(p.result[0]) # Выведет \"hello\"\n"
+"    print(p.result[0]) # Печатает \"hello\".\n"
 "else:\n"
-"    push_error(\"Неожиданный результат.\")\n"
+"    push_error(\"Неожиданные результаты.\")\n"
 "[/codeblock]"
 
 #: doc/classes/JSONRPC.xml
@@ -33795,6 +34460,21 @@ msgid ""
 "while performing collision tests. This makes them really useful to implement "
 "characters that collide against a world, but don't require advanced physics."
 msgstr ""
+"Кинематические тела - это особые типы тел, которые предназначены для "
+"управления пользователем. На них вообще не влияет физика; для других типов "
+"тел, таких как персонаж или жесткое тело, это то же самое, что и статическое "
+"тело. Однако у них есть два основных применения:\n"
+"[b]Имитация движения:[/b] Когда эти тела перемещаются вручную, либо из кода, "
+"либо из [AnimationPlayer] (с [member AnimationPlayer.playback_process_mode], "
+"установленным на \"physics\"), физика автоматически вычисляет оценку их "
+"линейной и угловой скорости. Это делает их очень полезными для движущихся "
+"платформ или других объектов, управляемых AnimationPlayer (например, дверь, "
+"открывающийся мост и т.д.).\n"
+"[b]Кинематические персонажи:[/b] KinematicBody также имеет API для "
+"перемещения объектов (методы [method move_and_collide] и [method "
+"move_and_slide]) при выполнении тестов на столкновения. Это делает их "
+"действительно полезными для реализации персонажей, которые сталкиваются с "
+"миром, но не требуют продвинутой физики."
 
 #: doc/classes/KinematicBody.xml doc/classes/KinematicBody2D.xml
 msgid "Kinematic character (2D)"
@@ -34048,6 +34728,21 @@ msgid ""
 "while performing collision tests. This makes them really useful to implement "
 "characters that collide against a world, but don't require advanced physics."
 msgstr ""
+"Кинематические тела - это особые типы тел, которые предназначены для "
+"управления пользователем. На них вообще не влияет физика; для других типов "
+"тел, таких как персонаж или жесткое тело, это то же самое, что и статическое "
+"тело. Однако у них есть два основных применения:\n"
+"[b]Имитация движения:[/b] Когда эти тела перемещаются вручную, либо из кода, "
+"либо из [AnimationPlayer] (с [member AnimationPlayer.playback_process_mode], "
+"установленным на \"physics\"), физика автоматически вычисляет оценку их "
+"линейной и угловой скорости. Это делает их очень полезными для движущихся "
+"платформ или других объектов, управляемых AnimationPlayer (например, дверь, "
+"открывающийся мост и т.д.).\n"
+"[b]Кинематические персонажи:[/b] KinematicBody2D также имеет API для "
+"перемещения объектов (методы [method move_and_collide] и [method "
+"move_and_slide]) при выполнении тестов на столкновения. Это делает их "
+"действительно полезными для реализации персонажей, которые сталкиваются с "
+"миром, но не требуют продвинутой физики."
 
 #: doc/classes/KinematicBody2D.xml
 msgid "Using KinematicBody2D"
@@ -34737,7 +35432,9 @@ msgid ""
 "The size of the light in Godot units. Only considered in baked lightmaps and "
 "only if [member light_bake_mode] is set to [constant BAKE_ALL]. Increasing "
 "this value will make the shadows appear blurrier. This can be used to "
-"simulate area lights to an extent."
+"simulate area lights to an extent.\n"
+"[b]Note:[/b] [member light_size] is not affected by [member Spatial.scale] "
+"(the light's scale or its parent's scale)."
 msgstr ""
 
 #: doc/classes/Light.xml
@@ -36388,8 +37085,12 @@ msgstr ""
 msgid "Flag used to mark a compressed (half float) tangent array."
 msgstr ""
 
-#: doc/classes/Mesh.xml doc/classes/VisualServer.xml
-msgid "Flag used to mark a compressed (half float) color array."
+#: doc/classes/Mesh.xml
+msgid ""
+"Flag used to mark a compressed (half float) color array.\n"
+"[b]Note:[/b] If this flag is enabled, vertex colors will be stored as 8-bit "
+"unsigned integers. This will clamp overbright colors to [code]Color(1, 1, 1, "
+"1)[/code] and reduce colors' precision."
 msgstr ""
 
 #: doc/classes/Mesh.xml doc/classes/VisualServer.xml
@@ -36434,7 +37135,10 @@ msgid ""
 "ARRAY_COMPRESS_NORMAL], [constant ARRAY_COMPRESS_TANGENT], [constant "
 "ARRAY_COMPRESS_COLOR], [constant ARRAY_COMPRESS_TEX_UV], [constant "
 "ARRAY_COMPRESS_TEX_UV2], [constant ARRAY_COMPRESS_WEIGHTS], and [constant "
-"ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION] quickly."
+"ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION] quickly.\n"
+"[b]Note:[/b] Since this flag enables [constant ARRAY_COMPRESS_COLOR], vertex "
+"colors will be stored as 8-bit unsigned integers. This will clamp overbright "
+"colors to [code]Color(1, 1, 1, 1)[/code] and reduce colors' precision."
 msgstr ""
 
 #: doc/classes/Mesh.xml
@@ -38059,6 +38763,7 @@ msgid "3D agent used in navigation for collision avoidance."
 msgstr ""
 
 #: doc/classes/NavigationAgent.xml
+#, fuzzy
 msgid ""
 "3D agent that is used in navigation to reach a location while avoiding "
 "static and dynamic obstacles. The dynamic obstacles are avoided using RVO "
@@ -38072,8 +38777,26 @@ msgid ""
 "use the [method get_next_location] function once every physics frame to "
 "update the internal path logic of the NavigationAgent. The returned vector "
 "position from this function should be used as the next movement position for "
-"the agent's parent Node."
+"the agent's parent Node.\n"
+"[b]Note:[/b] By default, the expensive calculations for avoidance are done "
+"in a thread. In HTML5 exports without thread support, they will be done on "
+"the main thread, which can lead to performance issues."
 msgstr ""
+"3D-агент, который используется в навигации для достижения местоположения, "
+"избегая при этом статических и динамических препятствий. Динамические "
+"препятствия избегаются с помощью системы предотвращения столкновений RVO "
+"(Reciprocal Velocity Obstacles). Для корректной работы агенту необходимы "
+"навигационные данные. По умолчанию этот узел регистрируется на навигационной "
+"карте по умолчанию [Мир]. Если этот узел является дочерним узлом "
+"[Navigation], он будет регистрироваться на навигационной карте "
+"навигационного узла, или можно использовать функцию [method set_navigation], "
+"чтобы установить навигационный узел напрямую. [NavigationAgent] является "
+"физически безопасным.\n"
+"[b]Примечание:[/b] После использования [method set_target_location] "
+"необходимо использовать функцию [method get_next_location] раз в каждый кадр "
+"физики для обновления внутренней логики пути NavigationAgent. Возвращаемая "
+"векторная позиция из этой функции должна использоваться в качестве следующей "
+"позиции движения для родительского узла агента."
 
 #: doc/classes/NavigationAgent.xml doc/classes/NavigationAgent2D.xml
 msgid ""
@@ -38312,6 +39035,7 @@ msgid "2D agent used in navigation for collision avoidance."
 msgstr ""
 
 #: doc/classes/NavigationAgent2D.xml
+#, fuzzy
 msgid ""
 "2D agent that is used in navigation to reach a location while avoiding "
 "static and dynamic obstacles. The dynamic obstacles are avoided using RVO "
@@ -38325,8 +39049,26 @@ msgid ""
 "use the [method get_next_location] function once every physics frame to "
 "update the internal path logic of the NavigationAgent. The returned vector "
 "position from this function should be used as the next movement position for "
-"the agent's parent Node."
+"the agent's parent Node.\n"
+"[b]Note:[/b] By default, the expensive calculations for avoidance are done "
+"in a thread. In HTML5 exports without thread support, they will be done on "
+"the main thread, which can lead to performance issues."
 msgstr ""
+"2D агент, который используется в навигации для достижения местоположения, "
+"избегая при этом статических и динамических препятствий. Динамические "
+"препятствия избегаются с помощью системы предотвращения столкновений RVO "
+"(Reciprocal Velocity Obstacles). Для корректной работы агенту необходимы "
+"навигационные данные. По умолчанию этот узел регистрируется на навигационной "
+"карте по умолчанию [World2D]. Если этот узел является дочерним для узла "
+"[Navigation2D], он будет регистрироваться на навигационной карте "
+"навигационного узла, или функция [method set_navigation] может быть "
+"использована для непосредственной установки навигационного узла. "
+"[NavigationAgent2D] является физически безопасным.\n"
+"[b]Примечание:[/b] После использования [method set_target_location] "
+"необходимо использовать функцию [method get_next_location] один раз в каждый "
+"кадр физики для обновления внутренней логики пути NavigationAgent. "
+"Возвращаемая векторная позиция из этой функции должна использоваться в "
+"качестве следующей позиции движения для родительского узла агента."
 
 #: doc/classes/NavigationAgent2D.xml
 #, fuzzy
@@ -39052,6 +39794,9 @@ msgid ""
 "modified velocity as-is might lead to pushing and agent outside of a "
 "navigable area. This is a limitation of the collision avoidance system, any "
 "more complex situation may require the use of the physics engine.\n"
+"[b]Note:[/b] By default, the expensive calculations for avoidance are done "
+"in a thread. In HTML5 exports without thread support, they will be done on "
+"the main thread, which can lead to performance issues.\n"
 "This server keeps tracks of any call and executes them during the sync "
 "phase. This means that you can request any change to the map, using any "
 "thread, without worrying."
@@ -39066,7 +39811,7 @@ msgstr "Возвращает значение задержки данного к
 msgid ""
 "Returns the normal for the point returned by [method map_get_closest_point]."
 msgstr ""
-"Возвращает нормаль для точки, возвращенной [методом map_get_closest_point]."
+"Возвращает нормаль для точки, возвращенной [method map_get_closest_point]."
 
 #: doc/classes/NavigationServer.xml
 msgid ""
@@ -39267,10 +40012,10 @@ msgstr ""
 "пирами, чтобы гарантировать, что пропускная способность пиров не будет "
 "превышена. Параметры пропускной способности также определяют размер окна "
 "соединения, которое ограничивает количество надежных пакетов, которые могут "
-"находиться в пути в любой момент времени. Возвращает [константу OK], если "
-"клиент был создан, [константу ERR_ALREADY_IN_USE], если данный экземпляр "
+"находиться в пути в любой момент времени. Возвращает [constant OK], если "
+"клиент был создан, [constant ERR_ALREADY_IN_USE], если данный экземпляр "
 "NetworkedMultiplayerENet уже имеет открытое соединение (в этом случае "
-"необходимо сначала вызвать [метод close_connection]) или [константу "
+"необходимо сначала вызвать [method close_connection]) или [constant "
 "ERR_CANT_CREATE], если клиент не может быть создан. Если указано "
 "[code]client_port[/code], клиент также будет слушать указанный порт; это "
 "полезно для некоторых методов обхода NAT."
@@ -39417,6 +40162,21 @@ msgid ""
 "COMPRESS_NONE]. Nonetheless, mixing engine versions between clients and "
 "server is not recommended and not officially supported."
 msgstr ""
+"Метод сжатия, используемый для сетевых пакетов. Они имеют различные "
+"компромиссы между скоростью сжатия и пропускной способностью, вам может "
+"потребоваться проверить, какой из них лучше всего подходит для вашего "
+"случая, если вы вообще используете сжатие.\n"
+"[b]Примечание:[/b] Сетевой дизайн большинства игр предполагает частую "
+"отправку множества небольших пакетов (размером менее 4 КБ каждый). Если есть "
+"сомнения, рекомендуется оставить алгоритм сжатия по умолчанию, так как он "
+"лучше всего работает с такими маленькими пакетами.\n"
+"[b]Примечание:[/b] [member compression_mode] должен быть установлен на одно "
+"и то же значение как на сервере, так и на всех его клиентах. Клиенты не "
+"смогут подключиться, если значение [member compression_mode], установленное "
+"на клиенте, отличается от установленного на сервере. До Godot 3.4 по "
+"умолчанию [member compression_mode] был [constant COMPRESS_NONE]. Тем не "
+"менее, смешивать версии движка между клиентами и сервером не рекомендуется и "
+"официально не поддерживается."
 
 #: modules/enet/doc_classes/NetworkedMultiplayerENet.xml
 msgid ""
@@ -39495,7 +40255,7 @@ msgstr ""
 
 #: modules/enet/doc_classes/NetworkedMultiplayerENet.xml
 msgid "[url=https://facebook.github.io/zstd/]Zstandard[/url] compression."
-msgstr ""
+msgstr "[url=https://facebook.github.io/zstd/]Zstandard[/url] cжатие."
 
 #: doc/classes/NetworkedMultiplayerPeer.xml
 msgid "A high-level network interface to simplify multiplayer interactions."
@@ -39905,6 +40665,20 @@ msgid ""
 "call with [method request_ready], which may be called anywhere before adding "
 "the node again."
 msgstr ""
+"Вызывается, когда узел \"готов\", т.е. когда и узел, и его дочерние элементы "
+"вошли в дерево сцены. Если узел имеет дочерние узлы, то сначала срабатывают "
+"их обратные вызовы [метода _ready], а затем родительский узел получает "
+"уведомление о готовности.\n"
+"Соответствует уведомлению [constant NOTIFICATION_READY] в [method Object."
+"_notification]. См. также ключевое слово [code]onready[/code] для "
+"переменных.\n"
+"Обычно используется для инициализации. Для еще более ранней инициализации "
+"можно использовать [метод Object._init]. См. также [метод _enter_tree].\n"
+"[b]Примечание:[/b] [метод _ready] может быть вызван только один раз для "
+"каждого узла. После удаления узла из дерева сцены и добавления его снова, "
+"[code]_ready[/code] не будет вызван второй раз. Это можно обойти, запросив "
+"повторный вызов с помощью [метода request_ready], который может быть вызван "
+"в любом месте перед повторным добавлением узла."
 
 #: doc/classes/Node.xml
 msgid ""
@@ -40034,6 +40808,21 @@ msgid ""
 "consider using [method get_node] instead. To avoid using [method find_node] "
 "too often, consider caching the node reference into a variable."
 msgstr ""
+"Находит потомка этого узла, имя которого соответствует [code]маске[/code] "
+"как в [методе String.match] (т.е. чувствительно к регистру, но [code]\"*\"[/"
+"code] соответствует нулю или более символов, а [code]\"?\"[/code] "
+"соответствует любому одиночному символу, кроме [code]\".\"[/code]). "
+"Возвращает [code]null[/code], если не найдено ни одного подходящего [узла].\n"
+"[b]Примечание:[/b] Не ищет совпадения по полному пути, только по именам "
+"отдельных узлов.\n"
+"Если [code]owned[/code] is [code]true[/code], этот метод находит только "
+"узлы, владельцем которых является этот узел. Это особенно важно для сцен, "
+"созданных через сценарий, поскольку у таких сцен нет владельца.\n"
+"[b]Примечание:[/b] Поскольку этот метод проходит по всем потомкам узла, это "
+"самый медленный способ получить ссылку на другой узел. По возможности "
+"используйте вместо него [method get_node]. Чтобы не использовать [метод "
+"find_node] слишком часто, подумайте о кэшировании ссылки на узел в "
+"переменной."
 
 #: doc/classes/Node.xml
 msgid ""
@@ -40474,6 +41263,20 @@ msgid ""
 "like [code]server_disconnected[/code] or by checking [code]SceneTree."
 "network_peer.get_connection_status() == CONNECTION_CONNECTED[/code]."
 msgstr ""
+"Отправляет запрос на вызов удаленной процедуры для заданного [code]метода[/"
+"code] равным узлам в сети (и локально), по желанию отправляя все "
+"дополнительные аргументы в качестве аргументов метода, вызываемого RPC. "
+"Запрос вызова будет получен только узлами с одинаковым [NodePath], включая "
+"точно такое же имя узла. Поведение зависит от конфигурации RPC для данного "
+"метода, см. [method rpc_config]. По умолчанию методы не открыты для RPC. См. "
+"также [method rset] и [method rset_config] для свойств. Возвращает "
+"[code]null[/code].\n"
+"[b]Примечание:[/b] Вы можете безопасно использовать RPC на клиентах только "
+"после получения сигнала [code]connected_to_server[/code] от [SceneTree]. Вам "
+"также необходимо отслеживать состояние соединения, либо по сигналам "
+"[SceneTree], таким как [code]server_disconnected[/code], либо проверяя "
+"[code]SceneTree.network_peer.get_connection_status() == "
+"CONNECTION_CONNECTED[/code]."
 
 #: doc/classes/Node.xml
 msgid ""
@@ -41018,7 +41821,7 @@ msgstr "Глобальный масштаб."
 
 #: doc/classes/Node2D.xml
 msgid "Global [Transform2D]."
-msgstr ""
+msgstr "Глобальный [Transform2D]."
 
 #: doc/classes/Node2D.xml
 msgid "Position, relative to the node's parent."
@@ -41044,7 +41847,7 @@ msgstr ""
 
 #: doc/classes/Node2D.xml
 msgid "Local [Transform2D]."
-msgstr ""
+msgstr "Локальный [Transform2D]."
 
 #: doc/classes/Node2D.xml
 msgid ""
@@ -41950,7 +42753,9 @@ msgid ""
 "The light's radius. Note that the effectively lit area may appear to be "
 "smaller depending on the [member omni_attenuation] in use. No matter the "
 "[member omni_attenuation] in use, the light will never reach anything "
-"outside this radius."
+"outside this radius.\n"
+"[b]Note:[/b] [member omni_range] is not affected by [member Spatial.scale] "
+"(the light's scale or its parent's scale)."
 msgstr ""
 
 #: doc/classes/OmniLight.xml
@@ -42366,6 +43171,21 @@ msgid ""
 "the project if it is currently running (since the project is an independent "
 "child process)."
 msgstr ""
+"Задерживает выполнение текущего потока на [code]мсек[/code] миллисекунд. "
+"[code]мсек[/code] должно быть больше или равно [code]0[/code]. В противном "
+"случае [метод delay_msec] ничего не сделает и выведет сообщение об ошибке.\n"
+"[b]Примечание:[/b] [method delay_msec] - это [i]блокирующий[/i] способ "
+"задержки выполнения кода. Чтобы задержать выполнение кода неблокирующим "
+"способом, смотрите [method SceneTree.create_timer]. Выдача с помощью [method "
+"SceneTree.create_timer] задержит выполнение кода, размещенного ниже "
+"[code]выдачи[/code] без влияния на остальную часть проекта (или редактора, "
+"для [EditorPlugin]ов и [EditorScript]ов).\n"
+"[b]Примечание:[/b] Если [метод delay_msec] вызывается в главном потоке, он "
+"замораживает проект и не позволяет ему перерисовывать и регистрировать ввод, "
+"пока не пройдет задержка. При использовании [method delay_msec] как части "
+"[EditorPlugin] или [EditorScript], он заморозит редактор, но не заморозит "
+"проект, если он запущен (поскольку проект является независимым дочерним "
+"процессом)."
 
 #: doc/classes/OS.xml
 msgid ""
@@ -42386,6 +43206,21 @@ msgid ""
 "the project if it is currently running (since the project is an independent "
 "child process)."
 msgstr ""
+"Задерживает выполнение текущего потока на [code]usec[/code] микросекунд. "
+"[code]usec[/code] должно быть больше или равно [code]0[/code]. В противном "
+"случае [метод delay_usec] ничего не сделает и выведет сообщение об ошибке.\n"
+"[b]Примечание:[/b] [method delay_usec] - это [i]блокирующий[/i] способ "
+"задержки выполнения кода. Чтобы задержать выполнение кода неблокирующим "
+"способом, смотрите [method SceneTree.create_timer]. Выдача с помощью [method "
+"SceneTree.create_timer] задержит выполнение кода, размещенного ниже "
+"[code]выдачи[/code] без влияния на остальную часть проекта (или редактора, "
+"для [EditorPlugin]ов и [EditorScript]ов).\n"
+"[b]Примечание:[/b] Если [метод delay_usec] вызывается в главном потоке, он "
+"замораживает проект и не позволяет ему перерисовывать и регистрировать ввод, "
+"пока не пройдет задержка. При использовании [method delay_usec] как части "
+"[EditorPlugin] или [EditorScript], он заморозит редактор, но не заморозит "
+"проект, если он запущен (поскольку проект является независимым дочерним "
+"процессом)."
 
 #: doc/classes/OS.xml
 msgid ""
@@ -42474,11 +43309,11 @@ msgstr "Возвращает вектор привязанный к сетке �
 #: doc/classes/OS.xml
 msgid ""
 "Returns the [i]global[/i] cache data directory according to the operating "
-"system's standards. On desktop platforms, this path can be overridden by "
-"setting the [code]XDG_CACHE_HOME[/code] environment variable before starting "
-"the project. See [url=$DOCS_URL/tutorials/io/data_paths.html]File paths in "
-"Godot projects[/url] in the documentation for more information. See also "
-"[method get_config_dir] and [method get_data_dir].\n"
+"system's standards. On Linux, this path can be overridden by setting the "
+"[code]XDG_CACHE_HOME[/code] environment variable before starting the "
+"project. See [url=$DOCS_URL/tutorials/io/data_paths.html]File paths in Godot "
+"projects[/url] in the documentation for more information. See also [method "
+"get_config_dir] and [method get_data_dir].\n"
 "Not to be confused with [method get_user_data_dir], which returns the "
 "[i]project-specific[/i] user data path."
 msgstr ""
@@ -42508,15 +43343,38 @@ msgid ""
 "        arguments[argument.lstrip(\"--\")] = \"\"\n"
 "[/codeblock]"
 msgstr ""
+"Возвращает аргументы командной строки, переданные движку.\n"
+"Аргументы командной строки могут быть записаны в любой форме, включая формы "
+"[code]--key value[/code] и [code]--key=value[/code], чтобы они могли быть "
+"правильно разобраны, при условии, что пользовательские аргументы командной "
+"строки не конфликтуют с аргументами движка.\n"
+"Вы также можете включить переменные окружения, используя метод [method "
+"get_environment].\n"
+"Вы можете установить [member ProjectSettings.editor/main_run_args] для "
+"определения аргументов командной строки, которые будут передаваться "
+"редактором при запуске проекта.\n"
+"Вот минимальный пример того, как разобрать аргументы командной строки в "
+"словарь, используя форму [code]--key=value[/code] для аргументов:\n"
+"[codeblock].\n"
+"var arguments = {}\n"
+"for argument in OS.get_cmdline_args():\n"
+"    if argument.find(\"=\") > -1:\n"
+"        var key_value = argument.split(\"=\")\n"
+"        arguments[key_value[0].lstrip(\"--\")] = key_value[1]\n"
+"    else:\n"
+"        # Опции без аргумента будут присутствовать в словаре,\n"
+"        # со значением, установленным в пустую строку.\n"
+"        arguments[argument.lstrip(\"--\")] = \"\"\n"
+"[/codeblock]"
 
 #: doc/classes/OS.xml
 msgid ""
 "Returns the [i]global[/i] user configuration directory according to the "
-"operating system's standards. On desktop platforms, this path can be "
-"overridden by setting the [code]XDG_CONFIG_HOME[/code] environment variable "
-"before starting the project. See [url=$DOCS_URL/tutorials/io/data_paths."
-"html]File paths in Godot projects[/url] in the documentation for more "
-"information. See also [method get_cache_dir] and [method get_data_dir].\n"
+"operating system's standards. On Linux, this path can be overridden by "
+"setting the [code]XDG_CONFIG_HOME[/code] environment variable before "
+"starting the project. See [url=$DOCS_URL/tutorials/io/data_paths.html]File "
+"paths in Godot projects[/url] in the documentation for more information. See "
+"also [method get_cache_dir] and [method get_data_dir].\n"
 "Not to be confused with [method get_user_data_dir], which returns the "
 "[i]project-specific[/i] user data path."
 msgstr ""
@@ -42538,11 +43396,11 @@ msgstr ""
 #: doc/classes/OS.xml
 msgid ""
 "Returns the [i]global[/i] user data directory according to the operating "
-"system's standards. On desktop platforms, this path can be overridden by "
-"setting the [code]XDG_DATA_HOME[/code] environment variable before starting "
-"the project. See [url=$DOCS_URL/tutorials/io/data_paths.html]File paths in "
-"Godot projects[/url] in the documentation for more information. See also "
-"[method get_cache_dir] and [method get_config_dir].\n"
+"system's standards. On Linux, this path can be overridden by setting the "
+"[code]XDG_DATA_HOME[/code] environment variable before starting the project. "
+"See [url=$DOCS_URL/tutorials/io/data_paths.html]File paths in Godot "
+"projects[/url] in the documentation for more information. See also [method "
+"get_cache_dir] and [method get_config_dir].\n"
 "Not to be confused with [method get_user_data_dir], which returns the "
 "[i]project-specific[/i] user data path."
 msgstr ""
@@ -43708,9 +44566,8 @@ msgid "Ringtones directory path."
 msgstr ""
 
 #: doc/classes/OS.xml
-#, fuzzy
 msgid "Unknown powerstate."
-msgstr "Неизвестная клавиша."
+msgstr "Неизвестное состояние питания."
 
 #: doc/classes/OS.xml
 msgid "Unplugged, running on battery."
@@ -44421,6 +45278,16 @@ msgstr ""
 
 #: doc/classes/Particles2D.xml
 msgid "Particle systems (2D)"
+msgstr ""
+
+#: doc/classes/Particles2D.xml
+msgid "2D Particles Demo"
+msgstr ""
+
+#: doc/classes/Particles2D.xml
+msgid ""
+"2D Dodge The Creeps Demo (uses GPUParticles2D for the trail behind the "
+"player)"
 msgstr ""
 
 #: doc/classes/Particles2D.xml
@@ -45139,7 +46006,7 @@ msgstr ""
 
 #: doc/classes/PHashTranslation.xml
 msgid "Optimized translation."
-msgstr ""
+msgstr "Оптимизированный перевод."
 
 #: doc/classes/PHashTranslation.xml
 msgid ""
@@ -45170,7 +46037,7 @@ msgstr ""
 #: doc/classes/PhysicsDirectBodyState.xml
 #: doc/classes/PhysicsDirectSpaceState.xml doc/classes/RayCast.xml
 msgid "Ray-casting"
-msgstr ""
+msgstr "Трассировка лучей"
 
 #: doc/classes/Physics2DDirectBodyState.xml doc/classes/RigidBody2D.xml
 msgid "Adds a constant directional force without affecting rotation."
@@ -45387,6 +46254,23 @@ msgid ""
 "[code]rid[/code]: The intersecting object's [RID].\n"
 "[code]shape[/code]: The shape index of the colliding shape."
 msgstr ""
+"Проверяет пересечения фигуры, заданной через объект "
+"[Physics2DShapeQueryParameters], с пространством. Если она пересекается с "
+"более чем одной фигурой, выбирается ближайшая. Если фигура ни с чем не "
+"пересекается, то возвращается пустой словарь.\n"
+"[b]Примечание:[/b] Этот метод не учитывает свойство [code]движения[/code] "
+"объекта. Возвращаемый объект представляет собой словарь, содержащий "
+"следующие поля:\n"
+"[code]collider_id[/code]: ID сталкивающегося объекта.\n"
+"[code]linear_velocity[/code]: Скорость объекта столкновения [Vector2]. Если "
+"объект является [Area2D], то результатом будет [code](0, 0)[/code].\n"
+"[code]метаданные[/code]: Метаданные пересекающейся фигуры. Эти метаданные "
+"отличаются от [метод Object.get_meta], и устанавливаются с помощью [метод "
+"Physics2DServer.shape_set_data].\n"
+"[code]normal[/code]: Нормаль поверхности объекта в точке пересечения.\n"
+"[code]точка[/code]: Точка пересечения.\n"
+"[code]rid[/code]: [RID] пересекающегося объекта.\n"
+"[code]shape[/code]: Индекс формы сталкивающейся фигуры."
 
 #: doc/classes/Physics2DDirectSpaceState.xml
 msgid ""
@@ -45411,6 +46295,26 @@ msgid ""
 "[code]Segments[/code] build mode are not solid shapes. Therefore, they will "
 "not be detected."
 msgstr ""
+"Проверяет, находится ли точка внутри какой-либо твердой фигуры. Фигуры, "
+"внутри которых находится точка, возвращаются в виде массива, содержащего "
+"словари со следующими полями:\n"
+"[code]collider[/code]: Объект столкновения.\n"
+"[code]collider_id[/code]: ID объекта столкновения.\n"
+"[code]metadata[/code]: Метаданные пересекающейся фигуры. Эти метаданные "
+"отличаются от [метод Object.get_meta], и устанавливаются с помощью [метод "
+"Physics2DServer.shape_set_data].\n"
+"[code]rid[/code]: [RID] пересекающегося объекта.\n"
+"[code]shape[/code]: Индекс формы сталкивающейся фигуры.\n"
+"Количество пересечений может быть ограничено с помощью параметра "
+"[code]max_results[/code], чтобы уменьшить время обработки.\n"
+"Кроме того, метод может принимать [code]exclude[/code] массив объектов или "
+"[RID]ов, которые должны быть исключены из столкновений, "
+"[code]collision_mask[/code] битовую маску, представляющую физические слои "
+"для проверки, или булевы для определения того, должен ли луч столкнуться с "
+"[PhysicsBody2D]s или [Area2D]s, соответственно.\n"
+"[b]Примечание:[/b] [ConcavePolygonShape2D]s и [CollisionPolygon2D]s в режиме "
+"построения [code]Segments[/code] не являются твердыми фигурами. Поэтому они "
+"не будут обнаружены."
 
 #: doc/classes/Physics2DDirectSpaceState.xml
 msgid ""
@@ -45457,6 +46361,24 @@ msgid ""
 "determine if the ray should collide with [PhysicsBody2D]s or [Area2D]s, "
 "respectively."
 msgstr ""
+"Пересекает луч в заданном пространстве. Возвращаемый объект представляет "
+"собой словарь со следующими полями:\n"
+"[code]collider[/code]: Объект столкновения.\n"
+"[code]collider_id[/code]: Идентификатор объекта столкновения.\n"
+"[code]metadata[/code]: Метаданные пересекающейся фигуры. Эти метаданные "
+"отличаются от [метод Object.get_meta], и устанавливаются с помощью [метод "
+"Physics2DServer.shape_set_data].\n"
+"[code]normal[/code]: Нормаль поверхности объекта в точке пересечения.\n"
+"[code]position[/code]: Точка пересечения.\n"
+"[code]rid[/code]: [RID] пересекающегося объекта.\n"
+"[code]shape[/code]: Индекс формы пересекающегося объекта.\n"
+"Если луч ни с чем не пересекается, то вместо него возвращается пустой "
+"словарь.\n"
+"Кроме того, метод может принимать [code]exclude[/code] массив объектов или "
+"[RID], которые должны быть исключены из столкновений, [code]collision_mask[/"
+"code] битовую маску, представляющую физические слои для проверки, или булевы "
+"для определения того, должен ли луч столкнуться с [PhysicsBody2D]s или "
+"[Area2D]s, соответственно."
 
 #: doc/classes/Physics2DDirectSpaceState.xml
 msgid ""
@@ -47563,6 +48485,22 @@ msgid ""
 "will allow for unbounded output. If any positive value is passed, and the "
 "decompression exceeds that amount in bytes, then an error will be returned."
 msgstr ""
+"Возвращает новый [PoolByteArray] с распакованными данными. Установите режим "
+"сжатия, используя одну из констант [enum File.CompressionMode]. [b]Этот "
+"метод принимает только режимы сжатия gzip и deflate.[/b]\n"
+"Этот метод потенциально медленнее, чем [code]decompress[/code], так как ему "
+"может потребоваться многократное перераспределение выходного буфера во время "
+"декомпрессии, в то время как [code]decompress[/code] знает размер своего "
+"выходного буфера с самого начала.\n"
+"\n"
+"GZIP имеет максимальный коэффициент сжатия 1032:1, что означает, что очень "
+"возможно, что небольшая сжатая полезная нагрузка распакуется в потенциально "
+"очень большой выходной файл. Чтобы защититься от этого, вы можете указать "
+"максимальный размер, который этой функции разрешено выделять в байтах через "
+"[code]max_output_size[/code]. Если передать значение -1, то можно выводить "
+"неограниченное количество данных. Если передано любое положительное "
+"значение, и распаковка превышает этот размер в байтах, то будет возвращена "
+"ошибка."
 
 #: doc/classes/PoolByteArray.xml doc/classes/PoolColorArray.xml
 #: doc/classes/PoolIntArray.xml doc/classes/PoolRealArray.xml
@@ -48634,6 +49572,19 @@ msgid ""
 "There is no need to place an opposite portal in an adjacent room, links are "
 "made two-way automatically."
 msgstr ""
+"[Порталы - это особый тип [MeshInstance], который позволяет системе отбора "
+"порталов \"видеть\" из одной комнаты в другую. Они часто соответствуют "
+"дверям и окнам в геометрии уровня. Позволяя [Camera]s видеть только через "
+"порталы, это позволяет системе отсеивать все объекты в комнатах, которые не "
+"видны через порталы. Это одна из форм окклюзионной выборки [b][/b] , которая "
+"может значительно повысить производительность.\n"
+"Существуют некоторые ограничения на форму порталов:\n"
+"Они должны быть односторонними выпуклыми многоугольниками, и обычно вы "
+"должны ориентировать их передние грани [b]наружу[/b] от [Комнаты], в которой "
+"они расположены. Вершины должны располагаться в одной плоскости (хотя их "
+"расположение не обязательно должно быть идеальным).\n"
+"Нет необходимости размещать противоположный портал в соседней комнате, связи "
+"делаются двусторонними автоматически."
 
 #: doc/classes/Portal.xml doc/classes/Room.xml
 msgid "Sets individual points. Primarily for use by the editor."
@@ -49288,6 +50239,21 @@ msgid ""
 "([code]stderr[/code]) is always flushed when a line is printed to it.\n"
 "Changes to this setting will only be applied upon restarting the application."
 msgstr ""
+"Если [code]true[/code], то поток стандартного вывода очищается каждый раз, "
+"когда печатается строка. Это влияет как на ведение журналов в терминале, так "
+"и на ведение журналов в файлах.\n"
+"При запуске проекта этот параметр должен быть включен, если вы хотите, чтобы "
+"журналы собирались менеджерами служб, такими как systemd/journalctl. Эта "
+"настройка отключена по умолчанию в сборках релизов, поскольку промывка "
+"каждой напечатанной строки негативно скажется на производительности, если "
+"много строк печатается в быстрой последовательности. Кроме того, если эта "
+"настройка включена, файлы журналов будут успешно записаны, если приложение "
+"аварийно завершено или иным образом убито пользователем (не будучи закрытым "
+"\"нормально\").\n"
+"[b]Примечание:[/b] Независимо от этой настройки, стандартный поток ошибок "
+"([code]stderr[/code]) всегда промывается, когда в него печатается строка.\n"
+"Изменения в этой настройке будут применены только после перезапуска "
+"приложения."
 
 #: doc/classes/ProjectSettings.xml
 msgid ""
@@ -51410,6 +52376,23 @@ msgid ""
 "[b]Note:[/b] This property is only read when the project starts. To change "
 "the value at runtime, set [member Engine.physics_jitter_fix] instead."
 msgstr ""
+"Управляет тем, насколько тики физики синхронизированы с реальным временем. "
+"При значении 0 или меньше тики синхронизируются. Такие значения "
+"рекомендуются для сетевых игр, где синхронизация часов имеет значение. "
+"Большие значения приводят к большему отклонению внутриигровых часов от "
+"реальных, но позволяют сгладить дрожание кадров. Значение по умолчанию 0,5 "
+"должно устраивать большинство; значения выше 2 могут привести к тому, что "
+"игра будет реагировать на выпадение кадров с заметной задержкой, поэтому не "
+"рекомендуется.\n"
+"[b]Примечание:[/b] Для достижения наилучших результатов при использовании "
+"пользовательского решения интерполяции физики, исправление джиттера физики "
+"следует отключить, установив [member physics/common/physics_jitter_fix] на "
+"[code]0[/code].\n"
+"[b]Примечание:[/b] Фиксация джиттера автоматически отключается во время "
+"выполнения, если включен [member physics/common/physics_interpolation].\n"
+"[b]Примечание:[/b] Это свойство считывается только при запуске проекта. "
+"Чтобы изменить значение во время выполнения, установите [member Engine."
+"physics_jitter_fix] вместо этого."
 
 #: doc/classes/ProjectSettings.xml
 msgid ""
@@ -52049,6 +53032,23 @@ msgid ""
 "[b]Note:[/b] This property is only read when the project starts. There is "
 "currently no way to change this setting at run-time."
 msgstr ""
+"Максимальный уровень анизотропного фильтра, используемый для текстур с "
+"включенной анизотропией. Более высокие значения приводят к более четким "
+"текстурам при просмотре под косыми углами, но за счет снижения "
+"производительности. За исключением [code]1[/code], допустимы только "
+"значения, равные двум целым ([code]2[/code], [code]4[/code], [code]8[/code], "
+"[code]16[/code]). Значение [code]1[/code] принудительно отключает "
+"анизотропную фильтрацию, даже на тех текстурах, где она включена.\n"
+"[b]Примечание:[/b] По причинам производительности анизотропная фильтрация "
+"[i]не включена по умолчанию[/i] на текстурах. Чтобы эта настройка имела "
+"эффект, анизотропную фильтрацию текстуры можно включить, выбрав текстуру в "
+"доке FileSystem, перейдя в док Import, установив флажок [b]Anisotropic[/b] и "
+"нажав [b]Reimport[/b]. Однако анизотропная фильтрация редко бывает полезной "
+"в 2D, поэтому включайте ее для текстур в 2D, только если это дает значимую "
+"визуальную разницу.\n"
+"[b]Примечание:[/b] Это свойство считывается только при запуске проекта. В "
+"настоящее время не существует способа изменить этот параметр во время "
+"выполнения проекта."
 
 #: doc/classes/ProjectSettings.xml
 msgid ""
@@ -52070,15 +53070,22 @@ msgstr ""
 #: doc/classes/ProjectSettings.xml
 msgid ""
 "If [code]true[/code], uses a fast post-processing filter to make banding "
-"significantly less visible. In some cases, debanding may introduce a "
-"slightly noticeable dithering pattern. It's recommended to enable debanding "
-"only when actually needed since the dithering pattern will make lossless-"
-"compressed screenshots larger.\n"
+"significantly less visible in 3D. 2D rendering is [i]not[/i] affected by "
+"debanding unless the [member Environment.background_mode] is [constant "
+"Environment.BG_CANVAS]. In this case, [member rendering/quality/"
+"intended_usage/framebuffer_allocation] must also be set to [b]3D[/b].\n"
+"In some cases, debanding may introduce a slightly noticeable dithering "
+"pattern. It's recommended to enable debanding only when actually needed "
+"since the dithering pattern will make lossless-compressed screenshots "
+"larger.\n"
 "[b]Note:[/b] Only available on the GLES3 backend. [member rendering/quality/"
 "depth/hdr] must also be [code]true[/code] for debanding to be effective.\n"
 "[b]Note:[/b] There are known issues with debanding breaking rendering on "
 "mobile platforms. Due to this, it is recommended to leave this option "
-"disabled when targeting mobile platforms."
+"disabled when targeting mobile platforms.\n"
+"[b]Note:[/b] This property is only read when the project starts. To set "
+"debanding at run-time, set [member Viewport.debanding] on the root "
+"[Viewport] instead."
 msgstr ""
 
 #: doc/classes/ProjectSettings.xml
@@ -52648,7 +53655,7 @@ msgstr ""
 
 #: doc/classes/Quat.xml
 msgid "Quaternion."
-msgstr ""
+msgstr "Кватернион."
 
 #: doc/classes/Quat.xml
 msgid ""
@@ -52931,6 +53938,24 @@ msgid ""
 "state], and not the initial seed value, which is going to be fixed in Godot "
 "4.0."
 msgstr ""
+"Инициализирует состояние генератора случайных чисел на основе заданного "
+"значения seed. Заданное значение семени дает воспроизводимую "
+"последовательность псевдослучайных чисел.\n"
+"[b]Примечание:[/b] RNG не обладает лавинным эффектом и может выдавать "
+"похожие случайные потоки при одинаковых семенах. Рассмотрите возможность "
+"использования хэш-функции для улучшения качества семян, если они получены "
+"извне.\n"
+"[b]Примечание:[/b] Установка этого свойства приводит к побочному эффекту "
+"изменения внутреннего [member state], поэтому убедитесь, что семя "
+"инициализировано [i], прежде чем[/i] изменять [member state]:\n"
+"[блок кода]\n"
+"var rng = RandomNumberGenerator.new()\n"
+"rng.seed = hash(\"Godot\")\n"
+"rng.state = 100 # Восстановление к некоторому ранее сохраненному состоянию.\n"
+"[/codeblock].\n"
+"[b]Предупреждение:[/b] геттер этого свойства возвращает предыдущее состояние "
+"[member state], а не начальное значение seed, что будет исправлено в Godot "
+"4.0."
 
 #: doc/classes/RandomNumberGenerator.xml
 msgid ""
@@ -53070,6 +54095,20 @@ msgid ""
 "queries are required between physics frames (or during the same frame), use "
 "[method force_raycast_update] after adjusting the raycast."
 msgstr ""
+"RayCast представляет собой линию от начала координат до места назначения, "
+"[code]cast_to[/code]. Он используется для запроса трехмерного пространства, "
+"чтобы найти ближайший объект на пути луча.\n"
+"RayCast может игнорировать некоторые объекты, добавляя их в список "
+"исключений через [code]add_exception[/code] или устанавливая надлежащую "
+"фильтрацию с помощью слоев столкновений и масок.\n"
+"RayCast может быть настроен на сообщение о столкновениях с [Area]s ([member "
+"collide_with_areas]) и/или [PhysicsBody]s ([member collide_with_bodies]).\n"
+"Только включенные лучевые передачи смогут запрашивать пространство и "
+"сообщать о столкновениях.\n"
+"RayCast вычисляет пересечение каждый кадр физики (см. [Node]), и результат "
+"кэшируется, чтобы его можно было использовать позже, до следующего кадра. "
+"Если требуется несколько запросов между кадрами физики (или в течение одного "
+"кадра), используйте [метод force_raycast_update] после настройки рэйкаста."
 
 #: doc/classes/RayCast.xml doc/classes/RayCast2D.xml
 msgid ""
@@ -53220,6 +54259,22 @@ msgid ""
 "queries are required between physics frames (or during the same frame) use "
 "[method force_raycast_update] after adjusting the raycast."
 msgstr ""
+"RayCast представляет собой линию от начала координат до места назначения, "
+"[code]cast_to[/code]. Он используется для запроса двумерного пространства с "
+"целью найти ближайший объект на пути луча.\n"
+"RayCast2D может игнорировать некоторые объекты, добавляя их в список "
+"исключений через [code]add_exception[/code], устанавливая правильную "
+"фильтрацию с помощью слоев столкновений или фильтруя типы объектов с помощью "
+"масок типов.\n"
+"RayCast2D может быть настроен на сообщение о столкновениях с [Area2D]s "
+"([member collide_with_areas]) и/или [PhysicsBody2D]s ([member "
+"collide_with_bodies]).\n"
+"Только включенные лучевые передачи смогут запрашивать пространство и "
+"сообщать о столкновениях.\n"
+"RayCast2D вычисляет пересечение каждый кадр физики (см. [Node]), и результат "
+"кэшируется, чтобы его можно было использовать позже, до следующего кадра. "
+"Если требуется несколько запросов между кадрами физики (или в течение одного "
+"кадра), используйте [метод force_raycast_update] после настройки рэйкаста."
 
 #: doc/classes/RayCast2D.xml
 msgid ""
@@ -53426,6 +54481,21 @@ msgid ""
 "free references that are no longer in use. This means that unused references "
 "will linger on for a while before being removed."
 msgstr ""
+"Базовый класс для любого объекта, который ведет подсчет ссылок. [Resource] и "
+"многие другие вспомогательные объекты наследуют этот класс.\n"
+"В отличие от других типов [Object], ссылки ведут внутренний счетчик ссылок, "
+"поэтому они автоматически освобождаются, когда больше не используются, и "
+"только тогда. Поэтому ссылки не нужно освобождать вручную с помощью [метода "
+"Object.free].\n"
+"В подавляющем большинстве случаев инстанцирование и использование "
+"[Reference]-производных типов - это все, что вам нужно сделать. Методы, "
+"предоставляемые в этом классе, предназначены только для опытных "
+"пользователей и могут вызвать проблемы при неправильном использовании.\n"
+"[b]Примечание:[/b] В C# ссылки не освобождаются мгновенно после того, как "
+"они перестают использоваться. Вместо этого сборка мусора будет выполняться "
+"периодически и освобождать ссылки, которые больше не используются. Это "
+"означает, что неиспользуемые ссылки будут существовать некоторое время, "
+"прежде чем будут удалены."
 
 #: doc/classes/Reference.xml
 msgid ""
@@ -53728,17 +54798,28 @@ msgstr ""
 #: modules/regex/doc_classes/RegEx.xml
 msgid ""
 "Searches the text for the compiled pattern. Returns a [RegExMatch] container "
-"of the first matching result if found, otherwise [code]null[/code]. The "
-"region to search within can be specified without modifying where the start "
-"and end anchor would be."
+"of the first matching result if found, otherwise [code]null[/code].\n"
+"The region to search within can be specified with [code]offset[/code] and "
+"[code]end[/code]. This is useful when searching for another match in the "
+"same [code]subject[/code] by calling this method again after a previous "
+"success. Setting these parameters differs from passing over a shortened "
+"string. For example, the start anchor [code]^[/code] is not affected by "
+"[code]offset[/code], and the character before [code]offset[/code] will be "
+"checked for the word boundary [code]\\b[/code]."
 msgstr ""
 
 #: modules/regex/doc_classes/RegEx.xml
 msgid ""
 "Searches the text for the compiled pattern. Returns an array of [RegExMatch] "
 "containers for each non-overlapping result. If no results were found, an "
-"empty array is returned instead. The region to search within can be "
-"specified without modifying where the start and end anchor would be."
+"empty array is returned instead.\n"
+"The region to search within can be specified with [code]offset[/code] and "
+"[code]end[/code]. This is useful when searching for another match in the "
+"same [code]subject[/code] by calling this method again after a previous "
+"success. Setting these parameters differs from passing over a shortened "
+"string. For example, the start anchor [code]^[/code] is not affected by "
+"[code]offset[/code], and the character before [code]offset[/code] will be "
+"checked for the word boundary [code]\\b[/code]."
 msgstr ""
 
 #: modules/regex/doc_classes/RegEx.xml
@@ -53747,8 +54828,14 @@ msgid ""
 "specified string. Escapes and backreferences such as [code]$1[/code] and "
 "[code]$name[/code] are expanded and resolved. By default, only the first "
 "instance is replaced, but it can be changed for all instances (global "
-"replacement). The region to search within can be specified without modifying "
-"where the start and end anchor would be."
+"replacement).\n"
+"The region to search within can be specified with [code]offset[/code] and "
+"[code]end[/code]. This is useful when searching for another match in the "
+"same [code]subject[/code] by calling this method again after a previous "
+"success. Setting these parameters differs from passing over a shortened "
+"string. For example, the start anchor [code]^[/code] is not affected by "
+"[code]offset[/code], and the character before [code]offset[/code] will be "
+"checked for the word boundary [code]\\b[/code]."
 msgstr ""
 
 #: modules/regex/doc_classes/RegExMatch.xml
@@ -53901,10 +54988,24 @@ msgid ""
 "free resources that are no longer in use. This means that unused resources "
 "will linger on for a while before being removed."
 msgstr ""
+"Resource - это базовый класс для всех специфических для Godot типов "
+"ресурсов, служащих в основном в качестве контейнеров данных. Поскольку они "
+"наследуются от [Reference], ресурсы учитываются по ссылкам и освобождаются, "
+"когда больше не используются. Они также кэшируются после загрузки с диска, "
+"так что все последующие попытки загрузить ресурс по заданному пути будут "
+"возвращать ту же ссылку (в отличие от [Node], который не учитывается по "
+"ссылкам и может инстанцироваться с диска сколько угодно раз). Ресурсы могут "
+"быть сохранены на внешнем диске или вложены в другой объект, например, "
+"[Node] или другой ресурс.\n"
+"[b]Примечание:[/b] В C# ресурсы не будут освобождаться мгновенно после того, "
+"как они перестанут использоваться. Вместо этого сборка мусора будет "
+"выполняться периодически и освобождать ресурсы, которые больше не "
+"используются. Это означает, что неиспользуемые ресурсы будут существовать "
+"некоторое время, прежде чем будут удалены."
 
 #: doc/classes/Resource.xml
 msgid "Resources"
-msgstr ""
+msgstr "Ресурсы"
 
 #: doc/classes/Resource.xml
 msgid ""
@@ -54261,6 +55362,24 @@ msgid ""
 "be used in most situations, leaving the use of [ResourceLoader] for more "
 "advanced scenarios."
 msgstr ""
+"Загружает ресурс по заданному [code]пути[/code] , кэшируя результат для "
+"последующего доступа.\n"
+"Зарегистрированные [ResourceFormatLoader]ы последовательно запрашиваются, "
+"чтобы найти первый, который может обрабатывать расширение файла, и затем "
+"выполняется попытка загрузки. Если загрузка не удалась, остальные "
+"ResourceFormatLoader'ы также будут опрошены.\n"
+"Необязательный [code]type_hint[/code] может быть использован для дальнейшего "
+"указания типа [Resource], который должен обрабатываться "
+"[ResourceFormatLoader]. В качестве подсказки типа можно использовать все, "
+"что наследуется от [Resource], например [Image].\n"
+"Если [code]no_cache[/code] is [code]true[/code], кэш ресурса будет обойден и "
+"ресурс будет загружен заново. В противном случае будет возвращен "
+"кэшированный ресурс, если он существует.\n"
+"Возвращает пустой ресурс, если ни один [ResourceFormatLoader] не смог "
+"обработать файл.\n"
+"GDScript имеет упрощенный встроенный метод [method @GDScript.load], который "
+"можно использовать в большинстве ситуаций, оставляя использование "
+"[ResourceLoader] для более сложных сценариев."
 
 #: doc/classes/ResourceLoader.xml
 msgid ""
@@ -55176,6 +56295,26 @@ msgid ""
 "[ConcavePolygonShape]. Don't use multiple [CollisionShape]s when using a "
 "[ConcavePolygonShape] with Bullet physics if you need shape indices."
 msgstr ""
+"Выдается при столкновении одного из [Shape] этого RigidBody с другим "
+"[PhysicsBody] или [GridMap] [Shape]. Требуется, чтобы [member "
+"contact_monitor] был установлен в [code]true[/code] и [member "
+"contacts_reported] был установлен достаточно высоким, чтобы обнаружить все "
+"столкновения. [GridMap]ы обнаруживаются, если в [MeshLibrary] есть [Shape]ы "
+"столкновений.\n"
+"[code]body_rid[/code] [RID] другого [PhysicsBody] или [MeshLibrary] "
+"[CollisionObject], используемого [PhysicsServer].\n"
+"[code]body[/code] [Узел], если он существует в дереве, другого [PhysicsBody] "
+"или [GridMap].\n"
+"[code]body_shape_index[/code] индекс [Shape] другого [PhysicsBody] или "
+"[GridMap], используемого [PhysicsServer]. Получите узел [CollisionShape] с "
+"помощью [code]body.shape_owner_get_owner(body_shape_index)[/code].\n"
+"[code]local_shape_index[/code] индекс [Shape] этого RigidBody, используемый "
+"[PhysicsServer]. Получите узел [CollisionShape] с помощью [code]self."
+"shape_owner_get_owner(local_shape_index)[/code].\n"
+"[b]Примечание:[/b] Физика пули не может определить индекс формы при "
+"использовании [ConcavePolygonShape]. Не используйте несколько "
+"[CollisionShape] при использовании [ConcavePolygonShape] с физикой Bullet, "
+"если вам нужны индексы формы."
 
 #: doc/classes/RigidBody.xml
 msgid ""
@@ -55682,11 +56821,15 @@ msgstr ""
 msgid ""
 "Switches the portal culling system on and off.\n"
 "It is important to note that when portal culling is active, it is "
-"responsible for [b]all[/b] the 3d culling. Some editor functionality may be "
-"more difficult to use, so switching the active flag is intended to be used "
-"to make sure your [Room] / [Portal] layout works within the editor.\n"
+"responsible for [b]all[/b] the 3d culling. Some editor visual debugging "
+"helpers may not be available when active, so switching the active flag is "
+"intended to be used to ensure your [Room] / [Portal] layout works within the "
+"editor.\n"
 "Switching to [code]active[/code] will have no effect when the [code]room "
-"graph[/code] is unloaded (the rooms have not yet been converted)."
+"graph[/code] is unloaded (the rooms have not yet been converted).\n"
+"[b]Note:[/b] For efficiency, the portal system is designed to work with only "
+"the core visual object types. In particular, only nodes derived from "
+"[VisualInstance] are expected to show when the system is active."
 msgstr ""
 
 #: doc/classes/RoomManager.xml
@@ -55784,6 +56927,19 @@ msgid ""
 "your room and object sizes, and movement speeds. The default value should "
 "work reasonably in most circumstances."
 msgstr ""
+"Чтобы уменьшить обработку данных для перемещаемых объектов, к их AABB "
+"применяется расширение по мере их перемещения. Этот расширенный объем "
+"используется для расчета комнат, в которых находится перемещаемый объект. "
+"Если точный AABB объекта все еще находится в пределах этого расширенного "
+"объема при следующем перемещении, нет необходимости повторно обрабатывать "
+"объект, что может сэкономить значительное количество CPU.\n"
+"Недостатком является то, что если расширение слишком велико, объект может "
+"неожиданно распространиться в соседние комнаты и появиться там, где в "
+"противном случае он мог бы быть удален.\n"
+"Чтобы сбалансировать производительность роуминга и точность выбраковки, этот "
+"запас расширения может быть настроен пользователем. Обычно он зависит от "
+"размеров комнат и объектов, а также от скорости передвижения. Значение по "
+"умолчанию должно работать разумно в большинстве случаев."
 
 #: doc/classes/RoomManager.xml
 msgid ""
@@ -55863,6 +57019,19 @@ msgid ""
 "[code]extends RootMotionView[/code]. Additionally, it must not be a "
 "[code]tool[/code] script."
 msgstr ""
+"[i]Корневое движение[/i] относится к технике анимации, когда скелет сетки "
+"используется для придания импульса персонажу. При работе с 3D-анимацией "
+"популярной техникой является использование аниматорами корневой кости "
+"скелета для придания движения остальным частям скелета. Это позволяет "
+"анимировать персонажей таким образом, что шаги фактически соответствуют полу "
+"под ними. Это также позволяет точно взаимодействовать с объектами во время "
+"кинематографа. См. также [AnimationTree].\n"
+"[b]Примечание:[/b] [RootMotionView] виден только в редакторе. Он будет "
+"автоматически скрыт в работающем проекте, а также будет преобразован в "
+"обычный [Node] в работающем проекте. Это означает, что скрипт, прикрепленный "
+"к узлу [RootMotionView] [i]должен[/i] иметь [code]extends Node[/code] вместо "
+"[code]extends RootMotionView[/code]. Кроме того, он не должен быть скриптом "
+"[code]инструмента[/code]."
 
 #: doc/classes/RootMotionView.xml
 msgid "Using AnimationTree - Root motion"
@@ -56465,12 +57634,16 @@ msgid "Call a group immediately (calls are normally made on idle)."
 msgstr ""
 
 #: doc/classes/SceneTree.xml
-msgid "Call a group only once even if the call is executed many times."
+msgid ""
+"Call a group only once even if the call is executed many times.\n"
+"[b]Note:[/b] Arguments are not taken into account when deciding whether the "
+"call is unique or not. Therefore when the same method is called with "
+"different arguments, only the first call will be performed."
 msgstr ""
 
 #: doc/classes/SceneTree.xml
 msgid "No stretching."
-msgstr ""
+msgstr "Не растягивать."
 
 #: doc/classes/SceneTree.xml
 msgid "Render stretching in higher resolution (interpolated)."
@@ -56514,7 +57687,7 @@ msgstr ""
 
 #: doc/classes/SceneTreeTimer.xml
 msgid "One-shot timer."
-msgstr ""
+msgstr "Таймер на один снимок."
 
 #: doc/classes/SceneTreeTimer.xml
 msgid ""
@@ -56605,6 +57778,18 @@ msgid ""
 "[/codeblock]\n"
 "In the example above, all children of a node are moved one after another to "
 "position (0, 0).\n"
+"You should avoid using more than one [SceneTreeTween] per object's property. "
+"If two or more tweens animate one property at the same time, the last one "
+"created will take priority and assign the final value. If you want to "
+"interrupt and restart an animation, consider assigning the [SceneTreeTween] "
+"to a variable:\n"
+"[codeblock]\n"
+"var tween\n"
+"func animate():\n"
+"    if tween:\n"
+"        tween.kill() # Abort the previous animation.\n"
+"    tween = create_tween()\n"
+"[/codeblock]\n"
 "Some [Tweener]s use transitions and eases. The first accepts a [enum Tween."
 "TransitionType] constant, and refers to the way the timing of the animation "
 "is handled (see [url=https://easings.net/]easings.net[/url] for some "
@@ -56617,7 +57802,10 @@ msgid ""
 "tween_cheatsheet.png]Tween easing and transition types cheatsheet[/url]\n"
 "[b]Note:[/b] All [SceneTreeTween]s will automatically start by default. To "
 "prevent a [SceneTreeTween] from autostarting, you can call [method stop] "
-"immediately after it is created."
+"immediately after it is created.\n"
+"[b]Note:[/b] [SceneTreeTween]s are processing after all of nodes in the "
+"current frame, i.e. after [method Node._process] or [method Node."
+"_physics_process] (depending on [enum Tween.TweenProcessMode])."
 msgstr ""
 
 #: doc/classes/SceneTreeTween.xml
@@ -56689,6 +57877,23 @@ msgid ""
 "will always return the final value, regardless of [code]elapsed_time[/code] "
 "provided."
 msgstr ""
+"Этот метод можно использовать для ручной интерполяции значения, когда вы не "
+"хотите, чтобы [SceneTreeTween] выполнял анимацию за вас. Он похож на [method "
+"@GDScript.lerp], но с поддержкой пользовательского перехода и смягчения.\n"
+"[code]initial_value[/code] - начальное значение интерполяции.\n"
+"[code]delta_value[/code] - это изменение значения в интерполяции, т.е. оно "
+"равно [code]final_value - initial_value[/code].\n"
+"[code]elapsed_time[/code] - это время в секундах, прошедшее после начала "
+"интерполяции, которое используется для контроля положения интерполяции. "
+"Например, если оно равно половине длительности [code][/code] , "
+"интерполированное значение будет находиться на полпути между начальным и "
+"конечным значениями. Это значение также может быть больше, чем "
+"[code]duration[/code] или меньше, чем 0, что приведет к экстраполяции "
+"значения.\n"
+"[code]duration[/code] - общее время интерполяции.\n"
+"[b]Примечание:[/b] Если [code]duration[/code] равно [code]0[/code], метод "
+"всегда будет возвращать конечное значение, независимо от [code]elapsed_time[/"
+"code] предоставленного значения."
 
 #: doc/classes/SceneTreeTween.xml
 msgid ""
@@ -57463,6 +58668,22 @@ msgid ""
 "([code]shape_xform[/code]), and the movement to test onto the other object "
 "([code]shape_motion[/code])."
 msgstr ""
+"Возвращает список пар точек соприкосновения, где данная фигура могла бы "
+"коснуться другой, если бы было применено заданное движение.\n"
+"Если столкновений не будет, возвращаемый список пуст. В противном случае, "
+"возвращаемый список содержит попарно расположенные точки контакта, в которых "
+"чередуются точки на границе данной фигуры и точки на границе "
+"[code]with_shape[/code].\n"
+"Пара столкновений A, B может быть использована для вычисления нормали "
+"столкновения с помощью [code](B - A).normalized()[/code], и глубины "
+"столкновения с помощью [code](B - A).length()[/code]. Эта информация обычно "
+"используется для разделения фигур, особенно в решателях столкновений.\n"
+"Этому методу нужна матрица трансформации для данной фигуры "
+"([code]local_xform[/code]), движение для проверки этой фигуры "
+"([code]local_motion[/code]), фигура для проверки столкновений с ней "
+"([code]with_shape[/code]), матрица трансформации этой фигуры "
+"([code]shape_xform[/code]) и движение для проверки на другом объекте "
+"([code]shape_motion[/code])."
 
 #: doc/classes/Shape2D.xml
 msgid ""
@@ -57534,7 +58755,7 @@ msgstr ""
 
 #: doc/classes/Skeleton.xml
 msgid "[i]Deprecated soon.[/i]"
-msgstr ""
+msgstr "[i]Скоро будет устаревшим.[/i]"
 
 #: doc/classes/Skeleton.xml
 msgid "Clear all the bones in this skeleton."
@@ -58294,7 +59515,9 @@ msgid ""
 "[b]Note:[/b] Mixed negative scales in 3D are not decomposable from the "
 "transformation matrix. Due to the way scale is represented with "
 "transformation matrices in Godot, the scale values will either be all "
-"positive or all negative."
+"positive or all negative.\n"
+"[b]Note:[/b] Not all nodes are visually scaled by the [member scale] "
+"property. For example, [Light]s are not visually affected by [member scale]."
 msgstr ""
 
 #: doc/classes/Spatial.xml
@@ -59676,7 +60899,10 @@ msgid ""
 msgstr ""
 
 #: doc/classes/SpotLight.xml
-msgid "The spotlight's angle in degrees."
+msgid ""
+"The spotlight's angle in degrees.\n"
+"[b]Note:[/b] [member spot_angle] is not affected by [member Spatial.scale] "
+"(the light's scale or its parent's scale)."
 msgstr ""
 
 #: doc/classes/SpotLight.xml
@@ -59692,7 +60918,9 @@ msgid ""
 "The maximal range that can be reached by the spotlight. Note that the "
 "effectively lit area may appear to be smaller depending on the [member "
 "spot_attenuation] in use. No matter the [member spot_attenuation] in use, "
-"the light will never reach anything outside this range."
+"the light will never reach anything outside this range.\n"
+"[b]Note:[/b] [member spot_range] is not affected by [member Spatial.scale] "
+"(the light's scale or its parent's scale)."
 msgstr ""
 
 #: doc/classes/SpringArm.xml
@@ -60700,6 +61928,21 @@ msgid ""
 "To get a boolean result from a string comparison, use the [code]==[/code] "
 "operator instead. See also [method nocasecmp_to]."
 msgstr ""
+"Выполняет сравнение с другой строкой с учетом регистра. Возвращает [code]-1[/"
+"code], если меньше, [code]1[/code], если больше, или [code]0[/code], если "
+"равно. \"Меньше\" или \"больше\" определяются [url=https://en.wikipedia.org/"
+"wiki/List_of_Unicode_characters]кодовыми точками Unicode[/url] каждой "
+"строки, что примерно соответствует алфавитному порядку.\n"
+"[b]Поведение при различной длине строки:[/b] Возвращает [code]1[/code], если "
+"\"базовая\" строка длиннее строк [code]-[/code] или [code]-1[/code], если "
+"\"базовая\" строка короче строк [code]-[/code]. Следует помнить, что длина "
+"определяется количеством кодовых точек Юникода, [i]а не[/i] реально видимых "
+"символов.\n"
+"[b]Поведение с пустыми строками:[/b] Возвращает [code]-1[/code], если "
+"\"базовая\" строка пуста, [code]1[/code], если строки [code]-[/code] пусты, "
+"или [code]0[/code], если обе строки пусты.\n"
+"Чтобы получить булев результат сравнения строк, используйте вместо этого "
+"оператор [code]==[/code]. См. также [метод nocasecmp_to]."
 
 #: doc/classes/String.xml
 msgid ""
@@ -61104,6 +62347,22 @@ msgid ""
 "To get a boolean result from a string comparison, use the [code]==[/code] "
 "operator instead. See also [method casecmp_to]."
 msgstr ""
+"Выполняет сравнение с другой строкой без учета регистра. Возвращает "
+"[code]-1[/code], если меньше, [code]1[/code], если больше, или [code]0[/"
+"code], если равно. \"Меньше\" или \"больше\" определяется [url=https://en."
+"wikipedia.org/wiki/List_of_Unicode_characters]кодовыми точками Unicode[/url] "
+"каждой строки, что примерно соответствует алфавитному порядку. При сравнении "
+"символы нижнего регистра преобразуются в верхний регистр.\n"
+"[b]Поведение при различной длине строки:[/b] Возвращает [code]1[/code], если "
+"\"базовая\" строка длиннее, чем строки [code]-[/code] или [code]-1[/code], "
+"если \"базовая\" строка короче, чем строки [code]-[/code]. Следует помнить, "
+"что длина определяется количеством кодовых точек Юникода, [i]а не[/i] "
+"реально видимых символов.\n"
+"[b]Поведение с пустыми строками:[/b] Возвращает [code]-1[/code], если "
+"\"базовая\" строка пуста, [code]1[/code], если строки [code]-[/code] пусты, "
+"или [code]0[/code], если обе строки пусты.\n"
+"Чтобы получить булев результат сравнения строк, используйте вместо этого "
+"оператор [code]==[/code]. См. также [метод casecmp_to]."
 
 #: doc/classes/String.xml
 msgid "Returns the character code at position [code]at[/code]."
@@ -61193,6 +62452,24 @@ msgid ""
 "print(some_array[1]) # Prints \"Four\"\n"
 "[/codeblock]"
 msgstr ""
+"Разделяет строку по [code]разделителю[/code] и возвращает массив подстрок, "
+"начиная справа.\n"
+"Разделители в возвращаемом массиве сортируются в том же порядке, что и "
+"исходная строка, слева направо.\n"
+"Если [code]allow_empty[/code] равен [code]true[/code], и в строке есть два "
+"соседних разделителя, то в массив подстрок в этой позиции будет добавлена "
+"пустая строка.\n"
+"Если указано [code]maxsplit[/code], то это определяет количество разбиений "
+"справа до [code]maxsplit[/code]. Значение по умолчанию 0 означает, что все "
+"элементы разделяются, что дает тот же результат, что и [method split].\n"
+"Пример:\n"
+"[codeblock].\n"
+"var some_string = \"One,Two,Three,Four\"\n"
+"var some_array = some_string.rsplit(\",\", true, 1)\n"
+"print(some_array.size()) # Печатает 2\n"
+"print(some_array[0]) # Печатает \"Один, два, три\"\n"
+"print(some_array[1]) # Печатает \"Four\"\n"
+"[/codeblock]"
 
 #: doc/classes/String.xml
 msgid ""
@@ -61261,6 +62538,26 @@ msgid ""
 "If you need to split strings with more complex rules, use the [RegEx] class "
 "instead."
 msgstr ""
+"Разделяет строку по разделителю [code][/code] и возвращает массив подстрок. "
+"Разделитель [code][/code] может быть любой длины.\n"
+"Если [code]allow_empty[/code] равно [code]true[/code], и в строке есть два "
+"соседних разделителя, то в массив подстрок в этой позиции будет добавлена "
+"пустая строка.\n"
+"Если указано [code]maxsplit[/code], то это определяет количество разбиений "
+"слева до [code]maxsplit[/code]. Значение по умолчанию [code]0[/code] "
+"означает, что все элементы разделяются.\n"
+"Если вам нужен только один элемент из массива по определенному индексу, "
+"[метод get_slice] является более производительным вариантом.\n"
+"Пример:\n"
+"[codeblock].\n"
+"var some_string = \"One,Two,Three,Four\"\n"
+"var some_array = some_string.split(\",\", true, 1)\n"
+"print(some_array.size()) # Печатает 2\n"
+"print(some_array[0]) # Печатает \"Один\"\n"
+"print(some_array[1]) # Печатает \"Два, три, четыре\"\n"
+"[/codeblock].\n"
+"Если вам нужно разделить строки по более сложным правилам, используйте класс "
+"[RegEx]."
 
 #: doc/classes/String.xml
 msgid ""
@@ -62130,7 +63427,7 @@ msgstr ""
 
 #: doc/classes/TabContainer.xml
 msgid "Tabbed container."
-msgstr ""
+msgstr "Контейнер с вкладками."
 
 #: doc/classes/TabContainer.xml
 msgid ""
@@ -62384,7 +63681,7 @@ msgstr ""
 
 #: doc/classes/Tabs.xml
 msgid "Tabs control."
-msgstr ""
+msgstr "Управление вкладками."
 
 #: doc/classes/Tabs.xml
 msgid ""
@@ -62591,7 +63888,7 @@ msgstr ""
 
 #: doc/classes/TCP_Server.xml
 msgid "Stops listening."
-msgstr ""
+msgstr "Перестает слушать."
 
 #: doc/classes/TCP_Server.xml
 msgid ""
@@ -63866,7 +65163,7 @@ msgstr ""
 #: doc/classes/Theme.xml
 #, fuzzy
 msgid ""
-"Clears the [Color] at [code]name[/code] if the theme has [code]node_type[/"
+"Clears the [Color] at [code]name[/code] if the theme has [code]theme_type[/"
 "code]."
 msgstr ""
 "Сдвигает вектор к [code]to[/code] на фиксированное значение [code]delta[/"
@@ -63875,7 +65172,7 @@ msgstr ""
 #: doc/classes/Theme.xml
 #, fuzzy
 msgid ""
-"Clears the constant at [code]name[/code] if the theme has [code]node_type[/"
+"Clears the constant at [code]name[/code] if the theme has [code]theme_type[/"
 "code]."
 msgstr ""
 "Сдвигает вектор к [code]to[/code] на фиксированное значение [code]delta[/"
@@ -63884,7 +65181,7 @@ msgstr ""
 #: doc/classes/Theme.xml
 #, fuzzy
 msgid ""
-"Clears the [Font] at [code]name[/code] if the theme has [code]node_type[/"
+"Clears the [Font] at [code]name[/code] if the theme has [code]theme_type[/"
 "code]."
 msgstr ""
 "Сдвигает вектор к [code]to[/code] на фиксированное значение [code]delta[/"
@@ -63893,7 +65190,8 @@ msgstr ""
 #: doc/classes/Theme.xml
 #, fuzzy
 msgid ""
-"Clears the icon at [code]name[/code] if the theme has [code]node_type[/code]."
+"Clears the icon at [code]name[/code] if the theme has [code]theme_type[/"
+"code]."
 msgstr ""
 "Сдвигает вектор к [code]to[/code] на фиксированное значение [code]delta[/"
 "code]."
@@ -63901,15 +65199,18 @@ msgstr ""
 #: doc/classes/Theme.xml
 #, fuzzy
 msgid ""
-"Clears [StyleBox] at [code]name[/code] if the theme has [code]node_type[/"
+"Clears [StyleBox] at [code]name[/code] if the theme has [code]theme_type[/"
 "code]."
 msgstr "Возвращает [code]true[/code] если массив содержит [code]value[/code]."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Clears the theme item of [code]data_type[/code] at [code]name[/code] if the "
-"theme has [code]node_type[/code]."
+"theme has [code]theme_type[/code]."
 msgstr ""
+"Сдвигает вектор к [code]to[/code] на фиксированное значение [code]delta[/"
+"code]."
 
 #: doc/classes/Theme.xml
 msgid ""
@@ -63928,15 +65229,17 @@ msgstr ""
 #: doc/classes/Theme.xml
 #, fuzzy
 msgid ""
-"Returns the [Color] at [code]name[/code] if the theme has [code]node_type[/"
+"Returns the [Color] at [code]name[/code] if the theme has [code]theme_type[/"
 "code]."
 msgstr "Возвращает [code]true[/code] если массив содержит [code]value[/code]."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Returns all the [Color]s as a [PoolStringArray] filled with each [Color]'s "
-"name, for use in [method get_color], if the theme has [code]node_type[/code]."
-msgstr ""
+"name, for use in [method get_color], if the theme has [code]theme_type[/"
+"code]."
+msgstr "Возвращает [code]true[/code] если массив содержит [code]value[/code]."
 
 #: doc/classes/Theme.xml
 msgid ""
@@ -63947,16 +65250,17 @@ msgstr ""
 #: doc/classes/Theme.xml
 #, fuzzy
 msgid ""
-"Returns the constant at [code]name[/code] if the theme has [code]node_type[/"
+"Returns the constant at [code]name[/code] if the theme has [code]theme_type[/"
 "code]."
 msgstr "Возвращает [code]true[/code] если массив содержит [code]value[/code]."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Returns all the constants as a [PoolStringArray] filled with each constant's "
-"name, for use in [method get_constant], if the theme has [code]node_type[/"
+"name, for use in [method get_constant], if the theme has [code]theme_type[/"
 "code]."
-msgstr ""
+msgstr "Возвращает [code]true[/code] если массив содержит [code]value[/code]."
 
 #: doc/classes/Theme.xml
 msgid ""
@@ -63967,16 +65271,17 @@ msgstr ""
 
 #: doc/classes/Theme.xml
 msgid ""
-"Returns the [Font] at [code]name[/code] if the theme has [code]node_type[/"
+"Returns the [Font] at [code]name[/code] if the theme has [code]theme_type[/"
 "code]. If such item does not exist and [member default_font] is set on the "
 "theme, the default font will be returned."
 msgstr ""
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Returns all the [Font]s as a [PoolStringArray] filled with each [Font]'s "
-"name, for use in [method get_font], if the theme has [code]node_type[/code]."
-msgstr ""
+"name, for use in [method get_font], if the theme has [code]theme_type[/code]."
+msgstr "Возвращает [code]true[/code] если массив содержит [code]value[/code]."
 
 #: doc/classes/Theme.xml
 msgid ""
@@ -63988,14 +65293,15 @@ msgstr ""
 #, fuzzy
 msgid ""
 "Returns the icon [Texture] at [code]name[/code] if the theme has "
-"[code]node_type[/code]."
+"[code]theme_type[/code]."
 msgstr "Возвращает [code]true[/code] если массив содержит [code]value[/code]."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Returns all the icons as a [PoolStringArray] filled with each [Texture]'s "
-"name, for use in [method get_icon], if the theme has [code]node_type[/code]."
-msgstr ""
+"name, for use in [method get_icon], if the theme has [code]theme_type[/code]."
+msgstr "Возвращает [code]true[/code] если массив содержит [code]value[/code]."
 
 #: doc/classes/Theme.xml
 msgid ""
@@ -64006,17 +65312,19 @@ msgstr ""
 #: doc/classes/Theme.xml
 msgid ""
 "Returns the [StyleBox] at [code]name[/code] if the theme has "
-"[code]node_type[/code].\n"
+"[code]theme_type[/code].\n"
 "Valid [code]name[/code]s may be found using [method get_stylebox_list]. "
-"Valid [code]node_type[/code]s may be found using [method get_stylebox_types]."
+"Valid [code]theme_type[/code]s may be found using [method "
+"get_stylebox_types]."
 msgstr ""
 
 #: doc/classes/Theme.xml
 msgid ""
 "Returns all the [StyleBox]s as a [PoolStringArray] filled with each "
 "[StyleBox]'s name, for use in [method get_stylebox], if the theme has "
-"[code]node_type[/code].\n"
-"Valid [code]node_type[/code]s may be found using [method get_stylebox_types]."
+"[code]theme_type[/code].\n"
+"Valid [code]theme_type[/code]s may be found using [method "
+"get_stylebox_types]."
 msgstr ""
 
 #: doc/classes/Theme.xml
@@ -64029,9 +65337,9 @@ msgstr ""
 #: doc/classes/Theme.xml
 msgid ""
 "Returns the theme item of [code]data_type[/code] at [code]name[/code] if the "
-"theme has [code]node_type[/code].\n"
+"theme has [code]theme_type[/code].\n"
 "Valid [code]name[/code]s may be found using [method get_theme_item_list] or "
-"a data type specific method. Valid [code]node_type[/code]s may be found "
+"a data type specific method. Valid [code]theme_type[/code]s may be found "
 "using [method get_theme_item_types] or a data type specific method."
 msgstr ""
 
@@ -64039,8 +65347,8 @@ msgstr ""
 msgid ""
 "Returns all the theme items of [code]data_type[/code] as a [PoolStringArray] "
 "filled with each theme items's name, for use in [method get_theme_item] or a "
-"data type specific method, if the theme has [code]node_type[/code].\n"
-"Valid [code]node_type[/code]s may be found using [method "
+"data type specific method, if the theme has [code]theme_type[/code].\n"
+"Valid [code]theme_type[/code]s may be found using [method "
 "get_theme_item_types] or a data type specific method."
 msgstr ""
 
@@ -64055,7 +65363,7 @@ msgstr ""
 msgid ""
 "Returns all the theme types as a [PoolStringArray] filled with unique type "
 "names, for use in other [code]get_*[/code] functions of this theme.\n"
-"[b]Note:[/b] [code]node_type[/code] has no effect and will be removed in "
+"[b]Note:[/b] [code]theme_type[/code] has no effect and will be removed in "
 "future version."
 msgstr ""
 
@@ -64075,18 +65383,23 @@ msgstr "Возвращает [code]true[/code] если массив содер�
 #, fuzzy
 msgid ""
 "Returns [code]true[/code] if [Color] with [code]name[/code] is in "
-"[code]node_type[/code].\n"
-"Returns [code]false[/code] if the theme does not have [code]node_type[/code]."
+"[code]theme_type[/code].\n"
+"Returns [code]false[/code] if the theme does not have [code]theme_type[/"
+"code]."
 msgstr ""
 "Возвращает [code]true[/code] если [code]a[/code] и [code]b[/code] "
 "приблизительно равны друг другу."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Returns [code]true[/code] if constant with [code]name[/code] is in "
-"[code]node_type[/code].\n"
-"Returns [code]false[/code] if the theme does not have [code]node_type[/code]."
+"[code]theme_type[/code].\n"
+"Returns [code]false[/code] if the theme does not have [code]theme_type[/"
+"code]."
 msgstr ""
+"Возвращает [code]true[/code] если [code]a[/code] и [code]b[/code] "
+"приблизительно равны друг другу."
 
 #: doc/classes/Theme.xml
 #, fuzzy
@@ -64099,32 +65412,45 @@ msgstr "Возвращает [code]true[/code] если массив содер�
 #, fuzzy
 msgid ""
 "Returns [code]true[/code] if [Font] with [code]name[/code] is in "
-"[code]node_type[/code].\n"
-"Returns [code]false[/code] if the theme does not have [code]node_type[/code]."
+"[code]theme_type[/code].\n"
+"Returns [code]false[/code] if the theme does not have [code]theme_type[/"
+"code]."
 msgstr ""
 "Возвращает [code]true[/code] если [code]a[/code] и [code]b[/code] "
 "приблизительно равны друг другу."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Returns [code]true[/code] if icon [Texture] with [code]name[/code] is in "
-"[code]node_type[/code].\n"
-"Returns [code]false[/code] if the theme does not have [code]node_type[/code]."
+"[code]theme_type[/code].\n"
+"Returns [code]false[/code] if the theme does not have [code]theme_type[/"
+"code]."
 msgstr ""
+"Возвращает [code]true[/code] если [code]a[/code] и [code]b[/code] "
+"приблизительно равны друг другу."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Returns [code]true[/code] if [StyleBox] with [code]name[/code] is in "
-"[code]node_type[/code].\n"
-"Returns [code]false[/code] if the theme does not have [code]node_type[/code]."
+"[code]theme_type[/code].\n"
+"Returns [code]false[/code] if the theme does not have [code]theme_type[/"
+"code]."
 msgstr ""
+"Возвращает [code]true[/code] если [code]a[/code] и [code]b[/code] "
+"приблизительно равны друг другу."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Returns [code]true[/code] if a theme item of [code]data_type[/code] with "
-"[code]name[/code] is in [code]node_type[/code].\n"
-"Returns [code]false[/code] if the theme does not have [code]node_type[/code]."
+"[code]name[/code] is in [code]theme_type[/code].\n"
+"Returns [code]false[/code] if the theme does not have [code]theme_type[/"
+"code]."
 msgstr ""
+"Возвращает [code]true[/code] если [code]a[/code] и [code]b[/code] "
+"приблизительно равны друг другу."
 
 #: doc/classes/Theme.xml
 #, fuzzy
@@ -64152,90 +65478,115 @@ msgid ""
 msgstr ""
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Renames the [Color] at [code]old_name[/code] to [code]name[/code] if the "
-"theme has [code]node_type[/code]. If [code]name[/code] is already taken, "
+"theme has [code]theme_type[/code]. If [code]name[/code] is already taken, "
 "this method fails."
-msgstr ""
+msgstr "Возвращает [code]true[/code] если массив содержит [code]value[/code]."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Renames the constant at [code]old_name[/code] to [code]name[/code] if the "
-"theme has [code]node_type[/code]. If [code]name[/code] is already taken, "
+"theme has [code]theme_type[/code]. If [code]name[/code] is already taken, "
 "this method fails."
-msgstr ""
+msgstr "Возвращает [code]true[/code] если массив содержит [code]value[/code]."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Renames the [Font] at [code]old_name[/code] to [code]name[/code] if the "
-"theme has [code]node_type[/code]. If [code]name[/code] is already taken, "
+"theme has [code]theme_type[/code]. If [code]name[/code] is already taken, "
 "this method fails."
 msgstr ""
+"Сдвигает вектор к [code]to[/code] на фиксированное значение [code]delta[/"
+"code]."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Renames the icon at [code]old_name[/code] to [code]name[/code] if the theme "
-"has [code]node_type[/code]. If [code]name[/code] is already taken, this "
+"has [code]theme_type[/code]. If [code]name[/code] is already taken, this "
 "method fails."
-msgstr ""
+msgstr "Возвращает [code]true[/code] если массив содержит [code]value[/code]."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Renames [StyleBox] at [code]old_name[/code] to [code]name[/code] if the "
-"theme has [code]node_type[/code]. If [code]name[/code] is already taken, "
+"theme has [code]theme_type[/code]. If [code]name[/code] is already taken, "
 "this method fails."
-msgstr ""
+msgstr "Возвращает [code]true[/code] если массив содержит [code]value[/code]."
 
 #: doc/classes/Theme.xml
 msgid ""
 "Renames the theme item of [code]data_type[/code] at [code]old_name[/code] to "
-"[code]name[/code] if the theme has [code]node_type[/code]. If [code]name[/"
+"[code]name[/code] if the theme has [code]theme_type[/code]. If [code]name[/"
 "code] is already taken, this method fails."
 msgstr ""
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Sets the theme's [Color] to [code]color[/code] at [code]name[/code] in "
-"[code]node_type[/code].\n"
-"Creates [code]node_type[/code] if the theme does not have it."
+"[code]theme_type[/code].\n"
+"Creates [code]theme_type[/code] if the theme does not have it."
 msgstr ""
+"Возвращает [code]true[/code] если [code]a[/code] и [code]b[/code] "
+"приблизительно равны друг другу."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Sets the theme's constant to [code]constant[/code] at [code]name[/code] in "
-"[code]node_type[/code].\n"
-"Creates [code]node_type[/code] if the theme does not have it."
+"[code]theme_type[/code].\n"
+"Creates [code]theme_type[/code] if the theme does not have it."
 msgstr ""
+"Возвращает [code]true[/code] если [code]a[/code] и [code]b[/code] "
+"приблизительно равны друг другу."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Sets the theme's [Font] to [code]font[/code] at [code]name[/code] in "
-"[code]node_type[/code].\n"
-"Creates [code]node_type[/code] if the theme does not have it."
+"[code]theme_type[/code].\n"
+"Creates [code]theme_type[/code] if the theme does not have it."
 msgstr ""
+"Возвращает [code]true[/code] если [code]a[/code] и [code]b[/code] "
+"приблизительно равны друг другу."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Sets the theme's icon [Texture] to [code]texture[/code] at [code]name[/code] "
-"in [code]node_type[/code].\n"
-"Creates [code]node_type[/code] if the theme does not have it."
+"in [code]theme_type[/code].\n"
+"Creates [code]theme_type[/code] if the theme does not have it."
 msgstr ""
+"Возвращает [code]true[/code] если [code]a[/code] и [code]b[/code] "
+"приблизительно равны друг другу."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Sets theme's [StyleBox] to [code]stylebox[/code] at [code]name[/code] in "
-"[code]node_type[/code].\n"
-"Creates [code]node_type[/code] if the theme does not have it."
+"[code]theme_type[/code].\n"
+"Creates [code]theme_type[/code] if the theme does not have it."
 msgstr ""
+"Возвращает [code]true[/code] если [code]a[/code] и [code]b[/code] "
+"приблизительно равны друг другу."
 
 #: doc/classes/Theme.xml
+#, fuzzy
 msgid ""
 "Sets the theme item of [code]data_type[/code] to [code]value[/code] at "
-"[code]name[/code] in [code]node_type[/code].\n"
+"[code]name[/code] in [code]theme_type[/code].\n"
 "Does nothing if the [code]value[/code] type does not match [code]data_type[/"
 "code].\n"
-"Creates [code]node_type[/code] if the theme does not have it."
+"Creates [code]theme_type[/code] if the theme does not have it."
 msgstr ""
+"Возвращает [code]true[/code] если [code]a[/code] и [code]b[/code] "
+"приблизительно равны друг другу."
 
 #: doc/classes/Theme.xml
 msgid ""
@@ -65570,7 +66921,7 @@ msgstr ""
 
 #: doc/classes/TouchScreenButton.xml
 msgid "Always visible."
-msgstr ""
+msgstr "Всегда видно."
 
 #: doc/classes/TouchScreenButton.xml
 msgid "Visible on touch screens only."
@@ -65838,7 +67189,7 @@ msgstr ""
 
 #: doc/classes/Translation.xml
 msgid "Language Translation."
-msgstr ""
+msgstr "Языковой перевод."
 
 #: doc/classes/Translation.xml
 msgid ""
@@ -67663,7 +69014,7 @@ msgstr ""
 
 #: modules/upnp/doc_classes/UPNP.xml
 msgid "Inconsistent parameters."
-msgstr ""
+msgstr "Несоответствующие параметры."
 
 #: modules/upnp/doc_classes/UPNP.xml
 msgid ""
@@ -67725,39 +69076,39 @@ msgstr ""
 
 #: modules/upnp/doc_classes/UPNP.xml
 msgid "Invalid gateway."
-msgstr ""
+msgstr "Неверный шлюз."
 
 #: modules/upnp/doc_classes/UPNP.xml
 msgid "Invalid port."
-msgstr ""
+msgstr "Неверный порт."
 
 #: modules/upnp/doc_classes/UPNP.xml
 msgid "Invalid protocol."
-msgstr ""
+msgstr "Неверный протокол."
 
 #: modules/upnp/doc_classes/UPNP.xml
 msgid "Invalid duration."
-msgstr ""
+msgstr "Неверная продолжительность."
 
 #: modules/upnp/doc_classes/UPNP.xml
 msgid "Invalid arguments."
-msgstr ""
+msgstr "Недопустимые аргументы."
 
 #: modules/upnp/doc_classes/UPNP.xml
 msgid "Invalid response."
-msgstr ""
+msgstr "Неверный ответ."
 
 #: modules/upnp/doc_classes/UPNP.xml
 msgid "Invalid parameter."
-msgstr ""
+msgstr "Недопустимый параметр."
 
 #: modules/upnp/doc_classes/UPNP.xml modules/upnp/doc_classes/UPNPDevice.xml
 msgid "HTTP error."
-msgstr ""
+msgstr "Ошибка HTTP."
 
 #: modules/upnp/doc_classes/UPNP.xml
 msgid "Socket error."
-msgstr ""
+msgstr "Ошибка сокета."
 
 #: modules/upnp/doc_classes/UPNP.xml
 msgid "Error allocating memory."
@@ -67840,11 +69191,11 @@ msgstr ""
 
 #: modules/upnp/doc_classes/UPNPDevice.xml
 msgid "Service type."
-msgstr ""
+msgstr "Тип услуг."
 
 #: modules/upnp/doc_classes/UPNPDevice.xml
 msgid "OK."
-msgstr ""
+msgstr "OK."
 
 #: modules/upnp/doc_classes/UPNPDevice.xml
 msgid "Empty HTTP response."
@@ -67860,15 +69211,15 @@ msgstr ""
 
 #: modules/upnp/doc_classes/UPNPDevice.xml
 msgid "Disconnected."
-msgstr ""
+msgstr "Отключен."
 
 #: modules/upnp/doc_classes/UPNPDevice.xml
 msgid "Unknown device."
-msgstr ""
+msgstr "Неизвестное устройство."
 
 #: modules/upnp/doc_classes/UPNPDevice.xml
 msgid "Invalid control."
-msgstr ""
+msgstr "Неверный контроль."
 
 #: modules/upnp/doc_classes/UPNPDevice.xml
 msgid "Memory allocation error."
@@ -69168,10 +70519,15 @@ msgstr ""
 #: doc/classes/Viewport.xml
 msgid ""
 "If [code]true[/code], uses a fast post-processing filter to make banding "
-"significantly less visible. In some cases, debanding may introduce a "
-"slightly noticeable dithering pattern. It's recommended to enable debanding "
-"only when actually needed since the dithering pattern will make lossless-"
-"compressed screenshots larger.\n"
+"significantly less visible in 3D. 2D rendering is [i]not[/i] affected by "
+"debanding unless the [member Environment.background_mode] is [constant "
+"Environment.BG_CANVAS]. In this case, [member usage] must also be set to "
+"[constant USAGE_3D]. See also [member ProjectSettings.rendering/quality/"
+"filters/use_debanding].\n"
+"In some cases, debanding may introduce a slightly noticeable dithering "
+"pattern. It's recommended to enable debanding only when actually needed "
+"since the dithering pattern will make lossless-compressed screenshots "
+"larger.\n"
 "[b]Note:[/b] Only available on the GLES3 backend. [member hdr] must also be "
 "[code]true[/code] for debanding to be effective."
 msgstr ""
@@ -69182,8 +70538,8 @@ msgstr ""
 
 #: doc/classes/Viewport.xml
 msgid ""
-"If [code]true[/code], the viewport will disable 3D rendering. For actual "
-"disabling use [code]usage[/code]."
+"If [code]true[/code], the viewport will disable 3D rendering. To actually "
+"disable allocation of 3D buffers, set [member usage] instead."
 msgstr ""
 
 #: doc/classes/Viewport.xml
@@ -69338,7 +70694,9 @@ msgstr ""
 
 #: doc/classes/Viewport.xml
 msgid ""
-"The rendering mode of viewport.\n"
+"The viewport's rendering mode. This controls which buffers are allocated for "
+"the viewport (2D only, or 2D + 3D). 2D-only options can reduce memory usage "
+"and improve performance slightly, especially on low-end devices.\n"
 "[b]Note:[/b] If set to [constant USAGE_2D] or [constant "
 "USAGE_2D_NO_SAMPLING], [member hdr] will have no effect when enabled since "
 "HDR is not supported for 2D."
@@ -69872,6 +71230,22 @@ msgid ""
 "The render layer(s) this [VisualInstance] is drawn on.\n"
 "This object will only be visible for [Camera]s whose cull mask includes the "
 "render object this [VisualInstance] is set to."
+msgstr ""
+
+#: doc/classes/VisualInstance.xml
+msgid ""
+"The sorting offset used by this [VisualInstance]. Adjusting it to a higher "
+"value will make the [VisualInstance] reliably draw on top of other "
+"[VisualInstance]s that are otherwise positioned at the same spot."
+msgstr ""
+
+#: doc/classes/VisualInstance.xml
+msgid ""
+"If [code]true[/code], the object is sorted based on the [AABB] center. "
+"Sorted based on the global position otherwise.\n"
+"The [AABB] center based sorting is generally more accurate for 3D models. "
+"The position based sorting instead allows to better control the drawing "
+"order when working with [Particles] and [CPUParticles]."
 msgstr ""
 
 #: modules/visual_script/doc_classes/VisualScript.xml
@@ -71063,11 +72437,11 @@ msgstr ""
 
 #: modules/visual_script/doc_classes/VisualScriptMathConstant.xml
 msgid "Unity: [code]1[/code]."
-msgstr ""
+msgstr "Единство: [code]1[/code]."
 
 #: modules/visual_script/doc_classes/VisualScriptMathConstant.xml
 msgid "Pi: [code]3.141593[/code]."
-msgstr ""
+msgstr "Пи: [code]3.141593[/code]."
 
 #: modules/visual_script/doc_classes/VisualScriptMathConstant.xml
 msgid "Pi divided by two: [code]1.570796[/code]."
@@ -71075,7 +72449,7 @@ msgstr ""
 
 #: modules/visual_script/doc_classes/VisualScriptMathConstant.xml
 msgid "Tau: [code]6.283185[/code]."
-msgstr ""
+msgstr "Тау: [code]6.283185[/code]."
 
 #: modules/visual_script/doc_classes/VisualScriptMathConstant.xml
 msgid ""
@@ -71089,7 +72463,7 @@ msgstr ""
 
 #: modules/visual_script/doc_classes/VisualScriptMathConstant.xml
 msgid "Infinity: [code]inf[/code]."
-msgstr ""
+msgstr "Бесконечность: [code]inf[/code]."
 
 #: modules/visual_script/doc_classes/VisualScriptMathConstant.xml
 msgid "Not a number: [code]nan[/code]."
@@ -71391,7 +72765,7 @@ msgstr ""
 
 #: modules/visual_script/doc_classes/VisualScriptSceneNode.xml
 msgid "Node reference."
-msgstr ""
+msgstr "Ссылка на узел."
 
 #: modules/visual_script/doc_classes/VisualScriptSceneNode.xml
 msgid ""
@@ -71552,7 +72926,7 @@ msgstr ""
 
 #: modules/visual_script/doc_classes/VisualScriptWhile.xml
 msgid "Conditional loop."
-msgstr ""
+msgstr "Условный цикл."
 
 #: modules/visual_script/doc_classes/VisualScriptWhile.xml
 msgid ""
@@ -72195,7 +73569,7 @@ msgstr ""
 
 #: doc/classes/VisualServer.xml
 msgid "Synchronizes threads."
-msgstr ""
+msgstr "Синхронизирует потоки."
 
 #: doc/classes/VisualServer.xml
 msgid "Tries to free an object in the VisualServer."
@@ -73673,6 +75047,25 @@ msgid ""
 "manually. For further optimization, see [method "
 "viewport_set_render_direct_to_screen]."
 msgstr ""
+"Копирует видовой экран в область экрана, указанную [code]rect[/code]. Если "
+"[member Viewport.render_direct_to_screen] равен [code]true[/code], то "
+"вьюпорт не использует фреймбуфер и содержимое вьюпорта выводится "
+"непосредственно на экран. Однако обратите внимание, что корневой видовой "
+"экран рисуется последним, поэтому он будет рисоваться поверх экрана. "
+"Соответственно, вы должны установить корневой видовой экран на область, "
+"которая не покрывает область, к которой вы прикрепили этот видовой экран.\n"
+"Например, вы можете установить корневой видовой экран так, чтобы он вообще "
+"не отрисовывался, используя следующий код:\n"
+"[codeblock].\n"
+"func _ready():\n"
+"\tget_viewport().set_attach_to_screen_rect(Rect2())\n"
+"\t$Viewport.set_attach_to_screen_rect(Rect2(0, 0, 600, 600))\n"
+"[/codeblock].\n"
+"Использование этого метода может привести к значительной оптимизации, "
+"особенно на устройствах низкого класса. Однако за это приходится "
+"расплачиваться необходимостью управлять видовыми экранами вручную. Для "
+"дальнейшей оптимизации смотрите [method "
+"viewport_set_render_direct_to_screen]."
 
 #: doc/classes/VisualServer.xml
 msgid ""
@@ -73780,6 +75173,19 @@ msgid ""
 "will be drawn, no automatic scaling is possible, even if your game scene is "
 "significantly larger than the window size."
 msgstr ""
+"Если [code]true[/code], выведите содержимое видового экрана непосредственно "
+"на экран. Это позволяет выполнить низкоуровневую оптимизацию, при которой "
+"можно пропустить отрисовку видового экрана в корневой видовой экран. Хотя "
+"эта оптимизация может привести к значительному увеличению скорости (особенно "
+"на старых устройствах), она обходится недешево. Когда эта функция включена, "
+"вы не можете читать из области просмотра или из [code]SCREEN_TEXTURE[/code]. "
+"Вы также теряете преимущества некоторых настроек окна, таких как различные "
+"режимы растяжения. Еще одно последствие, о котором следует знать, это то, "
+"что в 2D рендеринг происходит в координатах окна, поэтому если у вас есть "
+"область просмотра, которая в два раза больше окна, и вы установите это, то "
+"будет отрисована только та часть, которая помещается в окно, автоматическое "
+"масштабирование невозможно, даже если ваша игровая сцена значительно больше, "
+"чем размер окна."
 
 #: doc/classes/VisualServer.xml
 msgid ""
@@ -74066,6 +75472,10 @@ msgstr ""
 
 #: doc/classes/VisualServer.xml
 msgid "Flag used to mark an index array."
+msgstr ""
+
+#: doc/classes/VisualServer.xml
+msgid "Flag used to mark a compressed (half float) color array."
 msgstr ""
 
 #: doc/classes/VisualServer.xml
@@ -74395,8 +75805,9 @@ msgid ""
 msgstr ""
 
 #: doc/classes/VisualServer.xml
+#, fuzzy
 msgid "The instance does not have a type."
-msgstr ""
+msgstr "Данный экземпляр не имеет типа."
 
 #: doc/classes/VisualServer.xml
 msgid "The instance is a mesh."
@@ -74407,28 +75818,32 @@ msgid "The instance is a multimesh."
 msgstr ""
 
 #: doc/classes/VisualServer.xml
+#, fuzzy
 msgid "The instance is an immediate geometry."
-msgstr ""
+msgstr "Дынный экземпляр - геометрическая фигура."
 
 #: doc/classes/VisualServer.xml
 msgid "The instance is a particle emitter."
-msgstr ""
+msgstr "Данный экземпляр - источник частиц."
 
 #: doc/classes/VisualServer.xml
+#, fuzzy
 msgid "The instance is a light."
-msgstr ""
+msgstr "Данный экземпляр - источник освещения."
 
 #: doc/classes/VisualServer.xml
 msgid "The instance is a reflection probe."
-msgstr ""
+msgstr "Данный экземпляр - проба отражения."
 
 #: doc/classes/VisualServer.xml
+#, fuzzy
 msgid "The instance is a GI probe."
-msgstr ""
+msgstr "Данный экземпляр - проба GI."
 
 #: doc/classes/VisualServer.xml
+#, fuzzy
 msgid "The instance is a lightmap capture."
-msgstr ""
+msgstr "Данный экземпляр - захваченная карта освещения."
 
 #: doc/classes/VisualServer.xml
 msgid "Represents the size of the [enum InstanceType] enum."
@@ -74454,7 +75869,7 @@ msgstr ""
 
 #: doc/classes/VisualServer.xml
 msgid "Disable shadows from this instance."
-msgstr ""
+msgstr "Отключает тени в данном экземпляре."
 
 #: doc/classes/VisualServer.xml
 msgid "Cast shadows from this instance."
@@ -74502,8 +75917,9 @@ msgid "The light adds color depending on mask."
 msgstr ""
 
 #: doc/classes/VisualServer.xml
+#, fuzzy
 msgid "Do not apply a filter to canvas light shadows."
-msgstr ""
+msgstr "Не применяет фильтры на холст теней."
 
 #: doc/classes/VisualServer.xml
 msgid "Use PCF3 filtering to filter canvas light shadows."
@@ -74565,19 +75981,20 @@ msgstr ""
 
 #: doc/classes/VisualServer.xml
 msgid "The amount of surface changes in the frame."
-msgstr ""
+msgstr "Количество изменений поверхности в кадр."
 
 #: doc/classes/VisualServer.xml
 msgid "The amount of draw calls in frame."
-msgstr ""
+msgstr "Количество вызовов отрисовки в кадр."
 
 #: doc/classes/VisualServer.xml
+#, fuzzy
 msgid "The amount of 2d items in the frame."
-msgstr ""
+msgstr "Количество 2d-объектов в кадре."
 
 #: doc/classes/VisualServer.xml
 msgid "The amount of 2d draw calls in frame."
-msgstr ""
+msgstr "Количество вызовов отрисовки 2d в кадре."
 
 #: doc/classes/VisualServer.xml
 msgid "Hardware supports shaders. This enum is currently unused in Godot 3.x."
@@ -74621,34 +76038,45 @@ msgid ""
 msgstr ""
 
 #: doc/classes/VisualServer.xml
+#, fuzzy
 msgid "MultiMesh custom data uses a float per component."
 msgstr ""
+"Пользовательские данные MultiMesh используют для хранения число с плавающей "
+"точкой."
 
 #: doc/classes/VisualServer.xml
+#, fuzzy
 msgid "Reflection probe will update reflections once and then stop."
-msgstr ""
+msgstr "Проба отражения будет обновлена единожды и затем остановлена."
 
 #: doc/classes/VisualServer.xml
+#, fuzzy
 msgid ""
 "Reflection probe will update each frame. This mode is necessary to capture "
 "moving objects."
 msgstr ""
+"Проба отражения будет обновляться каждый кадр. Режим нужен для захвата "
+"движущихся объектов."
 
 #: doc/classes/VisualServer.xml
+#, fuzzy
 msgid "Draw particles in the order that they appear in the particles array."
-msgstr ""
+msgstr "Отрисует частицы исходя из их расположения в массиве"
 
 #: doc/classes/VisualServer.xml
+#, fuzzy
 msgid "Sort particles based on their lifetime."
-msgstr ""
+msgstr "Отсортирует частицы исходя из их времени жизни."
 
 #: doc/classes/VisualServer.xml
+#, fuzzy
 msgid "Sort particles based on their distance to the camera."
-msgstr ""
+msgstr "Отсортирует частицы исходя из расстояния от камеры"
 
 #: doc/classes/VisualServer.xml
+#, fuzzy
 msgid "Use the clear color as background."
-msgstr ""
+msgstr "Используйте сплошной цвет как задний фон."
 
 #: doc/classes/VisualServer.xml
 msgid "Use a specified color as the background."
@@ -76228,7 +77656,7 @@ msgstr "Возвращает значение, противоположное п
 
 #: doc/classes/VisualShaderNodeVectorFunc.xml
 msgid "Returns [code]1/vector[/code]."
-msgstr ""
+msgstr "Возвращает [code]1/вектор[/code]."
 
 #: doc/classes/VisualShaderNodeVectorFunc.xml
 msgid "Converts RGB vector to HSV equivalent."
@@ -76563,7 +77991,7 @@ msgstr ""
 
 #: doc/classes/VSlider.xml
 msgid "Vertical slider."
-msgstr ""
+msgstr "Вертикальный слайдер."
 
 #: doc/classes/VSlider.xml
 msgid ""

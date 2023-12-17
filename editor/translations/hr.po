@@ -5,14 +5,16 @@
 # Unlimited Creativity <marinosah1@gmail.com>, 2019.
 # Patik <patrikfs5@gmail.com>, 2019.
 # Nikola Bunjevac <nikola.bunjevac@gmail.com>, 2019, 2020.
-# LeoClose <leoclose575@gmail.com>, 2020, 2021.
+# LeoClose <leoclose575@gmail.com>, 2020, 2021, 2022.
 # Filip <fhomolka@protonmail.com>, 2022.
+# Milo Ivir <mail@milotype.de>, 2022.
+# peter277 <ps2718@hotmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: Godot Engine editor\n"
 "Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
-"PO-Revision-Date: 2022-07-23 03:57+0000\n"
-"Last-Translator: Filip <fhomolka@protonmail.com>\n"
+"PO-Revision-Date: 2022-12-21 07:02+0000\n"
+"Last-Translator: peter277 <ps2718@hotmail.com>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/godot-engine/"
 "godot/hr/>\n"
 "Language: hr\n"
@@ -20,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 
 #: core/bind/core_bind.cpp main/main.cpp
 msgid "Tablet Driver"
@@ -28,16 +30,15 @@ msgstr "Upravljački program za Tablet"
 
 #: core/bind/core_bind.cpp
 msgid "Clipboard"
-msgstr ""
+msgstr "Međuspremnik"
 
 #: core/bind/core_bind.cpp
-#, fuzzy
 msgid "Current Screen"
-msgstr "Premjesti Okvir"
+msgstr "Trenutni Ekran"
 
 #: core/bind/core_bind.cpp
 msgid "Exit Code"
-msgstr ""
+msgstr "Exit Kod"
 
 #: core/bind/core_bind.cpp
 msgid "V-Sync Enabled"
@@ -77,38 +78,31 @@ msgstr "Orijentacija zaslona"
 
 #: core/bind/core_bind.cpp core/project_settings.cpp main/main.cpp
 #: platform/uwp/os_uwp.cpp
-#, fuzzy
 msgid "Window"
 msgstr "Prozor"
 
 #: core/bind/core_bind.cpp core/project_settings.cpp
-#, fuzzy
 msgid "Borderless"
 msgstr "Bez obruba"
 
 #: core/bind/core_bind.cpp
-#, fuzzy
 msgid "Per Pixel Transparency Enabled"
 msgstr "Omogućena prozirnost po pikselu"
 
 #: core/bind/core_bind.cpp core/project_settings.cpp
-#, fuzzy
 msgid "Fullscreen"
 msgstr "Cijeli zaslon"
 
 #: core/bind/core_bind.cpp
-#, fuzzy
 msgid "Maximized"
 msgstr "Maksimiziran"
 
 #: core/bind/core_bind.cpp
-#, fuzzy
 msgid "Minimized"
 msgstr "Minimiziran"
 
 #: core/bind/core_bind.cpp core/project_settings.cpp scene/gui/dialogs.cpp
 #: scene/gui/graph_node.cpp
-#, fuzzy
 msgid "Resizable"
 msgstr "Mogućnost promjene veličine"
 
@@ -117,7 +111,6 @@ msgstr "Mogućnost promjene veličine"
 #: scene/3d/physics_body.cpp scene/3d/remote_transform.cpp
 #: scene/gui/control.cpp scene/gui/line_edit.cpp
 #: scene/resources/default_theme/default_theme.cpp
-#, fuzzy
 msgid "Position"
 msgstr "Pozicija"
 
@@ -130,38 +123,32 @@ msgstr "Pozicija"
 #: scene/resources/primitive_meshes.cpp scene/resources/sky.cpp
 #: scene/resources/style_box.cpp scene/resources/texture.cpp
 #: scene/resources/visual_shader.cpp servers/visual_server.cpp
-#, fuzzy
 msgid "Size"
 msgstr "Veličina"
 
 #: core/bind/core_bind.cpp
 msgid "Endian Swap"
-msgstr ""
+msgstr "Promjena Endian-a"
 
 #: core/bind/core_bind.cpp
-#, fuzzy
 msgid "Editor Hint"
 msgstr "Savjet Urednika"
 
 #: core/bind/core_bind.cpp
-#, fuzzy
 msgid "Print Error Messages"
 msgstr "Ispis poruka o pogreškama"
 
 #: core/bind/core_bind.cpp
-#, fuzzy
 msgid "Iterations Per Second"
 msgstr "Iteracije u sekundi"
 
 #: core/bind/core_bind.cpp
-#, fuzzy
 msgid "Target FPS"
 msgstr "Ciljani FPS"
 
 #: core/bind/core_bind.cpp
-#, fuzzy
 msgid "Time Scale"
-msgstr "Vremenska skala"
+msgstr "Skala vremena"
 
 #: core/bind/core_bind.cpp main/main.cpp
 msgid "Physics Jitter Fix"
@@ -169,7 +156,7 @@ msgstr ""
 
 #: core/bind/core_bind.cpp editor/plugins/version_control_editor_plugin.cpp
 msgid "Error"
-msgstr ""
+msgstr "Greška"
 
 #: core/bind/core_bind.cpp
 #, fuzzy
@@ -342,7 +329,7 @@ msgstr "Neispravan unos %i (nije uspio) u izrazu"
 
 #: core/math/expression.cpp
 msgid "self can't be used because instance is null (not passed)"
-msgstr "self se ne može koristiti jer instanca je null (nije prosljeđena)"
+msgstr "self se ne može koristiti jer je instanca null (nije prosljeđena)"
 
 #: core/math/expression.cpp
 msgid "Invalid operands to operator %s, %s and %s."
@@ -1414,7 +1401,7 @@ msgstr "Okidač"
 
 #: editor/animation_track_editor.cpp scene/3d/baked_lightmap.cpp
 msgid "Capture"
-msgstr ""
+msgstr "Snimka"
 
 #: editor/animation_track_editor.cpp
 msgid "Nearest"
@@ -3446,7 +3433,7 @@ msgstr ""
 
 #: editor/editor_help.cpp
 msgid "Enumerations"
-msgstr ""
+msgstr "Nabrajanja"
 
 #: editor/editor_help.cpp
 msgid "Property Descriptions"
@@ -10838,7 +10825,7 @@ msgstr ""
 msgid " [auto]"
 msgstr ""
 
-#. TRANSLATORS: This will be appended to the view name when Portal Occulusion is enabled.
+#. TRANSLATORS: This will be appended to the view name when Portal Occlusion is enabled.
 #: editor/plugins/spatial_editor_plugin.cpp
 msgid " [portals active]"
 msgstr ""
@@ -12668,9 +12655,10 @@ msgstr "Opcije Klase"
 #: scene/2d/path_2d.cpp scene/2d/polygon_2d.cpp scene/2d/sprite.cpp
 #: scene/3d/cpu_particles.cpp scene/3d/label_3d.cpp scene/3d/path.cpp
 #: scene/3d/physics_body.cpp scene/3d/soft_body.cpp scene/3d/sprite_3d.cpp
-#: scene/gui/graph_node.cpp scene/gui/rich_text_effect.cpp
-#: scene/main/canvas_layer.cpp scene/resources/material.cpp
-#: scene/resources/particles_material.cpp scene/resources/style_box.cpp
+#: scene/3d/visual_instance.cpp scene/gui/graph_node.cpp
+#: scene/gui/rich_text_effect.cpp scene/main/canvas_layer.cpp
+#: scene/resources/material.cpp scene/resources/particles_material.cpp
+#: scene/resources/style_box.cpp
 msgid "Offset"
 msgstr ""
 
@@ -14046,12 +14034,11 @@ msgstr ""
 
 #: editor/project_manager.cpp
 msgid ""
-"Couldn't load project.godot in project path (error %d). It may be missing or "
-"corrupted."
+"Couldn't load project at '%s' (error %d). It may be missing or corrupted."
 msgstr ""
 
 #: editor/project_manager.cpp
-msgid "Couldn't edit project.godot in project path."
+msgid "Couldn't save project at '%s' (error %d)."
 msgstr ""
 
 #: editor/project_manager.cpp
@@ -22939,6 +22926,15 @@ msgstr "Greška!"
 msgid "AABB"
 msgstr ""
 
+#: scene/3d/visual_instance.cpp
+#, fuzzy
+msgid "Sorting"
+msgstr "Zalijepi Animaciju"
+
+#: scene/3d/visual_instance.cpp
+msgid "Use AABB Center"
+msgstr ""
+
 #: scene/3d/visual_instance.cpp scene/resources/navigation_mesh.cpp
 msgid "Geometry"
 msgstr ""
@@ -24308,9 +24304,8 @@ msgid "Draw 2D Outlines"
 msgstr ""
 
 #: scene/main/scene_tree.cpp servers/visual_server.cpp
-#, fuzzy
 msgid "Reflections"
-msgstr "Direkcije"
+msgstr "Reflekcija"
 
 #: scene/main/scene_tree.cpp
 msgid "Atlas Size"
