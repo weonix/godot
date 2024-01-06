@@ -51,6 +51,9 @@ void Shader::set_code(const String &p_code) {
 	}
 
 	VisualServer::get_singleton()->shader_set_code(shader, p_code);
+	VisualServer::get_singleton()->shader_set_path(shader, get_path());
+	VisualServer::get_singleton()->emit_signal("create_shader", this->get_path());
+
 	params_cache_dirty = true;
 
 	emit_changed();
@@ -173,6 +176,7 @@ void Shader::_bind_methods() {
 Shader::Shader() {
 	mode = MODE_SPATIAL;
 	shader = VisualServer::get_singleton()->shader_create();
+
 	params_cache_dirty = true;
 }
 

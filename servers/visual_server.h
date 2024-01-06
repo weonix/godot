@@ -69,6 +69,9 @@ protected:
 	static void _bind_methods();
 
 public:
+	HashMap<RID, void*> shader_material_map;
+	 
+
 	static VisualServer *get_singleton();
 	static VisualServer *create();
 	static Vector2 norm_to_oct(const Vector3 v);
@@ -196,6 +199,7 @@ public:
 	virtual RID shader_create() = 0;
 
 	virtual void shader_set_code(RID p_shader, const String &p_code) = 0;
+	virtual void shader_set_path(RID p_shader, const String &path) = 0;
 	virtual String shader_get_code(RID p_shader) const = 0;
 	virtual void shader_get_param_list(RID p_shader, List<PropertyInfo> *p_param_list) const = 0;
 	Array _shader_get_param_list_bind(RID p_shader) const;

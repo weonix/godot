@@ -1066,6 +1066,9 @@ String ShaderCompilerGLES3::_dump_node_code(const SL::Node *p_node, int p_level,
 }
 
 Error ShaderCompilerGLES3::compile(VS::ShaderMode p_mode, const String &p_code, IdentifierActions *p_actions, const String &p_path, GeneratedCode &r_gen_code) {
+	print_verbose("ShaderCompilerGLES3::compile");		
+	VS::get_singleton()->emit_signal("godot_shader_compiled");
+	
 	Error err = parser.compile(p_code, ShaderTypes::get_singleton()->get_functions(p_mode), ShaderTypes::get_singleton()->get_modes(p_mode), ShaderTypes::get_singleton()->get_types());
 
 	if (err != OK) {

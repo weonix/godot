@@ -1872,6 +1872,7 @@ void VisualServer::_bind_methods() {
 #endif
 	ClassDB::bind_method(D_METHOD("shader_create"), &VisualServer::shader_create);
 	ClassDB::bind_method(D_METHOD("shader_set_code", "shader", "code"), &VisualServer::shader_set_code);
+	ClassDB::bind_method(D_METHOD("shader_set_path", "shader", "path"), &VisualServer::shader_set_path);
 	ClassDB::bind_method(D_METHOD("shader_get_code", "shader"), &VisualServer::shader_get_code);
 	ClassDB::bind_method(D_METHOD("shader_get_param_list", "shader"), &VisualServer::_shader_get_param_list_bind);
 	ClassDB::bind_method(D_METHOD("shader_set_default_texture_param", "shader", "name", "texture"), &VisualServer::shader_set_default_texture_param);
@@ -2535,6 +2536,22 @@ void VisualServer::_bind_methods() {
 	ADD_SIGNAL(MethodInfo("frame_post_draw"));
 
 	ADD_SIGNAL(MethodInfo("gl_shader_compiled"));
+	ADD_SIGNAL(MethodInfo("godot_shader_compiled"));
+
+	ADD_SIGNAL(MethodInfo("new_shader_version", 
+		PropertyInfo(Variant::STRING, "material"), 
+		PropertyInfo(Variant::INT, "version"), 
+		PropertyInfo(Variant::INT, "code")
+	));
+
+	ADD_SIGNAL(MethodInfo("create_spatial_shader",
+		PropertyInfo(Variant::STRING, "material"), 
+		PropertyInfo(Variant::INT, "key")
+	));
+
+	ADD_SIGNAL(MethodInfo("create_shader", 
+		PropertyInfo(Variant::STRING, "shader_path")
+	));
 }
 
 void VisualServer::_canvas_item_add_style_box(RID p_item, const Rect2 &p_rect, const Rect2 &p_source, RID p_texture, const Vector<float> &p_margins, const Color &p_modulate) {
@@ -2613,7 +2630,6 @@ void VisualServer::set_force_shader_fallbacks_enabled(bool p_enabled) {
 VisualServer::VisualServer() {
 	//ERR_FAIL_COND(singleton);
 	singleton = this;
-
 	GLOBAL_DEF_RST("rendering/vram_compression/import_bptc", false);
 	GLOBAL_DEF_RST("rendering/vram_compression/import_s3tc", true);
 	GLOBAL_DEF_RST("rendering/vram_compression/import_etc", false);

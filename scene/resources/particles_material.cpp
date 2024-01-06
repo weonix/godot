@@ -685,7 +685,10 @@ void ParticlesMaterial::_update_shader() {
 	shader_data.shader = VS::get_singleton()->shader_create();
 	shader_data.users = 1;
 
+	
+
 	VS::get_singleton()->shader_set_code(shader_data.shader, code);
+	VS::get_singleton()->shader_set_path(shader_data.shader, get_path());
 
 	shader_map[mk] = shader_data;
 

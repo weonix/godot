@@ -234,12 +234,13 @@ private:
 	HashMap<VersionKey, Version, VersionKeyHash> version_map;
 
 	HashMap<uint32_t, CustomCode> custom_code_map;
-	uint32_t last_custom_code;
+
 
 	VersionKey conditional_version;
 	VersionKey new_conditional_version;
 
 	virtual String get_shader_name() const = 0;
+
 
 	const char **conditional_defines;
 	const char **uniform_names;
@@ -380,6 +381,9 @@ protected:
 	ShaderGLES3();
 
 public:
+	HashMap<uint32_t, String> custom_code_path_map;
+	uint32_t last_custom_code;
+	
 	enum {
 		CUSTOM_SHADER_DISABLED = 0
 	};

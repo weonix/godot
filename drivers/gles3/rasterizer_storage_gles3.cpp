@@ -2549,6 +2549,8 @@ void RasterizerStorageGLES3::material_set_shader(RID p_material, RID p_shader) {
 
 	Shader *shader = shader_owner.getornull(p_shader);
 
+	
+
 	if (material->shader) {
 		//if shader, remove from previous shader material list
 		material->shader->materials.remove(&material->list);
@@ -2559,7 +2561,16 @@ void RasterizerStorageGLES3::material_set_shader(RID p_material, RID p_shader) {
 		shader->materials.add(&material->list);
 	}
 
+	
+
 	_material_make_dirty(material);
+}
+
+void RasterizerStorageGLES3::shader_set_path(RID p_shader, const String &path) {
+	Shader *shader = shader_owner.getornull(p_shader);
+	if (shader) {
+		shader->shader->custom_code_path_map[shader->shader->last_custom_code - 1] = path;
+	}
 }
 
 RID RasterizerStorageGLES3::material_get_shader(RID p_material) const {

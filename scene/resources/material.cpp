@@ -1081,7 +1081,11 @@ void SpatialMaterial::_update_shader() {
 	shader_data.shader = VS::get_singleton()->shader_create();
 	shader_data.users = 1;
 
+
 	VS::get_singleton()->shader_set_code(shader_data.shader, code);
+	VS::get_singleton()->shader_set_path(shader_data.shader, get_path());
+
+	VisualServer::get_singleton()->emit_signal("create_spatial_shader", this->get_path(), mk.key);
 
 	shader_map[mk] = shader_data;
 

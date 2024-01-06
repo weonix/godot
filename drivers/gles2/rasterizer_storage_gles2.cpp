@@ -1360,6 +1360,10 @@ void RasterizerStorageGLES2::shader_set_code(RID p_shader, const String &p_code)
 	_shader_make_dirty(shader);
 }
 
+void RasterizerStorageGLES2::shader_set_path(RID p_shader, const String &path) {
+	return;
+}
+
 String RasterizerStorageGLES2::shader_get_code(RID p_shader) const {
 	const Shader *shader = shader_owner.get(p_shader);
 	ERR_FAIL_COND_V(!shader, "");

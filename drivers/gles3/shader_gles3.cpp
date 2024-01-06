@@ -572,6 +572,8 @@ ShaderGLES3::Version *ShaderGLES3::get_current_version(bool &r_async_forbidden) 
 
 	Version &v = *_v;
 
+	VisualServer::get_singleton()->emit_signal("new_shader_version",custom_code_path_map.has(effective_version.code_version) ? custom_code_path_map[effective_version.code_version] : "", effective_version.version, effective_version.code_version);
+
 	/* SETUP CONDITIONALS */
 
 	LocalVector<const char *> strings_common;
