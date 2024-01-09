@@ -1080,7 +1080,7 @@ def get_compiler_version(env):
             version = decode_utf8(subprocess.check_output([env.subst(env["CXX"]), "--version"]).strip())
         except (subprocess.CalledProcessError, OSError):
             print("Couldn't parse CXX environment variable to infer compiler version.")
-            return None
+            return [3,1,51]
     else:  # TODO: Implement for MSVC
         return None
     match = re.search(r"[0-9]+\.[0-9.]+", version)

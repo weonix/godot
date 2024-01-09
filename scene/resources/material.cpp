@@ -362,7 +362,12 @@ void Material3D::finish_shaders() {
 void Material3D::_update_shader() {
 	dirty_materials->remove(&element);
 
+	
+
 	MaterialKey mk = _compute_key();
+
+	VisualServer::get_singleton()->emit_signal("try_update_spatial_shader", this->get_path(), mk.key);
+
 	if (mk.key == current_key.key) {
 		return; //no update required in the end
 	}
@@ -1111,9 +1116,9 @@ void Material3D::_update_shader() {
 
 
 	VS::get_singleton()->shader_set_code(shader_data.shader, code);
-	VS::get_singleton()->shader_set_path(shader_data.shader, get_path());
+	uint32_t code_id = VS::get_singleton()->shader_set_path(shader_data.shader, get_path());
 
-	VisualServer::get_singleton()->emit_signal("create_spatial_shader", this->get_path(), mk.key);
+	VisualServer::get_singleton()->emit_signal("create_spatial_shader", this->get_path(), mk.key, code_id);
 
 	shader_map[mk] = shader_data;
 

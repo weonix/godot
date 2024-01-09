@@ -195,7 +195,7 @@ public:
 	BIND0R(RID, shader_create)
 
 	BIND2(shader_set_code, RID, const String &)
-	BIND2(shader_set_path, RID, const String &)
+	BIND2R(uint32_t, shader_set_path, RID, const String &)
 	BIND1RC(String, shader_get_code, RID)
 
 	BIND2C(shader_get_param_list, RID, List<PropertyInfo> *)

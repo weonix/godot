@@ -2596,11 +2596,18 @@ void VisualServer::_bind_methods() {
 
 	ADD_SIGNAL(MethodInfo("create_spatial_shader",
 		PropertyInfo(Variant::STRING, "material"), 
+		PropertyInfo(Variant::INT, "key"),
+		PropertyInfo(Variant::INT, "code_id")
+	));
+
+	ADD_SIGNAL(MethodInfo("try_update_spatial_shader",
+		PropertyInfo(Variant::STRING, "material"), 
 		PropertyInfo(Variant::INT, "key")
 	));
 
 	ADD_SIGNAL(MethodInfo("create_shader", 
-		PropertyInfo(Variant::STRING, "shader_path")
+		PropertyInfo(Variant::STRING, "shader_path"),
+		PropertyInfo(Variant::INT, "code_id")
 	));
 }
 

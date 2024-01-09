@@ -1385,8 +1385,8 @@ void RasterizerStorageGLES2::shader_set_code(RID p_shader, const String &p_code)
 	_shader_make_dirty(shader);
 }
 
-void RasterizerStorageGLES2::shader_set_path(RID p_shader, const String &path) {
-	return;
+uint32_t RasterizerStorageGLES2::shader_set_path(RID p_shader, const String &path) {
+	return 0;
 }
 
 String RasterizerStorageGLES2::shader_get_code(RID p_shader) const {
