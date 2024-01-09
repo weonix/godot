@@ -51,8 +51,8 @@ void Shader::set_code(const String &p_code) {
 	}
 
 	VisualServer::get_singleton()->shader_set_code(shader, p_code);
-	VisualServer::get_singleton()->shader_set_path(shader, get_path());
-	VisualServer::get_singleton()->emit_signal("create_shader", this->get_path());
+	uint32_t code_id = VisualServer::get_singleton()->shader_set_path(shader, get_path());
+	VisualServer::get_singleton()->emit_signal("create_shader", this->get_path(), code_id);
 
 	params_cache_dirty = true;
 
